@@ -1,0 +1,114 @@
+.page-login{
+    .container-titulo-login .titulo-login {
+        text-align: center;
+        font-weight: $bold;
+    }
+
+    .page-content {
+        padding: 100px 0;
+
+        .container .container2 .board {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+
+            @media(max-width: 991px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+            }
+
+            .Login.caixa-login,
+            .Cadastro.caixa-cadastro {
+                background-color: #fff;
+                padding: 20px;
+                width: 100%;
+                border-radius: 20px 20px 0;
+                margin: 30px 20px 0;
+                box-shadow: 1px 1px 0px 0px #0000002e;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                text-align: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+
+                @media(max-width: 991px) {
+                    margin: 10px 0;
+                }
+
+                .botao-commerce {
+                    background-color: var(--bgButton);
+                    border-radius: 30px 30px 0;
+                    transition: .3s;
+                    padding: 10px 20px;
+
+                    &:hover {
+                        border-radius: 30px;
+                    }
+                }
+
+                h3 {
+                    font-weight: $semiBold;
+                }
+
+                form[name="cadastro_pre_insercao"] {
+                    width: 75%;
+                }
+
+                .campo-email {
+                    margin: 20px 0;
+                    font-weight: $bold;
+                    font-size: 15px;
+
+                    #email_cadastro {
+                        margin-left: 5px;
+                        padding: 7px;
+                        border: 1px solid #c4c4c4;
+                        border-radius: 6px;
+                        transition: .3s;
+                        width: 70%;
+
+                        &:focus {
+                            border-radius: 20px 20px 0;
+                            border: 1px solid #888;
+                        }
+                    }
+
+                    label[for="email_cadastro"] {
+                        width: 100%;
+
+                        @media(max-width: 480px) {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                                -ms-flex-direction: column;
+                                    flex-direction: column;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
+
+                            #email_cadastro {
+                                width: 100%;
+                                margin-top: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

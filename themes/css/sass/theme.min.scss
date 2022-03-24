@@ -1,0 +1,50 @@
+// base
+@import "reset";
+@import "reset-tray";
+@import "base";
+@import "typo";
+@import "styleguide";
+
+//pages
+@import "page-cart"; 
+@import "page-catalog";
+@import "page-central_cliente";
+@import "page-comparador";
+@import "page-contact"; 
+@import "page-depoimentos";
+@import "page-extra";
+@import "page-implantacao";
+@import "page-listas";
+@import "page-login";
+@import "page-newsletter"; 
+@import "page-noticia";
+@import "page-payment";
+@import "compre-junto";
+@import "page-product";
+@import "page-register";
+@import "page-visitados";
+
+// organisms
+@import "header";
+@import "footer";
+
+// molecules
+@import "address";
+@import "breadcrumb";
+@import "brands";
+@import "customer";
+@import "cart";
+@import "sidebar"; 
+@import "menu-mobile";
+@import "slick";
+@import "banners"; 
+@import "newsletter";
+@import "product";
+@import "store-rating";
+@import "search";
+@import "regua"; 
+@import "reviews";
+@import "tagcloud";
+@import "suggestion";
+@import "tray-kit";
+@import "new-filter";

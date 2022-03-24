@@ -1,0 +1,13 @@
+{% if products|length > 0 %}
+    <div class="showcase grid container" data-tray-tst="vitrine_home">
+        <h1 class="showcase__title">{{ showcaseTitle }}</h1>
+        <ul class="showcase-content normal-grid product-carrossel">
+            {% for product in products %}
+                {% set ranking = product.ranking %}
+                <li class="showcase-content__item" data-tray-tst="vitrine_produto" itemscope itemtype="https://schema.org/SomeProducts">
+                    {% element 'snippets/product' {"product": product} %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

@@ -1,0 +1,116 @@
+.page-depoimentos{
+    .page-content {
+        width: 1170px;
+        margin: 0 auto;
+        padding: 40px 15px;
+
+        @media(max-width: 1200px) {
+            width: 992px;
+        }
+
+        @media(max-width: 1024px) {
+            width: 768px;
+        }
+        
+        @media(max-width: 800px) {
+            width: 100%;
+        }
+
+        h1.color {
+            font-weight: $bold;
+        }
+
+        form#depoimento {
+            label {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+
+                input.text,
+                textarea.textarea {
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    transition: .3s;
+                    border-radius: 6px;
+                    width: 100%;
+                    font-size: 15px;
+                    resize: none;
+                    margin-top: 10px;
+
+                    &:focus {
+                        border: 1px solid #b8b8b8;
+                        border-radius: 15px 15px 0;
+                    }
+                }
+            }
+
+            .nota_dep label {
+                display: block;
+            }
+
+            .btn_submit {
+                color: var(--textButton);
+                background-color: var(--bgButton);
+                text-decoration: none;
+                padding: 12px 30px;
+                border-radius: 30px;
+                display: inline-block;
+                transition: .3s;
+
+                &:hover {
+                    border-radius: 30px 30px 0;
+                }
+
+                &:before {
+                    content: "Enviar";
+                }
+
+                img {
+                    display: none;
+                }
+            }
+        }
+
+        .board {
+            h2.color {
+                text-align: center;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                font-weight: $bold;
+            }
+
+            .editDep {
+                li {
+                    padding: 25px;
+                    background-color: #fff;
+                    border-radius: 30px 30px 0;
+                    margin-bottom: 20px;
+                    box-shadow: 1px 1px 0 0 #00000020;
+
+                    h3.color {
+                        font-size: 20px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+
+                    ul {
+                        li {
+                            padding: 0;
+                            margin: 0;
+                            background-color: transparent;
+                            box-shadow: none;
+                        }
+
+                        .dep {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

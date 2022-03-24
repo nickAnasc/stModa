@@ -1,0 +1,37 @@
+<div class="main-menu hidden-xs">
+    {% if settings.show_menu_title %}
+        <h4>{{ Translation('ver_todos') }}</h4>
+        <h3>{{ Translation('categorias') }}</h3>
+    {% endif %}
+    <ul class="level1">
+        {% for level1 in categories %}
+            <li class="item-level1">
+                <a href="{{ level1.link }}" class="link-level1" data-tray-tst="categoria_lvl_1">{{ level1.name }}</a>
+                {% if level1.children %}
+                    <div class="level2">
+                        <ul>
+                            {% for level2 in level1.children %}
+                                <li class="item-level2">
+                                    <a href="{{ level2.link }}" class="link-level2" data-tray-tst="categoria_lvl_2">{{ level2.name }}</a>
+                                    {% if level2.children %}
+                                        <div class="level3">
+                                            <ul>
+                                                {% for level3 in level2.children %}
+                                                    <li class="item-level3">
+                                                        <a href="{{ level3.link }}" class="link-level3" data-tray-tst="categoria_lvl_3">{{ level3.name }}</a>
+                                                        {% if level3.children %}
+                                                        {% endif %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

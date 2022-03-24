@@ -1,0 +1,77 @@
+{% set loopMais = 3 %}
+<nav class="menu">
+    <ul class="menu__content {{ categories|length < 5 ? 'flex-center' : 'flex-between' }}">
+        {% if categories|length > loopMais %}
+            <li class="more-categories">
+                <a href="javascript:;" class="link-more-cat first-lvl">
+                    <div class=""><i class="fas fa-bars"></i> Categorias</div>
+                </a>
+                {% set filterCategory = [] %}
+                <div class="more-categories__list">
+                    <ul class="container flex-list">
+                    {% for list in categories %}
+                        {% if loop.index > loopMais %}
+                            <li class="more-categories__item {% if list.children %} dropdown {% endif %}">
+                                {% if list.children %}
+                                    <a class="second-lvl" href="{{ list.link }}">{{ list.name }}</a>
+                                    <ul class="more-categories__drop">
+                                        {% for subList in list.children %}
+                                            <li>
+                                                <a class="third-lvl" href="{{ subList.link }}">
+                                                    {{ subList.name }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <a class="second-lvl" href="{{ list.link }}">{{ list.name }}</a>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        {% endif %}
+        {% for category in categories %}
+            {% if loop.index <= loopMais %}
+            {% set children = category.children %}
+            <li class="item-category">
+                <a class="first-lvl" href="{{ category.link }}">
+                    <img class="icon-category" src="{{ category.images[0] }}" style="{{ category.images[0] ? 'display: inline;' : 'display: none;' }}">
+                    {{ category.name }} 
+                </a>
+                {% if children %}
+                    <div class="drop-content-first-lvl">
+                        <div class="container flex-image-menu">
+                            <ul class="flex-list">
+                            {% for child in children %}
+                                <li class="item-category-second">
+                                    <a class="second-lvl" href="{{ child.link }}">
+                                        {{ child.name }}
+                                    </a>
+                                {% if child.children  %}
+                                    <ul class="drop-content-second-lvl">
+                                        {% for child in child.children %}
+                                            <li class="item-category-third">
+                                                <a class="third-lvl" href="{{ child.link }}">{{ child.name }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                            {% if banners.extra12 %}
+                                <a class="image-menu" href="{{ banners.extra12.link ? banners.extra12.link : 'javascript:;' }}">
+                                    <img src="{{ banners.extra12.src }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

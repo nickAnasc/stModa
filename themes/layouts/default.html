@@ -1,0 +1,170 @@
+{% spaceless %}
+<!doctype html>
+<html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+<head>
+    <!-- tray charset -->
+    {{ html.charset() }}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- tray meta tags -->
+    {{ tray.meta }}
+
+    <!-- tray styles -->
+    <!-- {{ tray.styles }} -->
+
+    <!-- theme styles -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Open+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
+
+    <!-- VARIÁVEIS DO PAINEL -->
+    <style>
+        :root {
+            --miniHeader: {{ settings.miniHeader }};
+            --textMiniHeader: {{ settings.textMiniHeader }};
+            --textSecondaryMiniHeader: {{ settings.textSecondaryMiniHeader }};
+
+            --bgHeader: {{ settings.bgHeader }};
+            --textHeader: {{ settings.textHeader }};
+
+            --iconHeader: {{ settings.iconHeader }};
+
+            --bgMenu: {{ settings.bgMenu }};
+            --textMenu: {{ settings.textMenu }};
+            --hoverMenu: {{ settings.hoverMenu }};
+            --hoverTextMenu: {{ settings.hoverTextMenu }};
+
+            --bgButton: {{ settings.bgButton }};
+            --textButton: {{ settings.textButton }};
+
+            --seloNovosBg: {{ settings.seloNovosBg }};
+            --seloNovosText: {{ settings.seloNovosText }};
+
+            --seloShippingBg: {{ settings.seloShippingBg }};
+            --seloShippingText: {{ settings.seloShippingText }};
+
+            --seloDestaqueBg: {{ settings.seloDestaqueBg }};
+            --seloDestaqueText: {{ settings.seloDestaqueText }};
+
+            --seloDescontoBg: {{ settings.seloDescontoBg }};
+            --seloDescontoText: {{ settings.seloDescontoText }};
+
+            --prorductBG: {{ settings.prorductBG }};
+            --productText: {{ settings.productText }};
+            --productPrice: {{ settings.productPrice }};
+
+            --bgVitCategorias: {{ settings.bgVitCategorias }};
+
+            --newsletterBg: {{ settings.newsletterBg }};
+            --newsletterText: {{ settings.newsletterText }};
+            --newsletterBtnBg: {{ settings.newsletterBtnBg }};
+            --newsBtnText: {{ settings.newsBtnText }};
+
+            --reguaBg: {{ settings.reguaBg }};
+            --reguaTitle: {{ settings.reguaTitle }};
+            --reguaText: {{ settings.reguaText }};
+
+            --footerBg: {{ settings.footerBg }};
+            --footerText: {{ settings.footerText }};
+            --iconColor: {{ settings.iconColor }};
+        }
+    </style>
+
+    <!-- tray analytics -->
+    {{ tray.analytics }}
+
+    <!-- google tag manager -->
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+<body>
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
+
+    {% element 'snippets/messages' %}
+
+    <div class="application">
+
+        {% element 'header' %}
+
+        <main class="site-main">
+            <div class="">
+                <section class="page-content">
+                    {{ content_for_layout }}
+                </section>
+            </div>
+        </main>
+
+        <!-- footer -->
+        {% element 'footer' %}
+    </div>
+
+    {% if settings.socialWhatsapp and settings.booleanWhats %}
+    <input type="hidden" class="hidden-phone" value="{{ settings.socialWhatsapp }}">
+    <div class="whatsapp-float">
+        <a href="" target="_blank" class="whatsap-web">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    {% endif %}
+
+    <!-- tray -->
+    {% element 'snippets/modal' %}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    {{ tray.scripts }}
+    {{
+            html.script({
+                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+            })
+    }}
+    {% element 'snippets/pageview' %}
+    {{ store.chat }}
+
+    <!-- theme scripts-->
+    <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/jsMinify/theme.min.js') }}"></script> -->
+    <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js/jsMinify/cartResume.min.js') }}"></script>
+    {% if pages.current == 'product' %}
+        <script type="text/javascript" src="{{ asset('js/jsMinify/zoomImage.min.js') }}"></script>
+        <!-- <script type="text/javascript" src="{{ asset('js/jsMinify/page-product.min.js') }}"></script> -->
+        <script type="text/javascript" src="{{ asset('js/page-product.js') }}"></script>
+    {% endif %}
+    {% if pages.current == 'home' %}
+        <script type="text/javascript" src="{{ asset('js/jsMinify/noticias.min.js') }}"></script>
+        <script>
+            (function(){
+                setTimeout(function(){
+                    var valPhone = document.querySelector('.hidden-phone').value;
+                    var linkWhats = document.querySelector('.whatsap-web');
+                    var linkFormat = 'https://web.whatsapp.com/send?phone=+55' + valPhone.replace(/\D/g,'');
+
+                    linkWhats.setAttribute('href', linkFormat)
+                }, 1000)
+            })();
+        </script>
+    {% endif %}
+    {% if pages.current == 'search' %}
+        <script>
+            (function(){
+                var formContent = document.querySelector('#Vitrine form[name=form1] fieldset');
+
+                formContent.innerHTML = formContent.innerHTML + '<button class="btn-busca-avancada"> Enviar </button>'
+            })();
+        </script>
+    {% endif %}
+
+    {% if settings.background_image %}
+    <style>
+        .application{ background-image: url('{{ themePath }}{{ settings.background_image }}'); }
+    </style>
+    {% endif %}
+
+</body>
+</html>
+{% endspaceless %}

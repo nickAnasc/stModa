@@ -1,0 +1,121 @@
+<!-- 
+	*****FILTROS PARA USAR NOS CARROSSÉIS*****
+	featured   |      new      | free_shipping
+	promotion  |  top_seller   | 
+-->
+
+<!-- BANNER PRINCIPAL -->
+{% element 'snippets/banner-main' %}
+
+<!-- CARROSSÉL REGUA -->
+{% if settings.booleanRegua %}
+	{% element 'snippets/regua-carrossel' %}
+{% endif %}
+
+<!--CARROSSEL DESTAQUE -->
+{% if settings.booleanDestaque %}
+	<div class="destaque">
+		{% set productFeatured = Products({
+			'filter': ['available', "featured"],
+			'order': 'rand',
+			'limit': settings.qtdVitDestaque ? settings.qtdVitDestaque : 20
+		}) %}
+
+		{% element 'showcase' {
+			"products": productFeatured,
+			"showcaseTitle": settings.titleVitDestaque ? settings.titleVitDestaque : "Destaque"
+		} %}
+	</div>
+{% endif %}
+
+<!-- BANNER LINE -->
+{% element 'snippets/banner-line' %}
+
+<!-- BANNER TRIPLO -->
+{% element 'snippets/banner-triplo' %}
+
+{% if settings.booleanNovidades %}
+<!--CARROSSEL NOVIDADES -->
+	<div class="novidades">
+		{% set productNew = Products({
+			'filter': ['available', "new"],
+			'order': 'rand',
+			'limit': settings.qtdVitNovidades ? settings.qtdVitNovidades : 10
+		}) %}
+
+		{% element 'showcase' {
+			"products": productNew,
+			"showcaseTitle": settings.titleVitNovidades ? settings.titleVitNovidades : "Novidades"
+		} %}
+	</div>
+{% endif %}
+
+<!-- BANNER DUPLO -->
+{% element 'snippets/banner-duplo' %}
+
+{% if pages.current == 'home' %}
+	{{ banner.popup ~ banner.floating }}
+{% endif %}
+
+<!-- CARROSSEL CATEGORIA -->
+{% if settings.idVitCategorias %}
+	{% if settings.booleanCategoria %}
+	<div class="carrosse-categories">
+		{% set productCategoriaUm = Products({
+			'filter': ['available'],
+			'order': 'rand',
+			'limit': settings.qtdVitCategorias ? settings.qtdVitCategorias : 10,
+			'categories': settings.idVitCategorias
+		}) %}
+		
+		{% element 'showcase-banner' {
+			"products": productCategoriaUm,
+			"showcaseTitle": settings.titleVitCategorias ? settings.titleVitCategorias : "Nossos Produtos"
+		} %}
+	</div>
+	{% endif %}
+{% endif %}
+
+<!-- BANNER PRODUTOS -->
+{% if settings.booleanPromocoes %}
+	<div class="promocoes">
+		{% set productPromotion = Products({
+			'filter': ['available', "promotion"],
+			'order': 'rand',
+			'limit': settings.qtdVitPromocoes ? settings.qtdVitPromocoes : 8
+		}) %}
+
+		{% element 'showcase-grid' {
+			"products": productPromotion,
+			"showcaseTitle": settings.titleVitPromocoes ? settings.titleVitPromocoes : "Promoções"
+		} %}
+	</div>
+{% endif %}
+
+<!-- MARCAS -->
+{% if settings.booleanMarcas %}
+	{% element 'snippets/brands' %}
+{% endif %}
+
+<!-- NOTÍCIAS -->
+{% if settings.booleanNoticias %}
+	{% element 'snippets/noticias' %}
+{% endif %}
+
+<!-- REVIEWS -->
+{% if settings.booleanDepoimentos %}
+	<section class="reviews">
+		<div class="container">
+			<h1 class="showcase__title">{{ settings.titleDepoimentos ? settings.titleDepoimentos : "Depoimentos" }}</h1>
+			<div class="control">
+				{% element 'CustomerReview.reviews' %}
+				<button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
+				<button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
+			</div>
+
+			<div class="mais-dep">
+				<a href="/depoimentos-de-clientes">Ver todos</a>
+			</div>
+		</div>
+	</section>
+{% endif %}

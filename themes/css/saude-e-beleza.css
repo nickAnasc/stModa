@@ -1,0 +1,70 @@
+.search form {
+  border-radius: 24px;
+}
+
+.search .search-button {
+  background: none;
+  border-radius: 0 24px 24px 0;
+
+}
+
+.cart .cart-icon {
+  background: #fff;
+}
+
+.cart:link {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cart .cart-info,
+.search .search-key {
+  border: 0;
+}
+
+.sidebar .main-menu,
+.newsletter,
+.product,
+.banner,
+.store-rating,
+.tagcloud {
+  border: 0;
+}
+
+.sidebar .main-menu {
+  background: #fff;
+}
+
+.news-full {
+  background: none;
+}
+
+.newsletter input {
+  border: 1px solid #797979 !important;
+  color: #444 !important;
+}
+
+.showcase > h2 small,
+.showcase > h2 strong {
+  color: #000 !Important;
+}
+
+.showcase > h2 small {
+  opacity: 0.7;
+}
+
+.newsletter h2 svg {
+  fill: #7dc9c5;
+}
+
+.sidebar .main-menu > h3,
+.showcase > h2 small,
+.showcase > h2 strong,
+.newsletter h2,
+.store-rating > h3,
+.tagcloud > h3,
+.product .product-price,
+.showcase > h2 strong {
+  color: #7dc9c5;
+}
+

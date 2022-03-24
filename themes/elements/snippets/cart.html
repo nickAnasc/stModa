@@ -1,0 +1,22 @@
+<div class="cart" data-tray-tst="link_qtde_carrinho">
+    <div class="cart-info hidden-xs">
+        <div class="cart-amount">
+            <span class="cart-cont" data-cart="amount" data-tray-tst="carrinho_qtde">{{ cart.amount }}</span>
+            <a href="javascript:;" class="cart-action" data-cart="open">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+            <nav class="cart-resume">
+                <div class="cart-title">
+                    <i class="fas fa-times-circle close-btn cart-action" data-cart="close"></i><h3>Resumo do Carrinho</h3>
+                </div>
+                <div class="cart-content">
+                    <p class="empty-cart">Carrinho Vazio.</p>
+                </div>
+                <div class="total-resume">
+                    <p class="total-content">Total: <strong class="total" data-fullTotal>R$ 00,00</strong></p>
+                    <a class="btn-total" href="{{ links.cart }}">Ir para o Carrinho</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

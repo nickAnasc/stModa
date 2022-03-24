@@ -1,0 +1,46 @@
+<header class="header">
+    <nav class="mini-header">
+        <div class="container mini-header__flex">
+            <span class="text-promotion primary">SUPER PROMOÇÃO</span>
+            <span class="text-promotion secondary">Toda loja com até <strong class="price-off-promo">50% OFF</strong></span>
+        </div>
+    </nav>
+    <div class="header__content">
+        <div class="container">
+            <div class="header__flex">
+                <div class="header__logo">
+                    <a href="{{ links.home }}">
+                        <picture>
+                            <source srcset="{{ asset( settings.logoMobile ) }}" media="(max-width: 768px)">
+                            <img src="{{ asset( settings.logoDesktop ) }}">
+                        </picture>
+                    </a>
+                    <!-- MENU -->
+                    {% element 'snippets/menu-content' %}
+                </div>
+                <div class="header__action">
+                    <div class="header__search">
+                        {% element 'snippets/search' %}
+                    </div>
+                    <div class="QnA">
+                        <a href="{{ links.contact }}" class="QnA__flex">
+                            <i class="far fa-question-circle"></i>
+                        </a>
+                    </div>
+                    {% element 'snippets/customer' %} 
+                    {% element 'snippets/cart' %}
+                    <div class="hm-content btn-menu" data-action="open">
+                        <span class="hm"></span>
+                        <span class="hm"></span>
+                        <span class="hm"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="header__search mobile container">
+            {% element 'snippets/search' %}
+        </div> -->
+    </div>
+</header>
+
+{% element 'snippets/menu-mobile' %}

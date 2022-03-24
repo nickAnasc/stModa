@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web_console_tool:
+    container_name: opencode
+    build: .
+    volumes:
+      - ./themes:/themes
+    working_dir: /themes
+    tty: true
+    stdin_open: true

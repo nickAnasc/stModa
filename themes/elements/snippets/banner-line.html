@@ -1,0 +1,7 @@
+<div class="container banner-line">
+    {% if banner.extra2 %}
+        <a class="banner-line__desk" href="{{ banners.extra2.link ? banners.extra2.link : 'javascript:;' }}">
+            <img src="{{ banners.extra2.src }}">
+        </a>
+    {% endif %}
+</div>
