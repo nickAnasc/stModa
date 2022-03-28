@@ -260,12 +260,22 @@ body{
     overflow: hidden;
 }
 
-.modal.fade.in {
+.cart-preview-item-image-space-box .cart-preview-item-image {
+    width: 90px;
+}
+
+.perguntasProdutoBTimg {
+    float: left!important;
+}
+
+.modal.fade.in,
+.modal {
     opacity: 1;
     background-color: #00000090;
 
     @media(max-width: 1100px) {
         overflow-X: scroll;
+        overflow-Y: scroll;
 
         &::-webkit-scrollbar {
             width: 12px;
@@ -279,7 +289,7 @@ body{
          
         &::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            background-color: var(--bgHeader);
+            background-color: var(--bgButton);
         }
     }
 

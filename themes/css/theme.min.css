@@ -1180,28 +1180,43 @@ body::-webkit-scrollbar-thumb:hover {
   overflow: hidden;
 }
 
-.modal.fade.in {
+.cart-preview-item-image-space-box .cart-preview-item-image {
+  width: 90px;
+}
+
+.perguntasProdutoBTimg {
+  float: left !important;
+}
+
+.modal.fade.in,
+.modal {
   opacity: 1;
   background-color: #00000090;
 }
 @media (max-width: 1100px) {
-  .modal.fade.in {
+  .modal.fade.in,
+.modal {
     overflow-X: scroll;
+    overflow-Y: scroll;
   }
-  .modal.fade.in::-webkit-scrollbar {
+  .modal.fade.in::-webkit-scrollbar,
+.modal::-webkit-scrollbar {
     width: 12px;
     height: 15px;
   }
-  .modal.fade.in::-webkit-scrollbar-track {
+  .modal.fade.in::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track {
     background-color: #eeeeee80;
     border-radius: 10px;
   }
-  .modal.fade.in::-webkit-scrollbar-thumb {
+  .modal.fade.in::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: var(--bgHeader);
+    background-color: var(--bgButton);
   }
 }
-.modal.fade.in .margem_imagem_frete {
+.modal.fade.in .margem_imagem_frete,
+.modal .margem_imagem_frete {
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -6268,6 +6283,41 @@ div[id^=AbaPersonalizada] iframe {
   margin-right: 10px;
   color: var(--iconColor);
   font-size: 18px;
+}
+.footer .foo-content .footer-item .social-title {
+  margin-bottom: 10px;
+}
+.footer .foo-content .footer-item .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.footer .foo-content .footer-item .social-media .social-media__item {
+  width: 20%;
+}
+.footer .foo-content .footer-item .social-media .social-media__item a {
+  background-color: var(--bgButton);
+  color: var(--textButton);
+  width: 32px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-size: 18px;
+}
+.footer .foo-content .footer-item .social-media .social-media__item a:hover {
+  border-radius: 50%;
 }
 .footer .payment-content .payment-list {
   margin-top: 15px;
