@@ -126,15 +126,20 @@
     <!-- theme scripts-->
     <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-    <!-- <script type="text/javascript" src="{{ asset('js/jsMinify/theme.min.js') }}"></script> -->
-    <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
 
+    <!-- main script -->
+    <script type="text/javascript" src="{{ asset('js/jsMinify/theme.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jsMinify/cartResume.min.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script> -->
+
+    <!-- product script -->
     {% if pages.current == 'product' %}
         <script type="text/javascript" src="{{ asset('js/jsMinify/zoomImage.min.js') }}"></script>
-        <!-- <script type="text/javascript" src="{{ asset('js/jsMinify/page-product.min.js') }}"></script> -->
-        <script type="text/javascript" src="{{ asset('js/page-product.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jsMinify/page-product.min.js') }}"></script>
+        <!-- <script type="text/javascript" src="{{ asset('js/page-product.js') }}"></script> -->
     {% endif %}
+
+    <!-- home scripts -->
     {% if pages.current == 'home' %}
         <script type="text/javascript" src="{{ asset('js/jsMinify/noticias.min.js') }}"></script>
         <script>
@@ -153,18 +158,10 @@
         <script>
             (function(){
                 var formContent = document.querySelector('#Vitrine form[name=form1] fieldset');
-
                 formContent.innerHTML = formContent.innerHTML + '<button class="btn-busca-avancada"> Enviar </button>'
             })();
         </script>
     {% endif %}
-
-    {% if settings.background_image %}
-    <style>
-        .application{ background-image: url('{{ themePath }}{{ settings.background_image }}'); }
-    </style>
-    {% endif %}
-
 </body>
 </html>
 {% endspaceless %}
