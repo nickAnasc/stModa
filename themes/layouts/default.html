@@ -113,22 +113,9 @@
     </div>
     {% endif %}
 
-    <!-- tray -->
-    {% element 'snippets/modal' %}
-    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
-    {{ tray.scripts }}
-    {{
-            html.script({
-                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
-                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
-            })
-    }}
-    {% element 'snippets/pageview' %}
-    {{ store.chat }}
-
     <!-- theme scripts-->
-    <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jsMinify/glider-js.min.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
 
     <!-- main script -->
     <script type="text/javascript" src="{{ asset('js/jsMinify/theme.min.js') }}"></script>
@@ -163,6 +150,19 @@
             })();
         </script>
     {% endif %}
+
+    <!-- tray -->
+    {% element 'snippets/modal' %}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    {{ tray.scripts }}
+    {{
+            html.script({
+                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+            })
+    }}
+    {% element 'snippets/pageview' %}
+    {{ store.chat }}
 
     {% if settings.background_image %}
     <style>
