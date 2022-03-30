@@ -21,9 +21,9 @@
     <a href="{{ product.link }}" data-tray-tst="vitrine_produto_link_imagem">
         <div class="product-image">
             {% if product.images %}
-                <img itemprop="image" onmouseover="secondPhoto(this)" data-photo="{% if product.images[1].full %} {{ product.images[1].full }} {% else %} {{ product.images[0].full }} {% endif %}" src="{{ product.images[0].full }}" alt="{{ product.name }}" title="{{ product.name }}">
+                <img width="500" itemprop="image" onmouseover="secondPhoto(this)" data-photo="{% if product.images[1].full %} {{ product.images[1].full }} {% else %} {{ product.images[0].full }} {% endif %}" src="{{ product.images[0].full }}" alt="{{ product.name }}" title="{{ product.name }}">
             {% else %}
-                <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
+                <img width="500" src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
             {% endif %}
         </div>
     
