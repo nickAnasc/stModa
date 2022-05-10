@@ -77,6 +77,9 @@
                                 </div>
                             {% else %}
                                 <div class="price-content">
+                                    {{ productHelper.pricing() }}
+                                </div>
+                                <div class="price-content" style="display: none;">
                                     <p class="price"></p>
                                     <p class="price-promotion"></p>
                                     <p class="parcelamento"></p>

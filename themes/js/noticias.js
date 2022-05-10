@@ -2,23 +2,22 @@
     setTimeout(function(){
         var dataStore = document.querySelector('html').dataset.store;
         var url = "busca_noticias.php?loja=" + dataStore
+        var myHeaders = new Headers();
+        var stringHtml = '';
+        myHeaders.append('Content-Type','text/plain; charset=UTF-8');
 
-        const newsHeader = {
-            method: 'GET',
-            mode: 'cors'
-        }
+        fetch(url, myHeaders)
+            .then(function(response) {
+                return response.arrayBuffer();
+            })
+            .then(function(buffer) {
+                const decoder = new TextDecoder('iso-8859-1');
+                const text = decoder.decode(buffer);
 
-        fetch(url, newsHeader)
-            .then(function (respNews) {
-                respNews.text().then( resp => {
-                    var stringHtml = '';
-
-                    for(i = resp.search('<ul class="noticias">'); i < resp.search('</li></ul>        </div>'); i++) {
-                        stringHtml = stringHtml + resp[i]
-                    }
-
-                    document.querySelector('.news__content').innerHTML = stringHtml + '</li></ul>';
-                })
+                for(i = text.search('<ul class="noticias">'); i < text.search('</li></ul>        </div>'); i++) {
+                    stringHtml = stringHtml + text[i]
+                }
+                document.querySelector('.news__content').innerHTML = stringHtml + '</li></ul>';
             })
     }, 300)
     setTimeout(function(){

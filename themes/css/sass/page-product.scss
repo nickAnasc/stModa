@@ -407,17 +407,31 @@
                     }
 
                     .price-content {
-                        .price.preco-cut {
-                            font-size: 16px;
-                            font-weight: $semiBold;
-                            text-decoration: line-through;
-                            color: #7b5050;
+                        .produto-economize,
+                        .produto-formas-pagamento,
+                        .txt-por,
+                        br {
+                            display: none;
+                        }
+                        
+                        #info_preco {
+                            display: block;
                         }
 
-                        .price-promotion {
-                            font-size: 30px;
-                            font-weight: $bold;
+                        .precode {
+                            font-weight: bold;
+                            color: #581515;
+                            text-decoration: line-through;
+                        }
+
+                        abbr.currency {
+                            text-decoration: none;
+                        }
+
+                        .PrecoPrincipal {
                             font-family: $fontStyle;
+                            font-size: 30px;
+                            font-weight: bold;
                         }
                     }
 
