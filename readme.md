@@ -9,7 +9,7 @@
   npm install @tray-tecnologia/tray-cli
 ```
 
-## CONFIURANDO O PROJETO
+## CONFIGURANDO O PROJETO
 ```sh
   tray configure --debug [key] [password] [theme_id]
 ```
