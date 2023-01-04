@@ -1,0 +1,195 @@
+.compre-junto {
+    .title {
+        text-align: center;
+        font-weight: $bold;
+        font-size: 35px;
+        margin-bottom: 20px;
+        font-family: "EB Garamond", serif;
+    }
+
+    #ProdAbas {
+        display: none;
+    }
+    .compreJunto {
+        form {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+
+            @media(max-width: 1199px) {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+            }
+
+            .fotosCompreJunto {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                width: 60%;
+
+                @media(max-width: 1399px) {
+                    width: 50%;
+                }
+
+                @media(max-width: 1199px) {
+                    width: 100%;
+                }
+
+                @media(max-width: 575px) {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                }
+
+                .produto {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    background-color: #fff;
+                    padding: 20px 30px;
+                    border-bottom: 1px solid #aaa;
+                    border-right: 1px solid #aaa;
+                    border-radius: 15px;
+
+                    .unidades_topo {
+                        font-weight: bold;
+                        padding-bottom: 10px;
+                    }
+
+                    span div img {
+                        border: 1px solid #000;
+                        border-radius: 50%;
+                        margin-bottom: 15px;
+                    }
+
+                    #menuVars1 {
+                        .varTit {
+                            font-weight: bold;
+                            text-align: center;
+                            margin-bottom: 5px;
+                            margin-top: 5px;
+                        }
+
+                        .varCont {
+                            select {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .plus {
+                    background-color: var(--bgButton);
+                    color: var(--textButton);
+                    font-size: 25px;
+                    font-weight: bold;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    padding-bottom: 3px;
+                    padding-right: 1px;
+                    border-radius: 50%;
+
+                    @media(max-width: 575px) {
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            .precoCompreJunto {
+                padding: 30px;
+                background-color: #fff;
+                border-radius: 15px;
+                border-bottom: 1px solid #aaa;
+                border-right: 1px solid #aaa;
+
+                @media(max-width: 1199px) {
+                    width: 100%;
+                    margin-top: 20px;
+                }
+
+                a {
+                    display: inline-block;
+                    margin-top: 5px;
+                }
+
+                strong:first-child {
+                    display: block;
+                    font-size: 20px;
+                }
+
+                .precosCompreJunto {
+                    strong {
+                        font-size: 15px;
+                        margin-bottom: 2px;
+                    }
+
+                    .comprejuto_preco {
+                        margin-top: 15px;
+
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .comprejunto_preco2 {
+                        margin-bottom: 10px;
+                        padding: 10px;
+                        background-color: var(--bgHeader);
+                        margin-top: 10px;
+                        text-align: center;
+                        color: var(--textMenu);
+                    }
+
+                    .comprejunto_economize {
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                        font-weight: bold;
+                    }
+
+                    .comprejunto_botao {
+                        .botao-compre-junto {
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            width: 100%;
+                            padding: 18px;
+                            background-color: var(--bgButton);
+                            color: var(--textButton);
+                            font-family: "EB Garamond", serif;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

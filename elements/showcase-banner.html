@@ -1,0 +1,22 @@
+{% if products|length > 0 %}
+    <div class="showcase showcase-banner">
+        <div class="container showcase-flex">
+            <div class="showcase-text-content">
+                <h1 class="showcase__title">{{ showcaseTitle }}</h1>
+                <p class="showcase__text">{{ settings.textVitCategorias }}</p>
+            </div>
+            <div class="control showcase-carrossel-content">
+                <ul class="showcase-content product-carrossel-banner prod">
+                    {% for product in products %}
+                        {% set ranking = product.ranking %}
+                        <li class="showcase-content__item">
+                            {% element 'snippets/product' {"product": product} %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
+                <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -25,8 +25,16 @@ Para assistir e subir as alterações no codigo basta executar o comando abaixo:
   tray watch
 ```
 
-**CONFIGURANDO SASS**
+**INSTALANDO SASS**
+```sh
+  npm install -g node-sass ## (Recomendado instalar globalmente)
+```
 
+```sh
+  npm install node-sass
+```
+
+**EXECUTANDO O SASS**
 Para salvar e assistir as alterações do SASS, execute o comando abaixo em um terminal separado:
 ```sh
 node-sass --watch --no-source-map css/sass/theme.min.scss css/theme.min.css --style=compressed           ## Este comando assistira as mudanças do SASS e minificará o css fianl

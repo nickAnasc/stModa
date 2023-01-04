@@ -1,0 +1,1304 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    html, body, .panel {
+        background-color: #f1f1f1!important;
+        font-family: 'Nunito', sans-serif;
+    }
+    .panel {
+        margin-bottom: 50px;
+        box-shadow: none;
+    }
+    .menu {
+        padding: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .menu a {
+        width: calc(100% / 5);
+        background-color: #fff;
+        border-radius: 10px 10px 0;
+        margin-right: 10px;
+        color: #0099ff;
+        padding: 20px 0;
+        text-decoration: none;
+        box-shadow: 1px 1px 0 0 #ccc;
+        transition: .3s;
+        font-size: 15px;
+        line-height: 18px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .menu a:last-child {
+        margin-right: 0;
+    }
+    .menu a:hover {
+        background-color: #0099ff;
+        color: #fff;
+    }
+    .menu a i {
+        margin-right: 10px;
+        font-size: 20px;
+    }
+    .all-content {
+        background-color: #fff;
+        border-radius: 10px 10px 0;
+        box-shadow: 1px 1px 0 0 #ccc;
+        padding: 20px 60px;
+        margin-top: 20px;
+    }
+    .all-content .title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #333;
+        margin: 0 0 20px;
+        text-transform: uppercase;
+        font-family: 'Nunito', sans-serif;
+        margin-top: 20px;
+    }
+    .box .box-content {
+        border: 1px solid #d1d1d1;
+        border-radius: 15px 15px 0;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .box-content .sub-title {
+        font-size: 16px;
+        color: #000;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        font-family: 'Nunito', sans-serif;
+    }
+    .box-content .content.open {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin: 0;
+    }
+    .box-content .content {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    .box-content .content.selos {
+        display: block;
+    }
+    .box-content .content.selos .content-selos__flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    .box-content .content .space {
+        width: calc(100% / 3);
+        margin-top: 15px;
+    }
+    .box-content .content .space__flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    .box-content .content .space__flex.file {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+    }
+    .box-content .content .space label {
+        display: block;
+    }
+    .box-content .content .inp-default.color {
+        border-radius: 30px 0 0 30px;
+        border: 1px solid #ddd;
+        border-right: 0;
+        box-shadow: none;
+        transition: .3s;
+        height: 35px;
+        width: 75%;
+    }
+    .box-content .content .inp-default {
+        border-radius: 30px;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        transition: .3s;
+        height: 35px;
+        width: 75%;
+    }
+    .box-content .content .inp-default:focus {
+        border: 1px solid;
+    }
+    .box-content .content .inp-color {
+        width: 35px;
+        height: 35px;
+        border-radius: 0 30px 30px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+    }
+    .img-thumbnail {
+        margin-right: 40px;
+        background-color: #ddd;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .checkbox-hidden {
+        display: none;
+    }
+    .check-style {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        border-radius: 0;
+        transition: .3s;
+        border: 2px solid #ddd;
+        cursor: pointer;
+    }
+    .check-style::before {
+        content: "Desativado";
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 5px);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+    }
+    .checkbox-hidden:checked + .check-style {
+        background-color: #0fb17d;
+        border-radius: 50%;
+        border: 2px solid #0fb17d;
+    }
+    .checkbox-hidden:checked + .check-style::before {
+        content: "Ativo";
+    }
+    .checkbox-hidden:checked + .check-style::after {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+    }
+    .btn-remove {
+        background-color: #741010;
+        margin-top: 15px;
+        border: none;
+        color: #fff;
+        border-radius: 10px;
+        padding: 7px 20px;
+        font-weight: bold;
+        transition: .3s;
+    }
+    .btn-remove:hover {
+        border-radius: 50px;
+    }
+    .doc-contact {
+        margin-bottom: 20px;
+    }
+    .doc-contact a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #0099ff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+    }
+    .doc-contact a i {
+        margin-right: 10px;
+        background-color: #0099ff;
+        color: #fff;
+        width: 35px;
+        height: 35px;
+        transition: .3s;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+        border-radius: 50%;
+    }
+    .doc-contact a:hover i {
+        border-radius: 50px 50px 10px;
+    }
+</style>
+
+<fieldset class="panel">
+    <nav class="container doc-contact">
+        <a href="https://superteia.com.br/#contato" target="_blank">
+            <i class="far fa-envelope-open"></i> Entre em Contato Conosco
+        </a>
+        <a href="http://tematray.web281.uni5.net/doc-temas/SuperT/" target="_blank">
+            <i class="fas fa-book"></i> Documentação do Tema
+        </a>
+    </nav>
+    <nav class="container menu">
+        <a href="#cores" onclick="openConfig('cores')">
+            <i class="fas fa-palette"></i>
+            <span>Cores do<br> Layout</span>
+        </a>
+        <a href="javascript:;" onclick="openConfig('regua')">
+            <i class="fas fa-ruler-combined"></i>
+            <span>Banner<br> Régua</span>
+        </a>
+        <a href="javascript:;" onclick="openConfig('marcas')">
+            <i class="fas fa-copyright"></i>
+            <span>Marcas</span>
+        </a>
+        <a href="javascript:;" onclick="openConfig('vitrines')">
+            <i class="far fa-window-maximize"></i>
+            <span>Vitrines</span>
+        </a>
+        <a href="javascript:;" onclick="openConfig('extra')">
+            <i class="fas fa-plus"></i>
+            <span>Recursos Extras</span>
+        </a>
+        <a href="javascript:;" onclick="openConfig('social')">
+            <i class="fas fa-share-alt"></i>
+            <span>Redes<br> Sociais</span>
+        </a>
+    </nav>
+    <div class="all-content container">
+        <div class="box" data-id="cores">
+            <h1 class="title">Cores do Layout</h1>
+            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para configurar as cores da sua régua</p>
+            <!-- TOPO INFO -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Topo de Informações <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="miniHeader" id="miniHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="textMiniHeader" id="textMiniHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto Secundário</label>
+                        <div class="space__flex">
+                            <input type="text" name="textSecondaryMiniHeader" id="textSecondaryMiniHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CABEÇALHO -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Cabeçalho <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="bgHeader" id="bgHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="textHeader" id="textHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Ícone</label>
+                        <div class="space__flex">
+                            <input type="text" name="iconHeader" id="iconHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LOGO -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Logo <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <div>
+                            <p>Largura Máxima recomendada: <strong>150px (pixels)</strong></p>
+                            <p>Extensões recomendadas para o Logo: <strong>JPEG ou PNG (caso o fundo seja transparente).</strong></p>
+                        </div>
+                        <label>Logo Desktop</label>
+                        <div class="space__flex">
+                            <input type="file" name="logoDesktop" id="logoDesktop">
+                        </div>
+                        <label style="margin-top: 30px;">Logo Mobile</label>
+                        <div class="space__flex">
+                            <input type="file" name="logoMobile" id="logoMobile">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- MENU -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Menu <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="textMenu" id="textMenu" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Hover Texto Menu</label>
+                        <div class="space__flex">
+                            <input type="text" name="hoverTextMenu" id="hoverTextMenu" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- BUTTON -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Botões <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="bgButton" id="bgButton" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="textButton" id="textButton" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SELOS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Selos <i class="fas fa-angle-down"></i></h3>
+                <div class="content selos">
+                    <!-- Destaque -->
+                    <div style="padding-top: 40px">
+                        <h3 class="sub-title">Destaque</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Texto do Selo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="textDestaque" id="textDestaque" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Fundo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloDestaqueBg" id="seloDestaqueBg" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloDestaqueText" id="seloDestaqueText" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promoção -->
+                    <div style="margin-top: 40px">
+                        <h3 class="sub-title">Promoção</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Cor do Fundo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloDescontoBg" id="seloDescontoBg" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloDescontoText" id="seloDescontoText" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lançamentos -->
+                    <div style="margin-top: 40px">
+                        <h3 class="sub-title">Lançamentos</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Texto do Selo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="textLancamento" id="textLancamento" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Fundo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloNovosBg" id="seloNovosBg" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloNovosText" id="seloNovosText" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frete Grátis -->
+                    <div style="margin-top: 40px">
+                        <h3 class="sub-title">Frete Grátis</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Texto do Selo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="textFreteGratis" id="textFreteGratis" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Fundo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloShippingBg" id="seloShippingBg" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="seloShippingText" id="seloShippingText" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SPOT PRODUTO -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Spot do Produto <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="prorductBG" id="prorductBG" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="productText" id="productText" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Preço</label>
+                        <div class="space__flex">
+                            <input type="text" name="productPrice" id="productPrice" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- NEWSLETTER -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Newsletter <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="newsletterBg" id="newsletterBg" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="newsletterText" id="newsletterText" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Botão</label>
+                        <div class="space__flex">
+                            <input type="text" name="newsletterBtnBg" id="newsletterBtnBg" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor texto do Botão</label>
+                        <div class="space__flex">
+                            <input type="text" name="newsBtnText" id="newsBtnText" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- FOOTER -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Rodapé <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="footerBg" id="footerBg" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto</label>
+                        <div class="space__flex">
+                            <input type="text" name="footerText" id="footerText" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Ícone</label>
+                        <div class="space__flex">
+                            <input type="text" name="iconColor" id="iconColor" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" data-id="regua" style="display: none;">
+            <h1 class="title">Banner Régua</h1>
+            <p>Dimensões do ícone: 45 x 45 pixels.</p>
+            <p>Extenção PNG (Para ícones transparentes), JPG, JPEG</p>
+            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para configurar as cores da sua régua</p>
+
+            <!-- ATIVAR RÉGUA -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Ativar/Desativar Régua <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label style="white-space: nowrap;">Use esta configuração para Ativar ou Desativar a Régua</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanRegua" id="booleanRegua">
+                            <label for="booleanRegua" class="check-style"></label>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- RÉGUA -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Banner Régua <i class="fas fa-angle-down"></i></h3>
+                <div class="content selos">
+                    <div style="padding-top: 40px;">
+                        <h3 class="sub-title">Cores do Banner Régua</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Cor de Fundo</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaBg" id="reguaBg" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Título</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTitle" id="reguaTitle" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Cor do Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaText" id="reguaText" onkeyup="changeColor(this)" class="inp-default color">
+                                    <span class="inp-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 40px;">
+                        <h3 class="sub-title">Ícones e Textos</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Primeiro Ícone</label>
+                                <div class="space__flex file">
+                                    <input type="file" name="reguaIconeUm" id="reguaIconeUm">
+                                    <button class="btn-remove" onclick="removeImage('#reguaIconeUm')">Remover</button>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Título</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTitleUm" id="reguaTitleUm" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTextUm" id="reguaTextUm" class="inp-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 40px;">
+                        <h3 class="sub-title">Ícones e Textos</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Segundo Ícone</label>
+                                <div class="space__flex file">
+                                    <input type="file" name="reguaIconeDois" id="reguaIconeDois">
+                                    <button class="btn-remove" onclick="removeImage('#reguaIconeDois')">Remover</button>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Título</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTitleDois" id="reguaTitleDois" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTextDois" id="reguaTextDois" class="inp-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 40px;">
+                        <h3 class="sub-title">Ícones e Textos</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Terceiro Ícone</label>
+                                <div class="space__flex file">
+                                    <input type="file" name="reguaIconeTres" id="reguaIconeTres">
+                                    <button class="btn-remove" onclick="removeImage('#reguaIconeTres')">Remover</button>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Título</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTitleTres" id="reguaTitleTres" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTextTres" id="reguaTextTres" class="inp-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding-top: 40px;">
+                        <h3 class="sub-title">Ícones e Textos</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label>Quarto Ícone</label>
+                                <div class="space__flex file">
+                                    <input type="file" name="reguaIconeQuatro" id="reguaIconeQuatro">
+                                    <button class="btn-remove" onclick="removeImage('#reguaIconeQuatro')">Remover</button>
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Título</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTitleQuatro" id="reguaTitleQuatro" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Texto</label>
+                                <div class="space__flex">
+                                    <input type="text" name="reguaTextQuatro" id="reguaTextQuatro" class="inp-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" data-id="vitrines" style="display: none;">
+            <h1 class="title">Vitrines</h1>
+            <!-- VITRINE DESTAQUE -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Destaque <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Vitrine</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanDestaque" id="booleanDestaque">
+                            <label for="booleanDestaque" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleVitDestaque" id="titleVitDestaque">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Quantidade de produtos</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="qtdVitDestaque" id="qtdVitDestaque">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- VITRINE NOVIDADES -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Novidades <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Vitrine</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanNovidades" id="booleanNovidades">
+                            <label for="booleanNovidades" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleVitNovidades" id="titleVitNovidades">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Quantidade de produtos</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="qtdVitNovidades" id="qtdVitNovidades">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- VITRINE CATEGORIAS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Categoria <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Vitrine</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanCategoria" id="booleanCategoria">
+                            <label for="booleanCategoria" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                    </div>
+                    <div class="space">
+                    </div>
+                    <div class="space">
+                        <label>ID da Categoria</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="idVitCategorias" id="idVitCategorias">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="bgVitCategorias" id="bgVitCategorias" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleVitCategorias" id="titleVitCategorias">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Texto da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="textVitCategorias" id="textVitCategorias">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Quantidade de produtos</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="qtdVitCategorias" id="qtdVitCategorias">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- GRID PROMOÇÕES -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Promoções <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Vitrine</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanPromocoes" id="booleanPromocoes">
+                            <label for="booleanPromocoes" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleVitPromocoes" id="titleVitPromocoes">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Quantidade de produtos</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="qtdVitPromocoes" id="qtdVitPromocoes">
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" data-id="extra" style="display: none;">
+            <h1 class="title">Recursos Extras</h1>
+            <!-- COMPONENTE DE NOTÍCIAS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Notícias <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Notícias</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanNoticias" id="booleanNoticias">
+                            <label for="booleanNoticias" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleNoticias" id="titleNoticias">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- COMPONENTE DE DEPOIMENTOS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Depoimentos <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Depoimentos</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanDepoimentos" id="booleanDepoimentos">
+                            <label for="booleanDepoimentos" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleDepoimentos" id="titleDepoimentos">
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- COMPONENTE WHATSAPP FLUTUANTE -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Whatsapp Flutuante <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Whatsapp Flutuante</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanWhats" id="booleanWhats">
+                            <label for="booleanWhats" class="check-style"></label>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" data-id="social" style="display: none;">
+            <h1 class="title">Redes Sociais</h1>
+            <!-- REDES SOCIAIS INFO -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Redes Sociais <i class="fas fa-angle-down" aria-hidden="true"></i></h3>
+                <div class="content selos open">
+                    <!-- Destaque -->
+                    <div style="padding-top: 40px">
+                        <h3 class="sub-title">Configure suas Redes Sociais</h3>
+                        <div class="content-selos__flex">
+                            <div class="space">
+                                <label><i class="fab fa-facebook-square"></i> Link Facebook</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialFacebook" id="socialFacebook" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label><i class="fab fa-twitter-square"></i> Link Twitter</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialTwitter" id="socialTwitter" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label><i class="fab fa-instagram"></i> Link Instagram</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialInstagram" id="socialInstagram" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label><i class="fab fa-pinterest-square"></i> Link Pinterest</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialPinterest" id="socialPinterest" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label><i class="fab fa-youtube"></i> Link Youtube</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialYoutube" id="socialYoutube" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label><i class="fab fa-whatsapp"></i> Número Whatsapp</label>
+                                <div class="space__flex">
+                                    <input type="text" name="socialWhatsapp" id="socialWhatsapp" class="inp-default">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="box" data-id="marcas" style="display: none;">
+            <h1 class="title">Marcas</h1>
+            <!-- COMPONENTE DE MARCAS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Ativar Marcas <i class="fas fa-angle-down"></i></h3>
+                <div class="content">
+                    <div class="space">
+                        <label>Ativar Carrossel de Marcas</label>
+                        <div class="space__flex">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanMarcas" id="booleanMarcas">
+                            <label for="booleanMarcas" class="check-style"></label>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Título</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="titleMarcas" id="titleMarcas">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- MARCAS -->
+            <article class="box-content">
+                <h3 class="sub-title" onclick="openContent(this)">Marcas <i class="fas fa-angle-down" aria-hidden="true"></i></h3>
+                <div class="content selos brand">
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 1</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca1" id="imageMarca1">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca1')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca1" id="nomeMarca1" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca1" id="linkMarca1" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 2</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca2" id="imageMarca2">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca2')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca2" id="nomeMarca2" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca2" id="linkMarca2" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 3</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca3" id="imageMarca3">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca3')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca3" id="nomeMarca3" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca3" id="linkMarca3" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 4</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca4" id="imageMarca4">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca4')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca4" id="nomeMarca4" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca4" id="linkMarca4" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 5</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca5" id="imageMarca5">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca5')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca5" id="nomeMarca5" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca5" id="linkMarca5" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 6</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca6" id="imageMarca6">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca6')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca6" id="nomeMarca6" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca6" id="linkMarca6" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 7</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca7" id="imageMarca7">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca7')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca7" id="nomeMarca7" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca7" id="linkMarca7" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 8</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca8" id="imageMarca8">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca8')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca8" id="nomeMarca8" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca8" id="linkMarca8" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 9</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca9" id="imageMarca9">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca9')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca9" id="nomeMarca9" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca9" id="linkMarca9" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top: 20px; padding-bottom: 20px;">
+                        <h3 class="sub-title">Marca 10</h3>
+                        <div class="content-selos__flex">
+                            <div class="space file">
+                                <label>Imagem da Marca</label>
+                                <input type="file" name="imageMarca10" id="imageMarca10">
+                                <button class="btn-remove" onclick="removeImage('#imageMarca10')">Remover</button>
+                            </div>
+                            <div class="space">
+                                <label>Nome da Marca</label>
+                                <div class="space__flex">
+                                    <input type="text" name="nomeMarca10" id="nomeMarca10" class="inp-default">
+                                </div>
+                            </div>
+                            <div class="space">
+                                <label>Link da Marca</label>
+                                <input type="text" name="linkMarca10" id="linkMarca10" class="inp-default">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</fieldset>
+<script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+<script>
+    (function(){
+        document.querySelector('.ls-md-space.col-md-8').style.width = "100%";
+
+        var allColors = document.querySelectorAll('.inp-default.color');
+
+        allColors.forEach(color => {
+            color.closest('.space').querySelector('.inp-color').style.background = color.value;
+        });
+
+        setTimeout(function(){
+            VMasker(document.querySelector("#socialWhatsapp")).maskPattern("(99) 99999-9999");
+        }, 2000);
+    })()
+    function changeColor(colorVal) {
+        colorVal.closest('.space').querySelector('.inp-color').style.background = colorVal.value;
+    }
+    function openContent(contentOpen) {
+        var content = contentOpen.closest('.box-content').querySelector('.content');
+        content.classList.toggle('open');
+    }
+    function openConfig(idItem) {
+        var contentOpen = document.querySelectorAll('.box');
+
+        contentOpen.forEach(content => {
+            if(content.dataset.id == idItem) {
+                content.style.display = "block";
+            }
+            else {
+                content.style.display = "none";
+            }
+        });
+    }
+    function removeImage(idImage) {
+        document.querySelector(idImage).value = "";
+
+        document.querySelector('a#btn-customize-save').click();
+    }
+</script>

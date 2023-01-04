@@ -1,0 +1,68 @@
+.store-rating{
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    margin-top: 30px;
+    padding: 15px;
+    
+    > h4{
+        color: #000;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        @include typo(1.3rem, 400, $font, 1.3rem);
+        
+        @media (min-width: 768px) and (max-width: 991px){
+            margin-bottom: 0;
+        }
+    }
+    
+    > h3{
+        color: #000;
+        text-transform: uppercase;
+        @include typo(2.5rem, 400, $font, 2.5rem);
+        
+        @media (min-width: 768px) and (max-width: 991px){
+            @include typo(2rem, 400, $font, 2rem);
+        }
+    }
+    
+    .dep_lista{
+        font-size: 0;
+        margin: 15px -15px 0;
+    }
+    
+    .dep_item{
+        display: block;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    
+    .dep_dados{
+        padding: 15px;
+        
+        > li{
+            
+            > span{
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .dep_link{
+        margin-top: 15px;
+        font-size: 0;
+        text-align: center;
+        
+        a{
+            background: #a2a2a2;
+            color: #fff;
+            font-size: 1.4rem;
+            padding: 9px 0;
+            text-align: center;
+            text-transform: uppercase;
+            
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}

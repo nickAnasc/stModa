@@ -1,0 +1,54 @@
+<style>
+    .showcase .showcase-content .showcase-content__item .btn-comprar {
+        bottom: 80px;
+    }
+    .compare-buttons a[data-compare="remove"] {
+        display: none;
+    }
+    .compare-buttons a[data-compare="add"] {
+        font-weight: bold;
+        color: black; 
+    }
+    
+</style>
+<section class="catalog">
+    <div class="container">
+        <div class="breadcrumb-content">
+            {% element 'snippets/breadcrumb' %}
+        </div>
+        <div class="catalog__flex">
+            <div class="catalog__filter">
+                {% element 'new-smart-filter' %}
+            </div>
+            <div class="catalog__showcase">
+                <div class="flex-showcase-components">
+                    <div class="category-name">
+                        {{ category.name }}
+                    </div>
+                    <div>
+                        {% element 'snippets/filter-order' %}
+                    </div>
+                    <div class="mobile-filter action-filter open">
+                        <i class="fas fa-filter"></i> Filtro
+                    </div>
+                </div>
+                {% element 'showcase-catalog' %}
+                {% element 'snippets/paginate' %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    (function(){
+        var openFilter = document.querySelectorAll('.action-filter');
+        var filterMobileContent = document.querySelector('.catalog__filter');
+
+        openFilter.forEach(element => {
+            element.addEventListener('click', function() {
+                this.classList.contains('open') ? filterMobileContent.classList.add('open') : filterMobileContent.classList.remove('open');
+            })
+        });
+    })();
+</script>

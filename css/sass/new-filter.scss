@@ -1,0 +1,136 @@
+.filter {
+    .catalog-banner-filter {
+        margin-top: 10px;
+        border-radius: 20px 20px 0;
+
+        @media(max-width: 991px) {
+            display: none;
+        }
+    }
+
+    .filter__form {
+        border-radius: 20px 20px 0;
+
+        .action-filter.close {
+            display: none;
+        }
+
+        @media(max-width: 991px) {
+            overflow-y: scroll;
+            height: 95vh;
+
+            .action-filter.close {
+                font-weight: 600;
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+                display: block;
+            }
+        }
+
+        .filter__block {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .filter__title {
+                text-transform: uppercase;
+                font-weight: $bold;
+                font-size: 16px;
+                font-family: $fontStyle;
+                cursor: pointer;
+            }
+
+            .filter__list {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+                margin: 0;
+
+                .filter__item {
+                    padding: 10px;
+                    margin-bottom: 5px;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    transition: .3s;
+
+                    &:hover {
+                        background-color: #eee;
+                        border-radius: 20px 20px 0;
+                    }
+
+                    .filter__input {
+                        display: none;
+                        transition: .3s;
+                    }
+
+                    .filter__label {
+                        display: block;
+                        width: 100%;
+
+                        .filter__text--count {
+                            font-weight: $semiBold;
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .label-input {
+                        display: inline-block;
+                        margin-right: 10px;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 30px;
+                        border: 3px solid #dcdcdc;
+                        background-color: #fff;
+                        transition: .3s;
+                        cursor: pointer;
+                    }
+
+                    .filter__label {
+                        cursor: pointer;
+                    }
+
+                    .filter__input:checked + .label-input {
+                        background-color: var(--bgButton);
+                        border: 3px solid var(--bgButton);
+                        border-radius: 30px;
+                    }
+                }
+
+                .filter__item.filter__item--checked {
+                    position: relative;
+                    transition: 0.3s;
+                    z-index: 0;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: var(--bgButton);
+                        opacity: 0.3;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 20px;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            .filter__list.open {
+                opacity: 1;
+                visibility: visible;
+                height: auto;
+                margin-top: 15px;
+            }
+        }
+    }
+}

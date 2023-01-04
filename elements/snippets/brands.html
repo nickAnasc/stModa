@@ -1,0 +1,100 @@
+<section class="brands">
+    <div class="container">
+        <h1 class="showcase__title">{{ settings.titleMarcas ? settings.titleMarcas : "Marcas" }}</h1>
+        <div class="control">
+            <ul class="brands-carrossel carrossel-init">
+                {% if settings.imageMarca1 %}
+                    <li>
+                        <a href="{{ settings.linkMarca1 ? settings.linkMarca1 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca1 ) }}" alt="{{ settings.nomeMarca1 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca1 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca2 %}
+                    <li>
+                        <a href="{{ settings.linkMarca2 ? settings.linkMarca2 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca2 ) }}" alt="{{ settings.nomeMarca2 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca2 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca3 %}
+                    <li>
+                        <a href="{{ settings.linkMarca3 ? settings.linkMarca3 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca3 ) }}" alt="{{ settings.nomeMarca3 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca3 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca4 %}
+                    <li>
+                        <a href="{{ settings.linkMarca4 ? settings.linkMarca4 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca4 ) }}" alt="{{ settings.nomeMarca4 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca4 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca5 %}
+                    <li>
+                        <a href="{{ settings.linkMarca5 ? settings.linkMarca5 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca5 ) }}" alt="{{ settings.nomeMarca5 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca5 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca6 %}
+                    <li>
+                        <a href="{{ settings.linkMarca6 ? settings.linkMarca6 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca6 ) }}" alt="{{ settings.nomeMarca6 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca6 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca7 %}
+                    <li>
+                        <a href="{{ settings.linkMarca7 ? settings.linkMarca7 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca7 ) }}" alt="{{ settings.nomeMarca7 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca7 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca8 %}
+                    <li>
+                        <a href="{{ settings.linkMarca8 ? settings.linkMarca8 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca8 ) }}" alt="{{ settings.nomeMarca8 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca8 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca9 %}
+                    <li>
+                        <a href="{{ settings.linkMarca9 ? settings.linkMarca9 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca9 ) }}" alt="{{ settings.nomeMarca9 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca9 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if settings.imageMarca10 %}
+                    <li>
+                        <a href="{{ settings.linkMarca10 ? settings.linkMarca10 : 'javascript:;' }}" class="link-brand">
+                            <img src="{{ asset( settings.imageMarca10 ) }}" alt="{{ settings.nomeMarca10 }}" width="150">
+                            <p class="name-brand">{{ settings.nomeMarca10 }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
+            <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </div>
+</section>

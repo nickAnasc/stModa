@@ -1,0 +1,46 @@
+{% if settings.structure == 1 %}
+<aside class="sidebar col-sm-3">
+{% elseif settings.structure == 2%}
+<aside class="sidebar col-sm-3 pull-right">
+{% endif %}
+
+    {% element 'snippets/menu' %}
+    
+    {% if pages.current in ['catalog','search'] %}
+        {% if settings.enable_filter %}
+            {% if filters %}
+                {% element 'smartfilter' %}
+            {% else %}
+                {% element 'new-smart-filter' %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    <div class="news-full hidden-xs">
+        {% element 'snippets/newsletter' %}
+    </div>
+    
+    {% if banner.side %}
+    <div class="banner banner-sidebar hidden-xs">
+        {{ banner.side }}
+    </div>
+    {% endif %}
+    
+    {% if settings.store_rating %}
+    <div class="store-rating hidden-xs">
+        <h4>As melhores</h4>
+        <h3>{{ Translation('avaliacoes') }}</h3>
+        {% element 'CustomerReview.reviews' %}
+    </div>
+    {% endif %}
+    
+    {% if settings.hottags_position == 1 %}
+    <div class="tagcloud hidden-xs">
+        <h4>As palavras</h4>
+        <h3>{{ Translation('tags_mais_buscadas') }}</h3>    
+        {% for tag in tags %}
+          <a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%">{{ tag.word }}</a>
+        {% endfor %}     
+    </div>
+    {% endif %}
+</aside>

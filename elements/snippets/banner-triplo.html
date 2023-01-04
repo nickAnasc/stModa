@@ -1,0 +1,21 @@
+<section class="banner-triplo control container">
+    <div class="carrossel-init">
+        {% if banner.extra3 %}
+            <a href="{{ banners.extra3.link ? banners.extra3.link : 'javascript:;' }}">
+                <img class="image-banner" src="{{ banners.extra3.src }}" width="500">
+            </a>
+        {% endif %}
+        {% if banner.extra4 %}
+            <a href="{{ banners.extra4.link ? banners.extra4.link : 'javascript:;' }}">
+                <img class="image-banner" src="{{ banners.extra4.src }}" width="500">
+            </a>
+        {% endif %}
+        {% if banner.extra5 %}
+            <a href="{{ banners.extra5.link ? banners.extra5.link : 'javascript:;' }}">
+                <img class="image-banner" src="{{ banners.extra5.src }}" width="500">
+            </a>
+        {% endif %}
+    </div>
+    <button class="slider-prev"><i class="fas fa-angle-left"></i></button>
+    <button class="slider-next"><i class="fas fa-angle-right"></i></button>
+</section>

@@ -1,0 +1,250 @@
+/*
+Theme Name: Yart Default
+Theme URI:
+Author: Lincon Keiti Kusunoki
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* color buy button on page product */
+.page-product .product-buy-button,
+html .remove-bg .botao-comprar,
+html .remove-bg .botao-comprar:hover,
+.page-checkout_cart .caixa-botoes .botao-commerce.botao-prosseguir-compra,
+.page-register .botao-prosseguir-cadastro,
+.page-register .botao-prosseguir-cadastro:hover{
+    background: {{ settings.color_buybutton }};
+}
+
+/* general buttons */
+.trigger-menu,
+.menu-mobile, 
+.search .search-button,
+.cart .cart-icon,
+.newsletter form button,
+.store-rating .dep_link a,
+.foo-rating .dep_link a,
+.box_skitter .info_slide .image_number_select,
+.box_skitter .info_slide .image_number_select:hover,
+.page-register #CadastroAbas .aberta a,
+.page-catalog .button-compare,
+.page-search .button-compare,
+.page-product #cepbox .botao-simular-frete,
+.page-product .products-visited .myNavigation,
+.page-product .products-visited .clearVisiteds,
+.page-product .products-visited .paginacao_ajax_prod #linksPag .pageON,
+.page-product .product-gallery .slider-nav .slick-arrow,
+.page-product .product-cross-sell .fotosCompreJunto .plus:after,
+.page-product .product-cross-sell .fotosCompreJunto .plus:before,
+.page-product .product-quantity > div > span,
+.page-product #bloco-add-lista a,
+.page-product .product-tabs #ProdAbas li,
+html .botao-commerce,
+html .botao-commerce:hover,
+html .botao-commerce:link,
+.page-catalog .filter-button,
+.page-search .filter-button{
+    background: {{ settings.color_primary }};
+}
+
+.page
+
+.smartfilter-button svg{
+    fill: {{ settings.color_primary }}
+}
+
+.page-product .product-tabs #ProdAbas a{
+    color: {{ settings.color_abas }};
+}
+
+.page-product .products-visited .ValoresLista .precoAvista{
+    color: {{ settings.color_primary }};
+}
+
+/* header */
+.customer,
+.customer a,
+.customer .orders a,
+.page-checkout_cart .caixa-total h3,
+.page-checkout_cart .caixa-total h3 div,
+.page-checkout_cart .caixa-total h3:before,
+.showcase > h2 strong,
+.showcase > h2 small{
+    color: {{ settings.color_font_header }};
+}
+
+.customer .orders a{
+    border-color: {{ settings.color_font_footer }};
+}
+
+/* footer */
+.foo-content,
+.foo-message{
+    background: {{ settings.color_footer }};
+}
+
+
+
+.foo-content h3,
+.foo-content h5,
+.foo-content .links-list a,
+.foo-contact p,
+.foo-message,
+.foo-message .message-footer,
+.foo-content .social-list .social-list a{
+    color: {{ settings.color_font_footer }};
+}
+
+.foo-contact i{
+    border-color: {{ settings.color_font_footer }};
+}
+
+.foo-contact i svg{
+    fill: {{ settings.color_font_footer }};
+}
+
+/* background color */
+.application{
+    background-color: {{ settings.color_background }};
+    background-attachment: {{ settings.bg_attachment }};
+    background-position-x: {{ settings.bg_position_x }};
+    background-position-y: {{ settings.bg_position_y }};
+    background-repeat: {{ settings.bg_repeat }};
+}
+
+.product .product-image .discount{
+    background: {{ settings.color_bg_discount }};
+    color: {{ settings.color_txt_discount }};
+}
+
+.product .product-price {
+    color: {{ settings.color_price }};
+}
+
+/* MENU */
+
+/* Level 1 */
+.sidebar .main-menu{ 
+    background: {{ settings.color_bg_menu_1 }} !important;
+}
+
+.sidebar .main-menu h3{
+    color: {{ settings.color_title_font_1 }};
+}
+
+.sidebar .main-menu .link-level1{
+    color: {{ settings.color_menu_font_1 }};
+}
+
+.sidebar .main-menu .item-level1:hover{
+    background: {{ settings.color_menu_bg_hover_1 }};
+}
+
+.sidebar .main-menu .item-level1:hover > .link-level1{
+    color: {{ settings.color_menu_font_hover_1 }};
+}
+
+/* Level 2 */
+.sidebar .main-menu .level2{
+    background: {{ settings.color_bg_menu_2 }};
+}
+
+.sidebar .main-menu .link-level2{
+    color: {{ settings.color_menu_font_2 }};
+}
+
+.sidebar .main-menu .item-level2:hover{
+    background: {{ settings.color_menu_bg_hover_2 }};
+}
+
+.sidebar .main-menu .item-level2:hover > .link-level2{
+    color: {{ settings.color_menu_font_hover_2 }};
+}
+
+/* Level 3 */
+.sidebar .main-menu .level3{
+    background: {{ settings.color_bg_menu_3 }};
+}
+
+.sidebar .main-menu .link-level3{
+    color: {{ settings.color_menu_font_3 }};
+}
+
+.sidebar .main-menu .item-level3:hover{
+    background: {{ settings.color_menu_bg_hover_3 }};
+}
+
+.sidebar .main-menu .item-level3:hover > .link-level3{
+    color: {{ settings.color_menu_font_hover_3 }};
+}
+
+/* Banner home */
+.banner-home .slick-arrow{
+    fill: {{ settings.color_slick_arrow }};
+}
+
+.banner-home .slick-arrow:hover{
+    fill: {{ settings.color_slick_arrow_hover }};
+}
+
+.banner-home .slick-dots button{
+    background: {{ settings.color_slick_dot }};
+}
+
+.banner-home .slick-dots .slick-active button{
+    background: {{ settings.color_slick_dot_active }};
+}
+
+
+{# menu Mobile #}
+
+.menu-mobile{
+    background: {{ settings.color_bg_menu_1 }};
+}
+
+.menu-mobile .link-level1{
+    color: {{ settings.color_menu_font_1 }}; 
+}
+
+.menu-mobile .level1-check:checked ~ .link-level1{
+    background: {{ settings.color_menu_bg_hover_1 }};
+    color: {{ settings.color_menu_font_hover_1 }};
+}
+
+.menu-mobile .level1-check:checked ~ .level2{
+    background : {{ settings.color_bg_menu_2 }};
+}
+
+.menu-mobile .link-level2{
+    color: {{ settings.color_menu_font_2 }};
+}
+
+.menu-mobile .link-level3{
+    color: {{ settings.color_menu_font_3 }};
+}
+.menu-mobile .item-level3{
+    background: {{ settings.color_bg_menu_3 }};
+    color: {{ settings.color_menu_font_3 }};
+}
+
+.product .product-discount-recursive-desc{
+    background: {{ settings.color_bg_discount }};
+    color: {{ settings.color_txt_discount }};
+}
+
+
+.newsletter h2 span{
+    color: {{ settings.color_title_news }};
+}
+
+.newsletter h2 svg{
+    fill: {{ settings.color_title_news }};
+}
+
+.tagcloud > h3{
+    color: {{ settings.color_words }};
+}
+
+.store-rating > h3{
+    color: {{ settings.color_avaliacoes }};
+}

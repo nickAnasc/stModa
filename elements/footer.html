@@ -1,0 +1,110 @@
+<!-- NEWSLETTER -->
+{% element 'snippets/newsletter' %}
+
+{% set checkout = "checkout" in pages.current ? "true" : "false" %}
+<footer class="footer">
+    <div class="news-full visible-xs-block .visible-sm-block">
+        <!-- {% element 'snippets/newsletter' %} -->
+    </div>
+    <div class="container">
+        <div class="foo-content">
+            <nav class="institucional footer-item">
+                <h3>{{ Translation('institucional') }}</h3>
+                <ul class="links-list">
+                    {% for custom in pages.custom %}
+                        <li>
+                            <a href="{{ custom.url }}">{{ custom.name }}</a>
+                        </li>
+                    {% endfor %}
+                    <li>
+                        <a href="{{ links.contact }}" data-tray-tst="fale_conosco">{{ Translation('contato') }}</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="minha-conta footer-item">
+                <h3>Minha Conta</h3>
+                <ul class="links-list">
+                    <li>
+                        <a href="#">Criar Conta</a>
+                    </li>
+                    <li>
+                        <a href="#">Minha Conta</a>
+                    </li>
+                    <li>
+                        <a href="#">Meus Pedidos</a>
+                    </li>
+                </ul>
+            </nav>
+
+            {%
+                if 
+                Translation('ag_atendimento') != '' or
+                Translation('ag_telefone_1') != '' or 
+                Translation('ag_telefone_2') != '' or 
+                Translation('ag_email_1') != '' or 
+                Translation('ag_email_2') != ''
+            %}
+            <nav class="foo-contact footer-item">
+                <h3>Atendimento</h3>
+                <ul class="contact-list">
+                    {% if Translation('ag_email_1') != '' or Translation('ag_email_2') != '' %}
+                    <li class="store-email">
+                        <p class="contato-email">
+                            {{ Translation('ag_email_1') }}
+                            <br>
+                            {{ Translation('ag_email_2') }}
+                        </p>
+                    </li>
+                    {% endif %}
+                    
+                    {% if Translation('ag_telefone_1') != '' or Translation('ag_telefone_2') != '' %}
+                    <li class="store-phones">
+                        <p data-tray-tst="contato_telefone">
+                            {{ Translation('ag_telefone_1') }}
+                            <br>
+                            {{ Translation('ag_telefone_2') }}
+                        </p>
+                    </li>
+                    {% endif %}
+
+                    {% if Translation('ag_atendimento') != '' %}
+                    <li class="open-info">
+                        <p>{{ Translation('ag_atendimento') }}</p>
+                    </li>
+                    {% endif %}
+                </ul>
+                <h3 class="social-title">Redes Sociais</h3>
+                {% element 'snippets/social-list' %}
+            </nav>
+            {% endif %}
+
+            <nav class="payment-content footer-item">
+                <h3 class="payment-title">Formas de Pagamento</h3>
+                <div class="payment-list">
+                    {% for payOrder in paymentMethods.order %}
+                        <div class="image-content">
+                            <img src="{{ payOrder.thumbnail.url }}" alt="{{ payOrder.display_name  }}">
+                        </div>
+                    {% endfor %}
+                    {% for payCredits in paymentMethods.credit %}
+                        <div class="image-content">
+                            <img src="{{ payCredits.thumbnail.url }}" alt="{{ payCredits.display_name  }}">
+                        </div>
+                    {% endfor %}
+
+                    <p class="safe-store">
+                        <i class="fas fa-lock"></i> Loja Protegida <strong>100% segura</strong>
+                    </p>
+                </div>
+            </nav>
+        </div>
+        <div class="dev-by">
+            <p class="dev-by__text">
+                {{ Translation('ag_mensagem_rodape') }}
+            </p>
+            <a class="superteia" href="https://superteia.com.br/" target="_blank">
+                <img src="{{ asset('img/logo-superteia.png') }}">
+            </a>
+        </div>
+    </div>
+</footer>

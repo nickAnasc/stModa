@@ -1,0 +1,9 @@
+.page-listas{
+    &_index, &_evento{ 
+        .page-content > *{
+            background: #fff;
+            font-size: 1.6rem;
+            padding: 15px;
+        }
+    }
+}
