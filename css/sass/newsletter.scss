@@ -15,7 +15,7 @@
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
-        
+
         @media(max-width: 1199px) {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
@@ -86,6 +86,7 @@
 
         .btn-news {
             width: 20%;
+            font-weight: $semiBold;
             background-color: var(--newsletterBtnBg);
             color: var(--newsBtnText);
             border: none;
@@ -93,6 +94,7 @@
 
             &:hover {
                 border-radius: 0 10px;
+                transition: .3s;
             }
         }
 

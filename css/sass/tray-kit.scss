@@ -2,8 +2,8 @@
     border: 1px solid #e1e1e1;
     margin-bottom: 15px;
     padding: 15px;
-    
-    
+
+
     div[style="clear:both;"] {
         display: none;
     }
@@ -12,7 +12,7 @@
 .tray-kit-item {
     border-top: 1px solid #e1e1e1;
     padding: 15px 0 25px;
-    
+
     &:first-child {
         border-top: none;
     }
@@ -22,7 +22,7 @@
         content: '';
         display: block;
     }
-    
+
     > div {
         position: relative;
     }
@@ -75,7 +75,7 @@
 }
 
 .tray-kit-additional-info {
-    
+
     .select,
     .text,
     .textarea,
@@ -85,17 +85,17 @@
         display: block;
         width: 100% !important;
     }
-    
+
     .text,
     .textarea{
         margin-bottom: 5px !important;
     }
-    
+
     .dd .ddTitle span.ddTitleText{
         font-weight: 400;
         font-size: 1.2rem;
     }
-    
+
     .select,
     .ddTitle,
     .textarea{
@@ -104,7 +104,7 @@
         font-size: 1.2rem;
         height: 24px;
     }
-    
+
     .varCont > *{
         color: #222;
         display: block;
@@ -112,14 +112,14 @@
 }
 
 .tray-kit-variation{
-    
+
     img {
         display: block;
         height: 30px;
         overflow: hidden;
         width: 30px;
     }
-    
+
     li {
         border: 1px solid #e1e1e1;
         display: inline-block;

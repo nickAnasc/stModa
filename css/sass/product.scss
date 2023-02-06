@@ -3,9 +3,27 @@
 .novidades,
 .promocoes,
 .carrosse-categories {
-    margin-top: 50px;
-}
+    margin-top: 20px;
 
+}
+.carrosse-categories{
+    .showcase-banner{
+        margin-top: 50px;
+        background-color: var(--bgVitCategorias);
+        padding: 50px 0;
+    }
+}
+.destaque, .novidades, .promocoes{
+    .showcase__title{
+        margin-bottom: 1px;
+    }
+}
+.banner-triplo{
+    margin-top: 70px;
+}
+.showcase-content.normal-grid.product-carrossel{
+    margin-top: 10px;
+}
 .showcase {
     .showcase-content {
         .glider-track {
@@ -63,35 +81,39 @@
                 text-transform: uppercase;
                 padding: 18px;
                 transition: .3s;
-                font-family: $fontStyle;
+                // font-family: $fontStyle;
+                font-weight: $semiBold;
                 font-size: 18px;
                 width: 100%;
                 text-align: center;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                opacity: 0;
-                visibility: hidden;
-                transition: .3s;
-                margin-bottom: -100%;
-            }
+                margin-top: 10px;
+                //position: absolute;
+                //bottom: 0;
+               // left: 0;
+                //opacity: 1;
+               // visibility: visible;
+                //transition: .3s;
+                //margin-bottom: 0;
 
-            &:hover {
-                .btn-comprar {
-                    opacity: 1;
-                    visibility: visible;
-                    margin-bottom: initial;
+                &:hover {
+                    .btn-comprar {
+                        border-radius: 0 10px;
+                        transition: .3s;
+                //         opacity: 1;
+                //         visibility: visible;
+                //         margin-bottom: initial;
+                    }
                 }
             }
 
             @media(max-width: 992px) {
                 .btn-comprar {
                     position: initial;
-                    bottom: initial;
+                    bottom: 0;
                     left: initial;
                     opacity: 1;
                     visibility: visible;
-                    margin-bottom: initial;
+                    margin-bottom: 0;
                 }
             }
 
@@ -222,6 +244,7 @@
         display: flex;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            // margin-top: 10px;
 
         .showcase-content__item {
             width: calc(100% / 4);

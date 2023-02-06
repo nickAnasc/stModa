@@ -13,11 +13,13 @@
 
         .action-filter.close {
             display: none;
+            margin-top: 20px;
         }
 
         @media(max-width: 991px) {
             overflow-y: scroll;
             height: 95vh;
+            background-color: #fff;
 
             .action-filter.close {
                 font-weight: 600;
@@ -25,6 +27,7 @@
                 text-align: center;
                 margin-bottom: 20px;
                 display: block;
+                margin-top: 20px;
             }
         }
 

@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .varTit strong {
         margin-bottom: 10px;
         font-size: 20px;
@@ -6,12 +6,15 @@
         font-family: "EB Garamond",serif;
         display: block;
     }
-    
+
     .select.selectanel.infoSelects {
         padding: 6px 10px;
         border: none;
     }
-</style>
+
+    ## coloquei esse trecho de código na page-product.scss
+
+</style>-->
 
 <div class="container">
     <div class="product-breadcrumb">
@@ -48,7 +51,7 @@
                                 {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
                                 {% if porcentagemDesconto < 100 %}
                                     <span class="seal discount-seal"> {{ porcentagemDesconto|number_format }}% OFF </span>
-                                {% endif %}  
+                                {% endif %}
                             {% endif %}
 
                             {% if product.featured %}
@@ -69,7 +72,7 @@
                             {% for star in 1..ranking.rating %}
                             <i class="fas fa-star"></i>
                             {% endfor %}
-        
+
                             {% if ranking.rating < 5 %} {% set emptystar=5 - ranking.rating %} {% for i in 1..emptystar %} <i
                                 class="far fa-star"></i>
                                 {% endfor %}
@@ -118,7 +121,7 @@
                             </div>
                         {% else %}
                             <form id="form_comprar" class="buy-content" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
-                                <div class="teste">
+                                <div class="product-add-information">
                                     {{ product.additional_information }}
                                 </div>
                                 <div class="variants-content">
@@ -193,7 +196,7 @@
                 {% endfor %}
             </ul>
         </div>
-    
+
         <div id="descricao" class="prodBox">
             <div class="board">
                 <div class="board_htm description">
@@ -201,28 +204,28 @@
                 </div>
             </div>
         </div>
-    
+
         <div id="itensInclusos" class="prodBox">
             <div class="board">
                 {{ product.included_items }}
             </div>
         </div>
-    
+
         <div id="coments" class="prodBox">
             <div class="board">
                 {% element 'product/comments' %}
             </div>
         </div>
-    
+
         <div id="caracteristicas" class="prodBox">
             <div class='board'>
                 {% element 'product/properties' %}
             </div>
         </div>
-    
+
         {{ productTabs.custom.content }}
         {{ productTabs.downloads.content }}
-    
+
         <div id="garantia" class="prodBox">
             <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg"  />
         </div>

@@ -1,8 +1,11 @@
 .brands {
-    padding: 70px 0 50px;
+    padding: 50px 0 0;
 
     .control {
         margin-top: 30px;
+        .dep_lista{
+            background-color: aqua;
+        }
     }
 
     .brands-carrossel {
@@ -19,7 +22,7 @@
                     border-radius: 15px 15px 0;
                 }
             }
-    
+
             .name-brand {
                 text-align: center;
                 margin-top: 15px;

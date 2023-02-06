@@ -1,8 +1,8 @@
 .reviews {
-    padding: 50px 0;
+    padding: 40px 0;
 
     .dep_lista {
-        margin-top: 50px;
+        margin-top: 25px;
 
         .dep_item {
             padding: 30px;
@@ -50,7 +50,7 @@
                     font-weight: $bold;
                     font-style: italic;
                     font-family: $fontStyle;
-                    
+
                     span {
                         display: none;
                     }

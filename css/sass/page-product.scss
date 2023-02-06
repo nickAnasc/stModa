@@ -1,3 +1,16 @@
+.varTit strong {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "EB Garamond",serif;
+    display: block;
+}
+
+.select.selectanel.infoSelects {
+    padding: 5px;
+    border: 1px solid #e2e2e2;
+}
+
 .product-breadcrumb {
     margin-top: 30px;
 }
@@ -128,10 +141,11 @@
                         display: inline-block;
                         padding: 11px 24px;
                         font-size: 16px;
+                        font-weight: $semiBold;
                         background-color: var(--bgButton);
                         color: var(--textButton);
                         text-transform: uppercase;
-                        font-family: $fontStyle;
+                        // font-family: $fontStyle;
                         text-align: center;
                         text-decoration: none;
                         transition: .3s;
@@ -196,6 +210,12 @@
                         img {
                             border-radius: 50%;
                         }
+                    }
+
+                    .tray-kit-image {
+                        border-radius: 50%;
+                        overflow: hidden;
+                        height: 90px;
                     }
 
                     .tray-kit-name {
@@ -396,7 +416,7 @@
 
                                 @media(max-width: 992px) {
                                     .whatsapp { display: none; }
-                                    .whatsapp-mobile { 
+                                    .whatsapp-mobile {
                                         display: -webkit-box;
                                         display: -ms-flexbox;
                                         display: flex;
@@ -413,7 +433,7 @@
                         br {
                             display: none;
                         }
-                        
+
                         #info_preco {
                             display: block;
                         }
@@ -469,7 +489,8 @@
                                 padding: 10px;
                                 font-size: 18px;
                                 text-transform: uppercase;
-                                font-family: $fontStyle;
+                                // font-family: $fontStyle;
+                                font-weight: $semiBold;
                                 text-align: center;
                                 width: 100%;
                                 margin-top: 25px;
@@ -480,6 +501,19 @@
                                 }
                             }
                         }
+                        .product-add-information {
+                            margin-top: 10px;
+                        }
+                        h5 {
+                            font-size: 12px;
+                        }
+
+
+                        .textarea {
+                            padding: 5px;
+                            border: 1px solid #e2e2e2;
+                        }
+
                     }
 
                     .variants-content {
@@ -575,6 +609,7 @@
                                     display: none;
                                 }
                             }
+
                         }
                     }
                 }
@@ -824,17 +859,19 @@
 
 .modal-content {
     #div_atualiza {
-        p:first-child {
-            text-align: center;
+        p:first-child , span {
+            text-align: left;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 14px;
             margin-bottom: 15px;
+            line-height: 1;
         }
 
         input,
         label,
         textarea {
             width: 100%;
+            // max-width: 50%;
         }
 
         label {
@@ -845,12 +882,21 @@
             textarea,
             select {
                 margin-top: 5px;
-                border: 1px solid #555;
+                border: 1px solid #e2e2e2;
                 padding: 5px;
-                border-radius: 5px;
+                border-radius: 14px;
             }
         }
     }
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    // max-height: 400px;
+    overflow-y: scroll
+}
+
 
     .image.perguntasProdutoBTimg {
         background-color: var(--bgButton);

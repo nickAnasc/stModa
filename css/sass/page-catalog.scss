@@ -1,3 +1,37 @@
+
+    .showcase .showcase-content .showcase-content__item  {
+        bottom: 80px;
+    }
+    .btn-comprar{
+        bottom: 80px;
+        font-weight: $semiBold;
+
+        &:hover {
+            border-radius: 0 10px;
+            transition: .3s;
+        }
+    }
+    // .compare-buttons a[data-compare="remove"] {
+    //     display: none;
+    // }
+    .compare-buttons a[data-compare="add"] {
+        font-weight: bold;
+        color: black;
+
+    }
+    .filter-checkbox{
+        width: 10px;
+        height: 10px;
+        border: 2px solid black;
+        display: inline-block;
+    }
+    .compare-hidden .filter-checkbox  {
+        background-color: rgb(14, 13, 13);
+        border-radius: 50%;
+    }
+
+
+
 .catalog {
     padding: 50px 0;
 
@@ -29,6 +63,7 @@
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 20px 20px 0;
+            flex-wrap: wrap;
 
             @media(max-width: 991px) {
                 margin-left: 0;
@@ -41,6 +76,21 @@
 
                 @media(max-width: 991px) {
                     display: none;
+                }
+            }
+
+            .btn-compare {
+                color: var(--textButton);
+                background-color: var(--bgButton);
+                text-transform: uppercase;
+                font-weight: $semiBold;
+                padding: 10px;
+                font-size: 12px;
+                text-decoration: none;
+
+                &:hover {
+                    border-radius: 0 10px;
+                    transition: .3s;
                 }
             }
 
@@ -99,7 +149,7 @@
         .catalog__filter {
             width: 30%;
         }
-    
+
         .catalog__showcase {
             width: 70%;
         }
@@ -109,7 +159,7 @@
         .catalog__filter {
             width: 100%;
             position: fixed;
-            z-index: 1;
+            z-index: -2;
             top: 0;
             left: 0;
             padding: 20px 20%;
@@ -123,8 +173,9 @@
         .catalog__filter.open {
             opacity: 1;
             visibility: visible;
+            z-index: 2;
         }
-    
+
         .catalog__showcase {
             width: 100%;
         }

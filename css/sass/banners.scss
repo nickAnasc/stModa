@@ -24,7 +24,7 @@
 
     .control {
         position: relative;
-    
+
         .slider-prev,
         .slider-next {
             position: absolute;
@@ -36,21 +36,21 @@
             width: auto;
             height: auto;
             background-color: transparent;
-    
+
             .fa-angle-right {
                 margin-left: 3px;
             }
-    
+
             .fa-angle-left {
                 margin-right: 3px;
             }
         }
-    
+
         .slider-prev {
             left: 2%;
             border-radius: 10px 30px 30px;
         }
-    
+
         .slider-next {
             right: 2%;
             border-radius: 30px 30px 10px;

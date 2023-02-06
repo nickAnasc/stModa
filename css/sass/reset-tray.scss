@@ -6,7 +6,7 @@ hr {
     clear: both;
     display: block;
     height: auto;
-    
+
     -webkit-margin-before: 0.5em;
      -webkit-margin-after: 0.5em;
     -webkit-margin-start: auto;
@@ -15,7 +15,7 @@ hr {
 
 a{
 	text-decoration: none;
-	
+
 	&:hover{
 		text-decoration: underline;
 	}
@@ -29,15 +29,15 @@ a{
 // cross sell
 .compreJunto{
     padding: 0;
-    
+
     > li{
         border-bottom: none;
         display: block;
         margin: 0;
         padding: 0;
-        
+
         div{
-            
+
             .plus{
                 float: none;
                 font-size: inherit;
@@ -48,41 +48,41 @@ a{
             }
         }
     }
-    
+
     .fotosCompreJunto{
         float: none;
         width: auto;
-        
+
         .produto{
             float: none;
             width: auto;
-            
+
             .unidades_topo {
                 margin: 0;
                 text-align: left;
                 width: auto;
             }
-            
+
             span{
                 height: auto;
                 text-align: left;
                 width: auto;
-                
+
                 div{
                     height: auto;
                     text-align: left;
                 }
             }
-            
+
             > div{
                 margin: 0;
                 width: auto;
             }
-            
+
             .select{
                 width: auto;
             }
-            
+
             .varTit{
                 background: none;
                 color: inherit;
@@ -91,26 +91,26 @@ a{
             }
         }
     }
-    
+
     .precoCompreJunto{
         border: none;
         float: none;
         height: auto;
         padding: 0;
         width: auto;
-        
+
         .precosCompreJunto{
             margin: 0;
-            
+
             ul{
-                padding: 0;    
+                padding: 0;
             }
-            
+
             li{
                 text-align: left;
             }
         }
-        
+
         .botao-compre-junto{
             float: none;
         }
@@ -128,13 +128,13 @@ html{
         border-radius: 0;
         border: none;
         color: #fff;
-        
+
         .botao-commerce-img{
             background: none;
             padding: 0;
         }
     }
-    
+
     .botao-destaque,
     .botao-frete,
     .botao-indisponivel,
@@ -142,12 +142,12 @@ html{
         display: inline-block;
         margin: 15px 1%;
         width: 30%;
-        
+
         @media (max-width: 767px){
             margin: 5px 0;
             width: 100%;
         }
-        
+
         &:hover{
             display: inline-block;
         }
@@ -179,7 +179,7 @@ html{
     top: initial;
     font: initial;
     color: initial;
-    
+
     img{
         position: static;
         top: initial;
@@ -188,13 +188,13 @@ html{
 
 .tablePage{
     border: none;
-    
+
     th{
         background: none;
         border: none;
         padding: 0;
     }
-    
+
     td{
         background: none;
         border: none;
@@ -282,7 +282,7 @@ html{
 }
 
 #Page{
-    
+
     fieldset{
         background: none;
         border: none;
@@ -290,7 +290,7 @@ html{
         padding: 0;
         position: static;
     }
-    
+
     .text{
         background: none;
         color: initial;
@@ -316,7 +316,7 @@ html{
     font: 400 12px Arial,Helvetica,sans-serif;
     margin: 10px;
     padding: 15px;
-    
+
     .red,
     .red a{
         color: inherit;
@@ -363,13 +363,13 @@ html{
 .varCont{
     border: none;
     padding: 0;
-    
+
     > *{
         margin: 0 !important;
     }
-    
+
     ul{
-        
+
         li{
             background: none;
             border: none;
@@ -382,15 +382,15 @@ html{
 .productAdditionalInformation{
     display: block;
     margin: 0 0 15px;
-    
+
     strong{
         font-weight: 400;
     }
-    
+
     .varCont{
         margin-bottom: 10px;
     }
-    
+
     input{
         border: 1px solid #e2e2e2;
         padding: 10px;
@@ -401,7 +401,7 @@ html{
     padding: 0;
     overflow: hidden;
     margin-top: 15px;
-    
+
     h2{
         float: none;
         width: auto;
@@ -425,15 +425,15 @@ html{
 // related
 #Relacionados{
     text-align: left;
-    
+
     ul{
-        
+
         li{
             float: none;
             font-size: initial;
             padding: 0;
             width: auto;
-            
+
             .NomeProdLista{
                 font-size: initial;
                 font-weight: initial;
@@ -441,7 +441,7 @@ html{
             }
         }
     }
-    
+
     .FotoLista{
         margin: 0;
     }
@@ -470,7 +470,7 @@ html{
 }
 
 .caixa-forma-frete{
-    
+
     .tablePage{
         margin: 0 !important;
         width: 100%;
@@ -480,11 +480,11 @@ html{
 // product
 #info{
     padding: 0;
-    
+
     a{
         border: none;
         padding: 0;
-        
+
         &:hover{
             background: none;
         }
@@ -511,7 +511,7 @@ html{
 }
 
 #info_preco{
-    
+
     > br:first-child{
         display: none;
     }
@@ -546,24 +546,24 @@ html{
 }
 
 .Forma1{
-    
+
     li{
         background: none;
         border: none;
-        
+
         &:hover{
             background: none;
-            
+
             table{
                 background: none;
             }
         }
-        
+
         a{
             padding: 0;
         }
     }
-    
+
     .tablePags{
         border: none;
     }
@@ -603,10 +603,10 @@ html{
         float: none;
         width: auto;
     }
-    
+
     .Cadastro {
         float: none;
-        width: auto; 
+        width: auto;
     }
 }
 
@@ -623,7 +623,7 @@ html{
 // }
 
 .caixa-cadastro{
-    
+
     p{
         margin: 0;
     }
@@ -631,16 +631,16 @@ html{
 
 // catalog navegacao_visitados
 .catalogo-galeria{
-    
+
     .change {
         margin: 0;
         text-align: left;
     }
-    
+
     #Vitrine{
         text-align: left;
     }
-    
+
     ul{
         border: none;
         list-style: none;
@@ -648,32 +648,32 @@ html{
         overflow: hidden;
         padding: 0;
         width: auto;
-        
+
         li{
             width: auto;
-            
+
             img{
                 margin: 0;
             }
         }
     }
-    
+
     li{
         border: none;
         float: none;
         position: static;
     }
-    
+
     .Foto{
         text-align: left;
     }
-    
+
     .dados{
         text-align: left;
     }
-    
+
     .nomeProd{
-        
+
         a{
             font-size: initial;
             font-weight: initial;
@@ -697,9 +697,9 @@ html{
 }
 
 .BoxVisitados{
-    
+
     ul{
-        
+
         li{
             border: none;
             display: block;
@@ -709,7 +709,7 @@ html{
             position: static;
         }
     }
-    
+
     h2 {
         background: none;
         border: none;
@@ -722,23 +722,23 @@ html{
 // checkout payment
 .Forma2{
     display: block;
-    
+
     ul{
         display: block;
     }
-    
+
     li{
         float: none;
         margin: 0;
         text-align: left;
         width: auto;
-        
+
         ul li{
             float: none;
             width: auto;
         }
     }
-    
+
     h3 {
         background: none;
         border: none;
@@ -754,11 +754,11 @@ html{
 }
 
 .noneListStyle{
-    
+
     li{
         clear: both;
         margin: 0;
-        
+
         &:after{
             clear: both;
             content: '';
@@ -777,9 +777,9 @@ html{
 // visited
 #NavVisitados{
     text-align: left;
-    
+
     ul{
-        
+
         li{
             float: none;
             padding: 0;
@@ -798,7 +798,7 @@ html{
 }
 
 .paginacao_ajax_prod{
-    float: none;    
+    float: none;
 }
 
 .total_produtos {
@@ -827,7 +827,7 @@ html{
     float: none;
     min-height: 0;
     // width: auto;
-    
+
     .itens{
         border: none;
         font-size: inherit;
@@ -835,7 +835,7 @@ html{
         min-height: 0;
         width: auto;
     }
-    
+
     div{
         text-align: left;
     }
@@ -874,14 +874,14 @@ html{
 
 // tag cloud
 #NavTagCloud{
-    
+
     h2{
         background: none;
         color: #000 !important;
         font: inherit;
         padding: 0;
     }
-    
+
     span{
         background: none;
         border: none;
@@ -897,28 +897,28 @@ html{
     border: none;
     height: 110px;
     width: 33.3333%;
-    
+
     &:nth-child(5),
     &:nth-child(12),
     &:nth-child(15){
         border-right: none;
     }
-    
+
     &:nth-child(13),
     &:nth-child(14),
     &:nth-child(15){
         border-bottom: none;
     }
-    
+
     &:hover{
         box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
     }
-    
+
     @media screen and (max-width: 767px){
         border: none;
         width: 50%;
     }
-    
+
     p{
         font-size: 1.4rem;
         margin-bottom: 10px;
@@ -929,7 +929,7 @@ html{
 // orders
 .Pedidos{
     border: none;
-    
+
     th{
         background: none;
     }
@@ -941,24 +941,24 @@ html{
     border: none;
     margin-bottom: 30px;
     padding: 0;
-    
+
     ul{
         li{
             line-height: 1;
         }
     }
-    
+
     + p{
         font-size: 1.4rem;
         text-align: center;
-        
+
         span,
         a{
             display: block;
             margin: 10px;
         }
     }
-    
+
     ~ p{
         font-size: 1.4rem;
     }
@@ -966,7 +966,7 @@ html{
 
 // comparator
 // .comparatorTabs{
-    
+
 //     ul{
 //         border-bottom: none;
 //         display: table;
@@ -976,28 +976,28 @@ html{
 //         text-transform: none;
 //         width: 100%;
 //     }
-    
+
 //     li{
 //         background: none;
 //         float: none;
 //         margin: 0;
 //         padding: 0;
 //         top: 0;
-        
+
 //         &.aberta{
-            
+
 //             a{
 //                 font-size: inherit;
 //                 font-weight: 400;
 //                 padding: 0;
 //             }
-            
+
 //             .closeCat{
 //                 border: none;
 //                 font-size: inherit;
 //                 padding: 0;
 //                 position: static;
-                
+
 //                 &:hover{
 //                     background: none;
 //                     color: inherit;
@@ -1005,13 +1005,13 @@ html{
 //                 }
 //             }
 //         }
-        
+
 //         .closeCat{
 //             border: none;
 //             font-size: inherit;
 //             padding: 0;
 //             position: static;
-            
+
 //             &:hover{
 //                 background: none;
 //                 color: inherit;
@@ -1019,7 +1019,7 @@ html{
 //             }
 //         }
 //     }
-    
+
 //     a{
 //         background: none;
 //         color: inherit;
@@ -1028,10 +1028,10 @@ html{
 // }
 
 // .comparator{
-    
+
 //     ul{
 //         padding: 0;
-        
+
 //         // colum that describes each row
 //         li.Labels{
 //             border: none;
@@ -1040,9 +1040,9 @@ html{
 //             margin: 0;
 //             overflow: visible;
 //             width: auto;
-            
+
 //             ul{
-                
+
 //                 li{
 //                     background: none;
 //                     border: none;
@@ -1051,19 +1051,19 @@ html{
 //                     padding: 0;
 //                     position: static;
 //                     text-align: left;
-                    
+
 //                     &.comparsionFoto{
 //                         background: none;
 //                     }
-                    
+
 //                     &:hover{
 //                         background: none;
 //                     }
 //                 }
 //             }
 //         }
-        
-        
+
+
 //         li{
 //             border: none;
 //             float: none;
@@ -1071,9 +1071,9 @@ html{
 //             margin: 0;
 //             overflow: visible;
 //             width: auto;
-            
+
 //             ul{
-                
+
 //                 li,
 //                 .comparsionFoto,
 //                 .comparsionInfoPreco{
@@ -1083,7 +1083,7 @@ html{
 //                     overflow: visible;
 //                     padding: 0;
 //                     text-align: left;
-                    
+
 //                     &:hover{
 //                         background: none;
 //                     }
@@ -1097,13 +1097,13 @@ html{
     border: 0;
     margin: 0;
     padding: 0;
-    
+
     .lista-produto-imagem {
         width: auto;
         text-align: left;
         float: none;
     }
-    
+
     .nomeProd {
         font-size: 1.4rem;
         font-weight: 400;
@@ -1112,16 +1112,16 @@ html{
         display: block;
         color: inherit;
     }
-    
+
     .lista-produto-dados {
         float: none;
         margin: 0;
-        
+
         br {
             display: none;
         }
     }
-    
+
     .lista-produto-solicitados,
     .lista-produto-valores,
     .lista-produto-comprar,
@@ -1131,7 +1131,7 @@ html{
         text-align: left;
         width: auto;
     }
-    
+
     .lista-produto-qtde {
         margin: 0;
     }

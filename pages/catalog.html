@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .showcase .showcase-content .showcase-content__item .btn-comprar {
         bottom: 80px;
     }
@@ -7,10 +7,11 @@
     }
     .compare-buttons a[data-compare="add"] {
         font-weight: bold;
-        color: black; 
+        color: black;
     }
-    
-</style>
+##Levei esse bloco de comando para a page-catolog.scss
+
+</style> -->
 <section class="catalog">
     <div class="container">
         <div class="breadcrumb-content">
@@ -25,6 +26,8 @@
                     <div class="category-name">
                         {{ category.name }}
                     </div>
+                    <div class="button-compare"></div>
+                    <a class="btn-compare" href="/loja/comparador.php?loja={{ store.id }}" alt="compare">COMPARAR</a>
                     <div>
                         {% element 'snippets/filter-order' %}
                     </div>

@@ -15,7 +15,7 @@
             {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
             {% if porcentagemDesconto < 100 %}
                 <span class="discount"> {{ porcentagemDesconto|number_format }}% OFF </span>
-            {% endif %}  
+            {% endif %}
         {% endif %}
     </div>
     <a href="{{ product.link }}" data-tray-tst="vitrine_produto_link_imagem">
@@ -26,7 +26,7 @@
                 <img width="500" src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
             {% endif %}
         </div>
-    
+
         <div class="product-name" itemprop="name">{{ product.name|length > 25 ? product.name[0:25] ~ '...' : product.name }}</div>
 
         <span class="ranking-content">
@@ -51,7 +51,7 @@
         {% if product.ean %}
             <meta itemprop="gtin14" content="{{ product.ean }}">
         {% endif %}
-        
+
         {% if product.description_small %}
             <meta itemprop="description" content="{{ product.description_small }}">
         {% endif %}
@@ -60,7 +60,7 @@
         <span itemprop="brand" itemscope itemtype="http://schema.org/Organization">
             <meta itemprop="name" content="{{ product.brand }}"/>
         </span>
-        {% endif %} 
+        {% endif %}
 
 
         {% for discount in product.ProgressiveDiscounts %}
@@ -68,8 +68,8 @@
             <div class="product-discount-recursive-tag">{{discount.tag}}</div>
             <div class="product-discount-recursive-desc">{{discount.description}}</div>
         {% endif %}
-    {% endfor %} 
-    
+    {% endfor %}
+
         {% if settings.cache_infopreco %}
         <div data-module="pricing" data-snippet="snippets/product-payment" data-product-id="{{ product.id }}">
             <div class="pricing">
@@ -79,18 +79,18 @@
         {% else %}
             {% element 'snippets/product-payment' {"product": product } %}
         {% endif %}
-        
+
     </a>
-    
+
     {% if pages.current == 'catalog' and settings.compare %}
     <div class="compare-buttons">
         {% set compareCSS = 'compare-hidden' %}
 
-        <a data-compare="remove" href="{{ links.compare_delete ~ product.id }}" class="{{ not product.compare ? compareCSS }}">
-            <span class="filter-checkbox checked"></span>
+        <!-- <a data-compare="remove" href="{{ links.compare_delete ~ product.id }}" class="{{ not product.compare ? compareCSS }}">
+            <span class="filter-checkbox checked"</span>
             {{ Translation("remover_comparar") }}
-        </a>
-        
+        </a> -->
+
         <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="{{ product.compare ? compareCSS }}">
             <span class="filter-checkbox"></span>
             {{ Translation("comparar_produto") }}

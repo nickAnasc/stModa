@@ -25,23 +25,23 @@
                 <h3>Minha Conta</h3>
                 <ul class="links-list">
                     <li>
-                        <a href="#">Criar Conta</a>
+                        <a href="/central-do-cliente">Criar Conta</a>
                     </li>
                     <li>
-                        <a href="#">Minha Conta</a>
+                        <a href="/loja/central_dados.php?loja=1072918#comprar">Minha Conta</a>
                     </li>
                     <li>
-                        <a href="#">Meus Pedidos</a>
+                        <a href="/loja/central_anteriores.php?loja=1072918">Meus Pedidos</a>
                     </li>
                 </ul>
             </nav>
 
             {%
-                if 
+                if
                 Translation('ag_atendimento') != '' or
-                Translation('ag_telefone_1') != '' or 
-                Translation('ag_telefone_2') != '' or 
-                Translation('ag_email_1') != '' or 
+                Translation('ag_telefone_1') != '' or
+                Translation('ag_telefone_2') != '' or
+                Translation('ag_email_1') != '' or
                 Translation('ag_email_2') != ''
             %}
             <nav class="foo-contact footer-item">
@@ -56,7 +56,7 @@
                         </p>
                     </li>
                     {% endif %}
-                    
+
                     {% if Translation('ag_telefone_1') != '' or Translation('ag_telefone_2') != '' %}
                     <li class="store-phones">
                         <p data-tray-tst="contato_telefone">
