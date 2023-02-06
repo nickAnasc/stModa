@@ -1,2 +1,3 @@
 # Byte-compiled / optimized / DLL files
 node_modules
+.debug.sdk.log
