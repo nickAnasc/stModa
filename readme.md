@@ -1,5 +1,4 @@
 # Projeto Tray Commerce
-## _Rodando projetos via Docker_
 [![N|Solid](https://static3.tcdn.com.br/files/841504/themes/219/img/superteia.png?53e0d03b9b7e1961be46b00aeaec3ce1)](https://superteia.com.br/)
 
 ## INSTALAÇÃO DO PROJETO
@@ -10,7 +9,7 @@
   npm install @tray-tecnologia/tray-cli
 ```
 
-## CONFIURANDO O PROJETO
+## CONFIGURANDO O PROJETO
 ```sh
   tray configure --debug [key] [password] [theme_id]
 ```
