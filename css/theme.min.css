@@ -3504,7 +3504,8 @@ div[id^="AbaPersonalizada"] table td {
   font-family: "Open Sans", sans-serif;
   font-size: 2.5rem;
   font-weight: 400;
-  line-height: 2.5rem; }
+  line-height: 2.5rem;
+  text-align: center; }
 
 .page-newsletter p {
   color: #666;
@@ -3512,7 +3513,8 @@ div[id^="AbaPersonalizada"] table td {
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.3rem;
-  margin-top: 30px; }
+  margin-top: 30px;
+  text-align: center; }
 
 .page-newsletter .board {
   color: #666;
@@ -3521,6 +3523,18 @@ div[id^="AbaPersonalizada"] table td {
   font-weight: 400;
   line-height: 1.3rem;
   margin-top: 30px; }
+
+.page-newsletter .image {
+  width: 10%;
+  font-size: 15px;
+  font-weight: 600;
+  height: 40px;
+  background-color: var(--bgButton);
+  color: var(--textButton);
+  transition: .3s;
+  border: none; }
+  .page-newsletter .image:hover {
+    border-radius: 0 10px; }
 
 .page-busca_noticias .noticias li,
 .page-noticia .noticias li {
@@ -3707,8 +3721,7 @@ div[id^="AbaPersonalizada"] table td {
       text-decoration: none;
       transition: .3s; }
       .news .more-news .btn-news:hover {
-        border-radius: 0 10px;
-        transition: .3s; }
+        border-radius: 0 10px; }
 
 .page-noticia h2 {
   font-size: 25px;
