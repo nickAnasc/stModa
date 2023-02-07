@@ -5371,6 +5371,8 @@ div[id^="AbaPersonalizada"] table td {
               background-color: transparent;
               border: none;
               border-bottom: 1px solid var(--textHeader); }
+            .header .header__content .header__flex .header__action .header__search form .no-results {
+              padding: 10px; }
         .header .header__content .header__flex .header__action .hm-content {
           display: none;
           margin-left: 30px;
