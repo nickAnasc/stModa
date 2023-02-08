@@ -51,7 +51,7 @@
 
         setTimeout(function(){
             var secondVariation = document.querySelectorAll('.cor_variacao.passo2 .lista_cor_variacao li');
-
+            
             secondVariation.forEach(secVar => {
                 secVar.addEventListener('click', function(){
                     makeFetch(this.dataset.id);
