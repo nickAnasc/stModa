@@ -121,7 +121,6 @@
 }
 
 .news {
-    margin-top: 20px;
     .noticias {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -225,10 +224,12 @@
                 }
             }
         }
-        .news__content{
-            .noticias{
-                margin-top: 30px;
-            }
+    }
+
+    .news__content{
+        .noticias{
+            margin-top: 50px;
+
         }
     }
 
@@ -236,7 +237,7 @@
         text-align: center;
 
         .btn-news {
-            margin-top: 30px;
+            margin-top: 48px;
             font-size: 15px;
             font-weight: $semiBold;
             background-color: var(--bgButton);

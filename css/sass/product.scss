@@ -1,10 +1,9 @@
-// CARROSSEL DE DESTAQUE
-.destaque,
-.novidades,
+CARROSSEL DE DESTAQUE
+.carrosse-categories,
 .promocoes,
-.carrosse-categories {
-    margin-top: 20px;
-
+.destaque,
+.novidades {
+    margin-top: 50px;
 }
 .carrosse-categories{
     .showcase-banner{
@@ -13,16 +12,13 @@
         padding: 50px 0;
     }
 }
-.destaque, .novidades, .promocoes{
-    .showcase__title{
-        margin-bottom: 1px;
-    }
-}
+
 .banner-triplo{
     margin-top: 70px;
 }
-.showcase-content.normal-grid.product-carrossel{
-    margin-top: 10px;
+.banner-line {
+    margin-top: 50px;
+    margin-bottom: -39px;
 }
 .showcase {
     .showcase-content {
@@ -244,7 +240,7 @@
         display: flex;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
-            // margin-top: 10px;
+            margin-top: 23px;
 
         .showcase-content__item {
             width: calc(100% / 4);
