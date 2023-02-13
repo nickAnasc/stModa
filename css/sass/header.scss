@@ -1,7 +1,7 @@
 /**
  * Header
  */
- 
+
 .mini-header {
     background-color: var(--miniHeader);
     padding: 10px 0;
@@ -148,7 +148,7 @@
                                         color: var(--textMenu);
                                         text-decoration: none;
                                     }
-                                    
+
                                     .second-lvl {
                                         font-size: 20px;
                                     }
@@ -294,6 +294,9 @@
                             border-bottom: 1px solid var(--textHeader);
                         }
                     }
+                }
+                .no-results{
+                    padding: 10px;
                 }
 
                 .hm-content {
