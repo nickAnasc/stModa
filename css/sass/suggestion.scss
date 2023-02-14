@@ -15,6 +15,8 @@
             transform: translateX(-50%);
     top: 100%;
     width: 1320px;
+    height: 420px;
+    overflow-y: scroll;
 
     @media(max-width: 1399px) {
         width: 1140px;
@@ -35,14 +37,14 @@
     @media(max-width: 575px) {
         width: 100%;
     }
-    
+
     @media (max-width: $sm){
         display: block;
         left: 50%;
         transform: translateX(-50vw);
         width: 100vw;
     }
-    
+
     &.is-hidden{
         display: none;
     }
@@ -65,14 +67,14 @@
 .suggestion-words {
     padding: 15px;
     width: 100%;
-    
+
     span {
         border: none;
         color: #333;
         font-size: 16px;
         display: block;
         margin: 0 0 10px;
-        
+
         &:hover{
             cursor: pointer;
         }
@@ -84,29 +86,29 @@
     background-color: #fff;
     padding: 15px;
     width: 100%;
-    
+
     @media (max-width: $sm){
         width: 100%;
     }
-    
+
     a {
         display: flex;
         align-items: center;
         padding: 15px;
-        
+
         &:hover{
             background-color: #eee;
             border-radius: 20px 0;
             text-decoration: none;
         }
     }
-    
+
     span{
         color: #000;
         font-size: 16px;
         display: block;
     }
-    
+
     .suggestion-img {
         background: #fff;
         border: 1px solid #ebebeb;
@@ -116,17 +118,17 @@
         text-align: center;
         width: 90px;
         border-radius: 50%;
-        
+
         img{
             max-height: 90px;
             margin: 0 auto;
         }
     }
-    
+
     .suggestion-product{
         margin: 0;
     }
-    
+
     .idp{
         display: none;
     }
