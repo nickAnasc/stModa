@@ -58,7 +58,7 @@
                 -webkit-box-pack: justify;
                     -ms-flex-pack: justify;
                         justify-content: space-between;
-                margin:0px;
+                margin-left: 20px;
                 padding: 25px;
                 margin-bottom: 20px;
                 background-color: #fff;
@@ -108,12 +108,19 @@
                         color: var(--textButton);
                         text-decoration: none;
                         text-transform: uppercase;
+                        border-radius: 0 10px;
+                        transition: .3s;
                     }
 
                     @media(max-width: 1024px) {
                         padding: 6px 8px 5px;
                         font-size: 12px;
                     }
+                  
+                    @media(max-width: 420px) {
+                        margin-top: 11px;
+                     }
+
                 }
 
                 .form-ordenation {
@@ -129,6 +136,7 @@
                         margin-left: 5px;
                         font-weight: $semiBold;
                         // white-space: nowrap;
+                        padding-bottom: 10px;
                     }
 
                     @media(max-width: 417px) {
@@ -141,7 +149,7 @@
                     .select-filter {
                         padding: 6px;
                         border: 2px solid #ddd;
-                        margin-left: 5px;
+                        margin-left: 8px;
                         // border-radius: 15px 15px 0;
                     }
                 }
@@ -154,15 +162,22 @@
                     padding: 5px 9px 5px;
                     // border-radius: 15px 15px 0;
                     display: none;
-                    margin-left: 5px;
+                    margin-left: 8px;
 
                     @media(max-width: 991px) {
                         display: block;
+                        // margin-top:5px;
                     }
+
+                    @media(max-width: 450px) {
+                        margin-top: 11px;
+                    }
+
                     @media(max-width: 418px) {
                         margin-left: 10px;
                         justify-content: flex-end;
                     }
+
 
                 }
             }
@@ -184,7 +199,7 @@
             .catalog__filter {
                 width: 100%;
                 position: fixed;
-                z-index: 1;
+                z-index: -1;
                 top: 0;
                 left: 0;
                 padding: 20px 20%;
@@ -198,6 +213,7 @@
             .catalog__filter.open {
                 opacity: 1;
                 visibility: visible;
+                z-index: 1;
             }
 
             .catalog__showcase {
@@ -218,5 +234,8 @@
             @media(max-width: 991px) {
                 display: block!important;
             }
+        }
+        .breadcrumb-content {
+            padding:10px;
         }
     }

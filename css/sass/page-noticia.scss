@@ -259,6 +259,9 @@
             &:hover {
                 border-radius: 0 10px;
             }
+        @media(max-width: 991px) {
+            margin-top: 20px;
+        }
         }
     }
 }
