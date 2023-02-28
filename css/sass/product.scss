@@ -56,6 +56,49 @@
                 color: var(--productText);
             }
 
+            .compare-buttons {
+                margin-top: 10px;
+
+                a {
+                    color: var(--productText);
+                }
+
+                a[data-compare="remove"] {
+                    display: none;
+                }
+
+
+                a[data-compare="add"] {
+                    .filter-checkbox {
+                        border: 2px solid var(--bgButton);
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        vertical-align: middle
+                    }
+                }
+
+                a[data-compare="add"].compare-hidden {
+                    .filter-checkbox {
+                        border-radius: 50%;
+                        background-color: var(--bgButton);
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+
+            .showcase {
+                .showcase-content {
+                    &__item {
+                        a {
+                            color: var(--productText);
+                        }
+                    }
+                }
+            }
+
             .btn-comprar {
                 white-space: nowrap;
                 color: var(--textButton);
@@ -68,7 +111,7 @@
                 width: 100%;
                 text-align: center;
                 position: absolute;
-                bottom: 0;
+                bottom: 100px;
                 left: 0;
                 opacity: 0;
                 visibility: hidden;

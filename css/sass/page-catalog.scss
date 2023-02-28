@@ -44,6 +44,25 @@
                 }
             }
 
+            .btn-compare {
+                background-color: var(--bgButton);
+                color: var(--textButton);
+                padding: 6px 10px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                    color: var(--textButton);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            
+                @media(max-width: 1024px) {
+                    padding: 6px 8px 5px;
+                    font-size: 12px;
+                }
+            }
+
             .form-ordenation {
                 display: -webkit-box;
                 display: -ms-flexbox;
