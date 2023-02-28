@@ -138,11 +138,13 @@
             opacity: 0;
             visibility: hidden;
             transition: .3s;
+            z-index: -1;
         }
 
         .catalog__filter.open {
             opacity: 1;
             visibility: visible;
+            z-index: 2;
         }
     
         .catalog__showcase {
