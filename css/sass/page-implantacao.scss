@@ -1,28 +1,28 @@
-.page-implantacao {
-
-    .page-content {
-
-        >* {
+.page-implantacao{
+    
+    .page-content{
+        
+        > *{
             background: #fff;
             font-size: 1.4rem;
             padding: 15px;
         }
-
+        
     }
 
-    .news.implantation {
+    .news.implantation{
         margin: 30px 0;
         padding: 0;
         width: auto;
-
-        .news-botao {
+        
+        .news-botao{
             padding: 11px 40px;
             text-transform: uppercase;
         }
     }
-
+    
     #implantation-news-nome,
-    #implantation-news-email {
+    #implantation-news-email{
         background: 0 0;
         border: 1px solid #e2e2e2;
         color: #a2a2a2;

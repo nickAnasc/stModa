@@ -1,47 +1,15 @@
 .reviews {
     padding: 50px 0;
 
-    .control {
-        position: relative;
-
-        &::before {
-            font-family: "Font Awesome 5 Free";
-            content: "\f10d";
-            font-weight: bold;
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: var(--bgButton);
-        }
-
-        &::after {
-            font-family: "Font Awesome 5 Free";
-            content: "\f10e";
-            font-weight: bold;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            color: var(--bgButton);
-        }
-
-        @media(max-width: 580px) {
-
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
-    }
-
     .dep_lista {
         margin-top: 50px;
 
         .dep_item {
-            padding: 30px 70px;
+            padding: 30px;
             background-color: #fff;
-            box-shadow: 1px 1px 0 0 #ccc;
+            box-shadow: 0 4px 10px -7px #000;
             margin: 20px 10px;
-            border-radius: 30px 30px 0;
+            border-radius: 30px;
 
             @media(max-width: 580px) {
                 padding: 30px;
@@ -52,22 +20,37 @@
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                flex-direction: column;
+                    -webkit-box-direction: reverse;
+                        -ms-flex-direction: column-reverse;
+                            flex-direction: column-reverse;
                 text-align: center;
+                position: relative;
+
+                &:before {
+                    content: "\f10d";
+                    font-weight: bold;
+                    font-family: $fontIcon;
+                    position: absolute;
+                    color: var(--bgHeader);
+                    top: 0;
+                    left: 50%;
+                    -webkit-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                        transform: translateX(-50%);
+                }
 
                 .dep_nome {
-                    margin-bottom: 10px;
-                    font-size: 20px;
+                    font-size: 16px;
+                    font-weight: $bold;
                     font-style: italic;
-
+                    font-family: $fontStyle;
+                    
                     span {
                         display: none;
                     }
@@ -79,19 +62,14 @@
 
                 .dep_msg {
                     font-size: 16px;
-                    margin-bottom: 20px;
-
+                    margin: 20px 0;
                     span {
                         display: none;
                     }
                 }
 
                 .dep_data {
-                    span {
-                        display: none;
-                    }
-
-                    font-weight: $semiBold;
+                    display: none;
                 }
             }
         }
@@ -110,7 +88,6 @@
             font-size: 15px;
             font-weight: bold;
             padding: 15px 30px;
-            border-radius: 30px 30px 0;
             background-color: var(--bgButton);
             color: var(--textButton);
             display: inline-block;
@@ -118,7 +95,7 @@
             text-decoration: none;
 
             &:hover {
-                border-radius: 30px;
+                border-radius: 0 10px;
             }
         }
     }

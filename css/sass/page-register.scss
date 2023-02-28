@@ -3,10 +3,9 @@
 **/
 
 .page-register,
-.page-cadastro_bloqueado {
+.page-cadastro_bloqueado{
     .page-content {
         padding: 50px 0;
-
         h1 {
             text-align: center;
             font-weight: $bold;
@@ -46,50 +45,44 @@
         }
 
         #frm2 {
-            .board {
-                text-align: center;
+            fieldset {
+                width: 60%;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 30px;
+                margin-top: 15px;
+                margin-bottom: 30px;
+                border-radius: 20px 20px 0;
+                box-shadow: 1px 1px 0px 0px #00000040;
 
-                fieldset {
-                    width: 60%;
-                    margin: 0 auto;
-                    background-color: #fff;
-                    padding: 30px;
-                    margin-top: 15px;
-                    margin-bottom: 30px;
-                    border-radius: 20px 20px 0;
-                    box-shadow: 1px 1px 0px 0px #00000040;
-                    text-align: left;
+                @media(max-width: 767px) {
+                    width: 100%;
+                }
 
-                    @media(max-width: 767px) {
+                #fisica,
+                #juridica {
+                    margin-top: 20px;
+                }
+
+                label {
+                    width: 100%;
+                    margin-bottom: 15px;
+                    font-size: 15px;
+
+                    input.text {
                         width: 100%;
-                    }
+                        padding: 10px;
+                        margin: 10px 0px 5px;
+                        border: 1px solid #ddd;
+                        border-radius: 6px;
+                        transition: .3s;
 
-                    #fisica,
-                    #juridica {
-                        margin-top: 20px;
-                    }
-
-                    label {
-                        width: 100%;
-                        margin-bottom: 15px;
-                        font-size: 15px;
-
-                        input.text {
-                            width: 100%;
-                            padding: 10px;
-                            margin: 10px 0px 5px;
-                            border: 1px solid #ddd;
-                            border-radius: 6px;
-                            transition: .3s;
-
-                            &:focus {
-                                border-radius: 20px 20px 0;
-                                border: 1px solid #888;
-                            }
+                        &:focus {
+                            border-radius: 20px 20px 0;
+                            border: 1px solid #888;
                         }
                     }
                 }
-
             }
 
             .termContainerRegister {

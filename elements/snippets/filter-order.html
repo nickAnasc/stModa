@@ -1,20 +1,20 @@
 <form data-form="filter" class="form-ordenation">
     {% if search.order_options %}
-    <p class="order">Ordenar Por:</p>
-    <select name="order" class="select-filter">
-        {% for option in search.order_options %}
-        <option value="{{ option.value }}">{{ option.name }}</option>
-        {% endfor %}
-    </select>
+        <p class="order">Ordenar Por:</p>
+        <select name="order" class="select-filter">
+            {% for option in search.order_options %}
+                <option value="{{ option.value }}">{{ option.name }}</option>
+            {% endfor %}
+        </select>
     {% endif %}
 </form>
 
 <script>
-    (function () {
+    (function(){
         var selectFilter = document.querySelector('.select-filter');
         var formFilter = document.querySelector('.form-ordenation');
 
-        selectFilter.addEventListener('change', function () {
+        selectFilter.addEventListener('change', function(){
             formFilter.submit();
         })
     })();

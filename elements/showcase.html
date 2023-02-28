@@ -1,14 +1,17 @@
 {% if products|length > 0 %}
-<div class="showcase container" data-tray-tst="vitrine_home">
-    <h1 class="showcase__title">{{ showcaseTitle }}</h1>
-    <ul class="showcase-content product-carrossel prod" style="width: 100%;">
-        {% for product in products %}
-        {% set ranking = product.ranking %}
-        <li class="showcase-content__item" data-tray-tst="vitrine_produto" itemscope
-            itemtype="https://schema.org/SomeProducts">
-            {% element 'snippets/product' {"product": product} %}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+    <div class="showcase container">
+        <h1 class="showcase__title">{{ showcaseTitle }}</h1>
+        <div class="control">
+            <ul class="showcase-content product-carrossel prod" style="width: 100%;">
+                {% for product in products %}
+                    {% set ranking = product.ranking %}
+                    <li class="showcase-content__item">
+                        {% element 'snippets/product' {"product": product} %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
+            <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
+        </div>
+    </div>
 {% endif %}

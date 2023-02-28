@@ -7,3 +7,17 @@
         </div>
     </div>
 </section>
+
+<script>
+    (function(){
+        setTimeout(function(){
+            var titles = document.querySelectorAll('#noticia_dados h3');
+
+            titles.forEach(title => {
+                if(title.textContent.length > 30) {
+                    title.querySelector('a').textContent = title.querySelector('a').textContent.slice(0, 30) + '...';
+                }
+            });
+        }, 1500)
+    })()
+</script>

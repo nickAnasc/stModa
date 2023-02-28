@@ -2,7 +2,7 @@
 * Page Contact
 **/
 
-.page-contact {
+.page-contact{
     .page-content {
         width: 1170px;
         margin: 0 auto;
@@ -39,7 +39,7 @@
         @media(max-width: 1024px) {
             width: 768px;
         }
-
+        
         @media(max-width: 800px) {
             width: 100%;
         }
@@ -50,8 +50,8 @@
             display: flex;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
+                -ms-flex-direction: column;
+                    flex-direction: column;
 
             label.block {
                 display: -webkit-box;
@@ -59,8 +59,8 @@
                 display: flex;
                 -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
                 text-align: left;
                 width: 65%;
                 margin: 0 auto 15px;
@@ -115,7 +115,7 @@
                 &:hover {
                     border-radius: 30px;
                 }
-
+                
                 &::before {
                     content: "Enviar";
                     color: #fff;

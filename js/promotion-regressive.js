@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 function regressivePromotion() {
-    var dias = 0, horas = 0, minutos = 0, segundos = 0;
+    var dias = 0, horas = 0, minutos = 0, segundos = 0;    
     var target_date = new Date(document.querySelector('.end-promotion').dataset.end.replace('-', '/')).getTime();
 
     var current_date = new Date().getTime();
@@ -19,16 +19,16 @@ function regressivePromotion() {
     minutos = parseInt(segundos_f / 60);
     segundos = parseInt(segundos_f % 60);
 
-    if (!isNaN(dias) && !isNaN(horas) && !isNaN(minutos) && !isNaN(segundos)) {
+    if(!isNaN(dias) && !isNaN(horas) && !isNaN(minutos) && !isNaN(segundos)) {
         var arrElements = [
             '<div class="message-promo-flex">' +
-            '<h6>Essa promoï¿½ï¿½o termina em: </h6>' +
-            '<div class="contador-flex">' +
-            '<p class="promo-item" id="dia"> <span>' + dias + ' dias </span> </p>' +
-            '<p class="promo-item" id="hora"> <span>' + horas + ' h </span> </p>' +
-            '<p class="promo-item" id="minuto"> <span>' + minutos + ' min </span> </p>' +
-            '<p class="promo-item" id="segundo"> <span>' + segundos + ' seg </span> </p>' +
-            '</div>' +
+                '<h6>Essa promoção termina em: </h6>' +
+                '<div class="contador-flex">' +
+                    '<p class="promo-item" id="dia"> <span>' + dias + ' dias </span> </p>' +
+                    '<p class="promo-item" id="hora"> <span>' + horas + ' h </span> </p>' +
+                    '<p class="promo-item" id="minuto"> <span>' + minutos + ' min </span> </p>' +
+                    '<p class="promo-item" id="segundo"> <span>' + segundos + ' seg </span> </p>' +
+                '</div>' +
             '</div>'
         ]
 

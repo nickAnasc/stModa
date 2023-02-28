@@ -1,14 +1,11 @@
 .brands {
     padding: 70px 0 50px;
 
-    .container {
-        .brands-carrossel.slick-initialized.slick-slider {
-            padding: 25px;
-        }
+    .control {
+        margin-top: 30px;
     }
 
     .brands-carrossel {
-
         .link-brand {
             text-decoration: none;
 
@@ -22,7 +19,7 @@
                     border-radius: 15px 15px 0;
                 }
             }
-
+    
             .name-brand {
                 text-align: center;
                 margin-top: 15px;
@@ -32,8 +29,4 @@
             }
         }
     }
-}
-
-.brands-carrossel.slick-initialized.slick-slider {
-    padding: 25px;
 }

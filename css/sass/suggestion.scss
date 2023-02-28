@@ -1,31 +1,54 @@
 .suggestion {
+    z-index: 9999;
     background: #fff;
     border: 1px solid #ebebeb;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
     display: block;
     left: 0;
     max-width: none;
     min-width: 0;
     padding: 0;
     position: absolute;
-    right: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
     top: 100%;
+    width: 1320px;
 
-    @media (max-width: $sm) {
+    @media(max-width: 1399px) {
+        width: 1140px;
+    }
+
+    @media(max-width: 1199px) {
+        width: 960px;
+    }
+
+    @media(max-width: 991px) {
+        width: 720px;
+    }
+
+    @media(max-width: 767px) {
+        width: 540px;
+    }
+
+    @media(max-width: 575px) {
+        width: 100%;
+    }
+    
+    @media (max-width: $sm){
         display: block;
         left: 50%;
         transform: translateX(-50vw);
         width: 100vw;
-        height: 420px;
-        overflow: scroll;
     }
-
-    &.is-hidden {
+    
+    &.is-hidden{
         display: none;
     }
 }
 
-.suggestion-title {
+.suggestion-title{
     background: none !important;
     border-bottom: 1px solid #ebebeb;
     color: #010101;
@@ -34,53 +57,56 @@
     padding-bottom: 10px;
     text-indent: 0;
     text-transform: uppercase;
-    @include typo(1.125rem, 700, $font, 1.6rem);
+    font-family: $fontStyle;
+    font-weight: $bold;
+    font-size: 20px;
 }
 
-.suggestion-words,
-.no-results {
+.suggestion-words {
     padding: 15px;
     width: 100%;
-
+    
     span {
         border: none;
-        color: #5a5a5a;
+        color: #333;
+        font-size: 16px;
         display: block;
         margin: 0 0 10px;
-        @include typo(1rem, 700, $font, 1.5rem);
-
-        &:hover {
+        
+        &:hover{
             cursor: pointer;
         }
     }
 }
 
+
 .suggestion-products {
     background-color: #fff;
     padding: 15px;
     width: 100%;
-
-    @media (max-width: $sm) {
+    
+    @media (max-width: $sm){
         width: 100%;
     }
-
+    
     a {
         display: flex;
         align-items: center;
-        padding: 15px 0;
-
-        &:hover {
-            background: #f7f7f7;
+        padding: 15px;
+        
+        &:hover{
+            background-color: #eee;
+            border-radius: 20px 0;
             text-decoration: none;
         }
     }
-
-    span {
-        color: #5a5a5a;
+    
+    span{
+        color: #000;
+        font-size: 16px;
         display: block;
-        @include typo(1rem, 700, $font, 1.5rem);
     }
-
+    
     .suggestion-img {
         background: #fff;
         border: 1px solid #ebebeb;
@@ -89,23 +115,23 @@
         overflow: hidden;
         text-align: center;
         width: 90px;
-
-        img {
-            border: 1px solid #ebebeb;
+        border-radius: 50%;
+        
+        img{
             max-height: 90px;
+            margin: 0 auto;
         }
     }
-
-    .suggestion-product {
+    
+    .suggestion-product{
         margin: 0;
     }
-
-    .idp {
+    
+    .idp{
         display: none;
     }
 }
 
-.suggestion-desc {
+.suggestion-desc{
     flex: 1;
-    overflow: hidden;
 }

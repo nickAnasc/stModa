@@ -1,5 +1,5 @@
 {% if products|length > 0 %}
-{% for product in products %}
-{% element 'snippets/product' {"product": product} %}
-{% endfor %}
+    {% for product in products %}
+        {% element 'snippets/product' {"product": product} %}
+    {% endfor %}
 {% endif %}

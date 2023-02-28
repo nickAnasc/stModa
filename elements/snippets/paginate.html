@@ -2,16 +2,27 @@
     <!-- <div>
         {{ paginate.counter('Encontramos {:count} produto(s) em {:pages} página(s)') }}
     </div> -->
-
+    
     <div class="paginate-content">
-        {% if paginate.params.pageCount > 1 %}
-        {{ paginate.first('<<', {'class': 'first-page' }) }} {% if paginate.hasPrev %} {{ paginate.prev('<',
-            {'class': 'prev-page' }) }} {% endif %} {{ paginate.numbers({ 'modulus' : 5, 'separator' : '' , 'class'
-            : 'paginate-count' , 'currentClass' : 'page-current' }) }} {% if paginate.hasNext %} {{ paginate.next('>',
-            {'class': 'next-page'}) }}
-            {% endif %}
-
-            {{ paginate.last('>>', {'class': 'last-page'}) }}
-            {% endif %}
+    {% if paginate.params.pageCount > 1 %}
+        {{ paginate.first('<<', {'class': 'first-page'}) }}
+     
+        {% if paginate.hasPrev %}
+            {{ paginate.prev('<', {'class': 'prev-page'}) }}
+        {% endif %}
+     
+        {{ paginate.numbers({
+            'modulus': 5,
+            'separator': '',
+            'class': 'paginate-count',
+            'currentClass': 'page-current'
+        }) }}
+     
+        {% if paginate.hasNext %}
+            {{ paginate.next('>', {'class': 'next-page'}) }}
+        {% endif %}
+     
+        {{ paginate.last('>>', {'class': 'last-page'}) }}
+    {% endif %}
     </div>
 </div>

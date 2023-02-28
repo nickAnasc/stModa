@@ -2,28 +2,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    html,
-    body,
-    .panel {
-        background-color: #f1f1f1 !important;
+    html, body, .panel {
+        background-color: #f1f1f1!important;
         font-family: 'Nunito', sans-serif;
     }
-
     .panel {
         margin-bottom: 50px;
         box-shadow: none;
     }
-
     .menu {
         padding: 0;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
-
     .menu a {
         width: calc(100% / 5);
         background-color: #fff;
@@ -40,27 +35,23 @@
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
-
     .menu a:last-child {
         margin-right: 0;
     }
-
     .menu a:hover {
         background-color: #0099ff;
         color: #fff;
     }
-
     .menu a i {
         margin-right: 10px;
         font-size: 20px;
     }
-
     .all-content {
         background-color: #fff;
         border-radius: 10px 10px 0;
@@ -68,7 +59,6 @@
         padding: 20px 60px;
         margin-top: 20px;
     }
-
     .all-content .title {
         font-size: 20px;
         font-weight: 700;
@@ -78,14 +68,12 @@
         font-family: 'Nunito', sans-serif;
         margin-top: 20px;
     }
-
     .box .box-content {
         border: 1px solid #d1d1d1;
         border-radius: 15px 15px 0;
         padding: 20px;
         margin-bottom: 20px;
     }
-
     .box-content .sub-title {
         font-size: 16px;
         color: #000;
@@ -97,21 +85,19 @@
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         font-family: 'Nunito', sans-serif;
     }
-
     .box-content .content.open {
         opacity: 1;
         visibility: visible;
         height: auto;
         margin: 0;
     }
-
     .box-content .content {
         opacity: 0;
         visibility: hidden;
@@ -121,58 +107,51 @@
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
         -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+            flex-wrap: wrap;
     }
-
     .box-content .content.selos {
         display: block;
     }
-
     .box-content .content.selos .content-selos__flex {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+            flex-wrap: wrap;
     }
-
     .box-content .content .space {
         width: calc(100% / 3);
         margin-top: 15px;
     }
-
     .box-content .content .space__flex {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
-
     .box-content .content .space__flex.file {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
         -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
     }
-
     .box-content .content .space label {
         display: block;
     }
-
     .box-content .content .inp-default.color {
         border-radius: 30px 0 0 30px;
         border: 1px solid #ddd;
@@ -182,7 +161,6 @@
         height: 35px;
         width: 75%;
     }
-
     .box-content .content .inp-default {
         border-radius: 30px;
         border: 1px solid #ddd;
@@ -191,11 +169,9 @@
         height: 35px;
         width: 75%;
     }
-
     .box-content .content .inp-default:focus {
         border: 1px solid;
     }
-
     .box-content .content .inp-color {
         width: 35px;
         height: 35px;
@@ -203,18 +179,15 @@
         display: inline-block;
         border: 1px solid #ccc;
     }
-
     .img-thumbnail {
         margin-right: 40px;
         background-color: #ddd;
         display: block;
         margin-bottom: 10px;
     }
-
     .checkbox-hidden {
         display: none;
     }
-
     .check-style {
         width: 25px;
         height: 25px;
@@ -224,28 +197,24 @@
         border: 2px solid #ddd;
         cursor: pointer;
     }
-
     .check-style::before {
         content: "Desativado";
         position: absolute;
         top: 50%;
         left: calc(100% + 5px);
         -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
     }
-
-    .checkbox-hidden:checked+.check-style {
+    .checkbox-hidden:checked + .check-style {
         background-color: #0fb17d;
         border-radius: 50%;
         border: 2px solid #0fb17d;
     }
-
-    .checkbox-hidden:checked+.check-style::before {
+    .checkbox-hidden:checked + .check-style::before {
         content: "Ativo";
     }
-
-    .checkbox-hidden:checked+.check-style::after {
+    .checkbox-hidden:checked + .check-style::after {
         content: "\f00c";
         font-family: "Font Awesome 5 Free";
         font-weight: bold;
@@ -254,10 +223,9 @@
         top: 50%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
     }
-
     .btn-remove {
         background-color: #741010;
         margin-top: 15px;
@@ -268,15 +236,12 @@
         font-weight: bold;
         transition: .3s;
     }
-
     .btn-remove:hover {
         border-radius: 50px;
     }
-
     .doc-contact {
         margin-bottom: 20px;
     }
-
     .doc-contact a {
         text-decoration: none;
         font-size: 16px;
@@ -286,11 +251,10 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
     }
-
     .doc-contact a i {
         margin-right: 10px;
         background-color: #0099ff;
@@ -301,15 +265,14 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
         border-radius: 50%;
     }
-
     .doc-contact a:hover i {
         border-radius: 50px 50px 10px;
     }
@@ -320,7 +283,7 @@
         <a href="https://superteia.com.br/#contato" target="_blank">
             <i class="far fa-envelope-open"></i> Entre em Contato Conosco
         </a>
-        <a href="http://tematray.web281.uni5.net/doc-temas/stInfo/" target="_blank">
+        <a href="http://tematray.web281.uni5.net/doc-temas/SuperT/" target="_blank">
             <i class="fas fa-book"></i> Documentação do Tema
         </a>
     </nav>
@@ -353,26 +316,29 @@
     <div class="all-content container">
         <div class="box" data-id="cores">
             <h1 class="title">Cores do Layout</h1>
-            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para
-                configurar as cores da sua régua</p>
+            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para configurar as cores da sua régua</p>
             <!-- TOPO INFO -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Topo de Informações <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Topo de Informações <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="miniHeader" id="miniHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="miniHeader" id="miniHeader" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="textMiniHeader" id="textMiniHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="textMiniHeader" id="textMiniHeader" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Cor do Texto Secundário</label>
+                        <div class="space__flex">
+                            <input type="text" name="textSecondaryMiniHeader" id="textSecondaryMiniHeader" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -386,32 +352,21 @@
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="bgHeader" id="bgHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="bgHeader" id="bgHeader" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="textHeader" id="textHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="textHeader" id="textHeader" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Ícone</label>
                         <div class="space__flex">
-                            <input type="text" name="iconHeader" id="iconHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
-                            <span class="inp-color"></span>
-                        </div>
-                    </div>
-                    <div class="space">
-                        <label>Cor texto Ícone</label>
-                        <div class="space__flex">
-                            <input type="text" name="textIconHeader" id="textIconHeader" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="iconHeader" id="iconHeader" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -425,8 +380,7 @@
                     <div class="space">
                         <div>
                             <p>Largura Máxima recomendada: <strong>150px (pixels)</strong></p>
-                            <p>Extensões recomendadas para o Logo: <strong>JPEG ou PNG (caso o fundo seja
-                                    transparente).</strong></p>
+                            <p>Extensões recomendadas para o Logo: <strong>JPEG ou PNG (caso o fundo seja transparente).</strong></p>
                         </div>
                         <label>Logo Desktop</label>
                         <div class="space__flex">
@@ -445,34 +399,16 @@
                 <h3 class="sub-title" onclick="openContent(this)">Menu <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
-                        <label>Cor de Fundo</label>
+                        <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="bgMenu" id="bgMenu" onkeyup="changeColor(this)"
-                                class="inp-default color">
-                            <span class="inp-color"></span>
-                        </div>
-                    </div>
-                    <div class="space">
-                        <label>Cor de Fundo</label>
-                        <div class="space__flex">
-                            <input type="text" name="textMenu" id="textMenu" onkeyup="changeColor(this)"
-                                class="inp-default color">
-                            <span class="inp-color"></span>
-                        </div>
-                    </div>
-                    <div class="space">
-                        <label>Hover Menu</label>
-                        <div class="space__flex">
-                            <input type="text" name="hoverMenu" id="hoverMenu" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="textMenu" id="textMenu" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Hover Texto Menu</label>
                         <div class="space__flex">
-                            <input type="text" name="hoverTextMenu" id="hoverTextMenu" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="hoverTextMenu" id="hoverTextMenu" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -486,16 +422,14 @@
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="bgButton" id="bgButton" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="bgButton" id="bgButton" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="textButton" id="textButton" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="textButton" id="textButton" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -519,16 +453,14 @@
                             <div class="space">
                                 <label>Cor do Fundo</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloDestaqueBg" id="seloDestaqueBg"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloDestaqueBg" id="seloDestaqueBg" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Texto</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloDestaqueText" id="seloDestaqueText"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloDestaqueText" id="seloDestaqueText" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
@@ -542,16 +474,14 @@
                             <div class="space">
                                 <label>Cor do Fundo</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloDescontoBg" id="seloDescontoBg"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloDescontoBg" id="seloDescontoBg" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Texto</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloDescontoText" id="seloDescontoText"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloDescontoText" id="seloDescontoText" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
@@ -573,16 +503,14 @@
                             <div class="space">
                                 <label>Cor do Fundo</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloNovosBg" id="seloNovosBg" onkeyup="changeColor(this)"
-                                        class="inp-default color">
+                                    <input type="text" name="seloNovosBg" id="seloNovosBg" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Texto</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloNovosText" id="seloNovosText"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloNovosText" id="seloNovosText" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
@@ -602,16 +530,14 @@
                             <div class="space">
                                 <label>Cor do Fundo</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloShippingBg" id="seloShippingBg"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloShippingBg" id="seloShippingBg" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Texto</label>
                                 <div class="space__flex">
-                                    <input type="text" name="seloShippingText" id="seloShippingText"
-                                        onkeyup="changeColor(this)" class="inp-default color">
+                                    <input type="text" name="seloShippingText" id="seloShippingText" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
@@ -627,24 +553,21 @@
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="prorductBG" id="prorductBG" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="prorductBG" id="prorductBG" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="productText" id="productText" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="productText" id="productText" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Preço</label>
                         <div class="space__flex">
-                            <input type="text" name="productPrice" id="productPrice" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="productPrice" id="productPrice" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -658,32 +581,28 @@
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="newsletterBg" id="newsletterBg" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="newsletterBg" id="newsletterBg" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="newsletterText" id="newsletterText" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="newsletterText" id="newsletterText" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Botão</label>
                         <div class="space__flex">
-                            <input type="text" name="newsletterBtnBg" id="newsletterBtnBg" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="newsletterBtnBg" id="newsletterBtnBg" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor texto do Botão</label>
                         <div class="space__flex">
-                            <input type="text" name="newsBtnText" id="newsBtnText" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="newsBtnText" id="newsBtnText" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -697,24 +616,21 @@
                     <div class="space">
                         <label>Cor de Fundo</label>
                         <div class="space__flex">
-                            <input type="text" name="footerBg" id="footerBg" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="footerBg" id="footerBg" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Texto</label>
                         <div class="space__flex">
-                            <input type="text" name="footerText" id="footerText" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="footerText" id="footerText" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
                     <div class="space">
                         <label>Cor do Ícone</label>
                         <div class="space__flex">
-                            <input type="text" name="iconColor" id="iconColor" onkeyup="changeColor(this)"
-                                class="inp-default color">
+                            <input type="text" name="iconColor" id="iconColor" onkeyup="changeColor(this)" class="inp-default color">
                             <span class="inp-color"></span>
                         </div>
                     </div>
@@ -725,17 +641,14 @@
             <h1 class="title">Banner Régua</h1>
             <p>Dimensões do ícone: 45 x 45 pixels.</p>
             <p>Extenção PNG (Para ícones transparentes), JPG, JPEG</p>
-            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para
-                configurar as cores da sua régua</p>
+            <p>Use o <a href="https://htmlcolors.com/google-color-picker" target="_blank">Google Color Picker</a> para configurar as cores da sua régua</p>
 
             <!-- ATIVAR RÉGUA -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Ativar/Desativar Régua <i
-                        class="fas fa-angle-down"></i></h3>
+                <h3 class="sub-title" onclick="openContent(this)">Ativar/Desativar Régua <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
-                        <label style="white-space: nowrap;">Use esta configuração para Ativar ou Desativar a
-                            Régua</label>
+                        <label style="white-space: nowrap;">Use esta configuração para Ativar ou Desativar a Régua</label>
                         <div class="space__flex">
                             <input class="checkbox-hidden" type="checkbox" name="booleanRegua" id="booleanRegua">
                             <label for="booleanRegua" class="check-style"></label>
@@ -754,24 +667,21 @@
                             <div class="space">
                                 <label>Cor de Fundo</label>
                                 <div class="space__flex">
-                                    <input type="text" name="reguaBg" id="reguaBg" onkeyup="changeColor(this)"
-                                        class="inp-default color">
+                                    <input type="text" name="reguaBg" id="reguaBg" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Título</label>
                                 <div class="space__flex">
-                                    <input type="text" name="reguaTitle" id="reguaTitle" onkeyup="changeColor(this)"
-                                        class="inp-default color">
+                                    <input type="text" name="reguaTitle" id="reguaTitle" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Cor do Texto</label>
                                 <div class="space__flex">
-                                    <input type="text" name="reguaText" id="reguaText" onkeyup="changeColor(this)"
-                                        class="inp-default color">
+                                    <input type="text" name="reguaText" id="reguaText" onkeyup="changeColor(this)" class="inp-default color">
                                     <span class="inp-color"></span>
                                 </div>
                             </div>
@@ -856,15 +766,13 @@
                                 <label>Quarto Ícone</label>
                                 <div class="space__flex file">
                                     <input type="file" name="reguaIconeQuatro" id="reguaIconeQuatro">
-                                    <button class="btn-remove"
-                                        onclick="removeImage('#reguaIconeQuatro')">Remover</button>
+                                    <button class="btn-remove" onclick="removeImage('#reguaIconeQuatro')">Remover</button>
                                 </div>
                             </div>
                             <div class="space">
                                 <label>Título</label>
                                 <div class="space__flex">
-                                    <input type="text" name="reguaTitleQuatro" id="reguaTitleQuatro"
-                                        class="inp-default">
+                                    <input type="text" name="reguaTitleQuatro" id="reguaTitleQuatro" class="inp-default">
                                 </div>
                             </div>
                             <div class="space">
@@ -882,8 +790,7 @@
             <h1 class="title">Vitrines</h1>
             <!-- VITRINE DESTAQUE -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Destaque <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Destaque <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Ativar Vitrine</label>
@@ -909,14 +816,12 @@
 
             <!-- VITRINE NOVIDADES -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Novidades <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Novidades <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Ativar Vitrine</label>
                         <div class="space__flex">
-                            <input class="checkbox-hidden" type="checkbox" name="booleanNovidades"
-                                id="booleanNovidades">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanNovidades" id="booleanNovidades">
                             <label for="booleanNovidades" class="check-style"></label>
                         </div>
                     </div>
@@ -937,14 +842,12 @@
 
             <!-- VITRINE CATEGORIAS -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Categoria <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Categoria <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Ativar Vitrine</label>
                         <div class="space__flex">
-                            <input class="checkbox-hidden" type="checkbox" name="booleanCategoria"
-                                id="booleanCategoria">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanCategoria" id="booleanCategoria">
                             <label for="booleanCategoria" class="check-style"></label>
                         </div>
                     </div>
@@ -959,9 +862,22 @@
                         </div>
                     </div>
                     <div class="space">
+                        <label>Cor de Fundo</label>
+                        <div class="space__flex">
+                            <input type="text" name="bgVitCategorias" id="bgVitCategorias" onkeyup="changeColor(this)" class="inp-default color">
+                            <span class="inp-color"></span>
+                        </div>
+                    </div>
+                    <div class="space">
                         <label>Título da Vitrine</label>
                         <div class="space__flex">
                             <input class="inp-default" type="text" name="titleVitCategorias" id="titleVitCategorias">
+                        </div>
+                    </div>
+                    <div class="space">
+                        <label>Texto da Vitrine</label>
+                        <div class="space__flex">
+                            <input class="inp-default" type="text" name="textVitCategorias" id="textVitCategorias">
                         </div>
                     </div>
                     <div class="space">
@@ -975,14 +891,12 @@
 
             <!-- GRID PROMOÇÕES -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Promoções <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Vitrine de Promoções <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Ativar Vitrine</label>
                         <div class="space__flex">
-                            <input class="checkbox-hidden" type="checkbox" name="booleanPromocoes"
-                                id="booleanPromocoes">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanPromocoes" id="booleanPromocoes">
                             <label for="booleanPromocoes" class="check-style"></label>
                         </div>
                     </div>
@@ -1030,8 +944,7 @@
                     <div class="space">
                         <label>Ativar Depoimentos</label>
                         <div class="space__flex">
-                            <input class="checkbox-hidden" type="checkbox" name="booleanDepoimentos"
-                                id="booleanDepoimentos">
+                            <input class="checkbox-hidden" type="checkbox" name="booleanDepoimentos" id="booleanDepoimentos">
                             <label for="booleanDepoimentos" class="check-style"></label>
                         </div>
                     </div>
@@ -1046,8 +959,7 @@
 
             <!-- COMPONENTE WHATSAPP FLUTUANTE -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Whatsapp Flutuante <i class="fas fa-angle-down"></i>
-                </h3>
+                <h3 class="sub-title" onclick="openContent(this)">Whatsapp Flutuante <i class="fas fa-angle-down"></i></h3>
                 <div class="content">
                     <div class="space">
                         <label>Ativar Whatsapp Flutuante</label>
@@ -1063,8 +975,7 @@
             <h1 class="title">Redes Sociais</h1>
             <!-- REDES SOCIAIS INFO -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Redes Sociais <i class="fas fa-angle-down"
-                        aria-hidden="true"></i></h3>
+                <h3 class="sub-title" onclick="openContent(this)">Redes Sociais <i class="fas fa-angle-down" aria-hidden="true"></i></h3>
                 <div class="content selos open">
                     <!-- Destaque -->
                     <div style="padding-top: 40px">
@@ -1134,8 +1045,7 @@
             </article>
             <!-- MARCAS -->
             <article class="box-content">
-                <h3 class="sub-title" onclick="openContent(this)">Marcas <i class="fas fa-angle-down"
-                        aria-hidden="true"></i></h3>
+                <h3 class="sub-title" onclick="openContent(this)">Marcas <i class="fas fa-angle-down" aria-hidden="true"></i></h3>
                 <div class="content selos brand">
                     <div style="padding-top: 20px; padding-bottom: 20px;">
                         <h3 class="sub-title">Marca 1</h3>
@@ -1354,7 +1264,7 @@
 <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
 <script>
-    (function () {
+    (function(){
         document.querySelector('.ls-md-space.col-md-8').style.width = "100%";
 
         var allColors = document.querySelectorAll('.inp-default.color');
@@ -1363,7 +1273,7 @@
             color.closest('.space').querySelector('.inp-color').style.background = color.value;
         });
 
-        setTimeout(function () {
+        setTimeout(function(){
             VMasker(document.querySelector("#socialWhatsapp")).maskPattern("(99) 99999-9999");
         }, 2000);
     })()
@@ -1378,7 +1288,7 @@
         var contentOpen = document.querySelectorAll('.box');
 
         contentOpen.forEach(content => {
-            if (content.dataset.id == idItem) {
+            if(content.dataset.id == idItem) {
                 content.style.display = "block";
             }
             else {

@@ -11,8 +11,8 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     opacity: 0;
     margin-right: -100%;
     transition: .3s;
@@ -31,20 +31,22 @@
 
     .cart-title,
     .total-resume {
-        background: -webkit-gradient(linear, left top, right top, from(var(--bgMenu)), to(var(--bgHeader)));
-        background: -o-linear-gradient(left, var(--bgMenu), var(--bgHeader));
-        background: linear-gradient(to right, var(--bgMenu), var(--bgHeader));
+        background-color: var(--bgButton);
         padding: 25px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
         -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        color: #fff;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        color: var(--textButton);
+
+        .cart-action {
+            color: var(--textButton)!important;
+        }
 
         .btn-total {
             background-color: #fff;
@@ -75,21 +77,21 @@
         }
     }
 
-    @media(max-width: 450px) {
-        .total-resume {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
+        @media(max-width: 450px ) {
+            .total-resume {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                flex-direction: column;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
 
-            .total-content {
-                margin-bottom: 20px;
+                .total-content {
+                    margin-bottom: 20px;
+                }
             }
         }
-    }
 
     .cart-content {
         padding: 25px;
@@ -135,8 +137,8 @@
             display: -ms-flexbox;
             display: flex;
             -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin-bottom: 20px;
             padding: 15px;
             position: relative;
@@ -153,10 +155,10 @@
                 left: 0;
                 cursor: pointer;
                 background-color: #641212;
-                color: #fff;
+                color: #fff!important;
                 padding: 8px;
                 border-radius: 30px 30px 0;
-                font-size: 12px;
+                font-size: 12px!important;
                 transition: .3s;
 
                 &:hover {
@@ -182,16 +184,15 @@
                 box-shadow: 1px 1px 0 0 #999;
             }
 
-            .nome-product {
+            .nome-product a {
                 color: #333;
-                text-decoration: none;
             }
 
             @media(max-width: 600px) {
                 -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
 
                 .img-cart-resume {
                     margin-right: 0;
@@ -210,8 +211,8 @@
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
             }
         }
     }
@@ -220,5 +221,4 @@
 .cart-resume.open {
     margin-right: initial;
     opacity: 1;
-    z-index: 9999;
 }
