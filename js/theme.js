@@ -2,280 +2,211 @@
 document.addEventListener("DOMContentLoaded", function glideInit(event) {
 
     // MAIN BANNER DESKTOP
-    if(document.querySelector('.banner-carrossel')) {
-        new Glider(document.querySelector('.banner-carrossel .carrossel-init'), {
+    if (document.querySelector('.banner-carrossel.desk')) {
+        $('.banner-carrossel.desk .init').slick({
+            infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.banner-carrossel.control .slider-prev'),
-                next: document.querySelector('.banner-carrossel.control .slider-next')
-            }
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
         });
     }
 
     // MAIN BANNER MOBILE
-    if(document.querySelector('.banner-carrossel-mb')) {
-        new Glider(document.querySelector('.banner-carrossel-mb .carrossel-init'), {
+    if (document.querySelector('.banner-carrossel-mb')) {
+        $('.banner-carrossel-mb .init').slick({
+            infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.banner-carrossel-mb.control .slider-prev'),
-                next: document.querySelector('.banner-carrossel-mb.control .slider-next')
-            }
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
         });
     }
 
-    // REGUA CARROSSEL
-    if(document.querySelector('.regua-carrossel')) {
-        new Glider(document.querySelector('.regua-carrossel'), {
-            slidesToShow: 1,
+    // RÉGUA CARROSSEL 
+    if (document.querySelector('.regua-carrossel')) {
+        $('.regua-carrossel').slick({
+            infinite: true,
+            slidesToShow: 4,
             slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.regua .control .slider-prev'),
-                next: document.querySelector('.regua .control .slider-next')
-            },
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
             responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        duration: 1
-                    }
-                },
                 {
                     breakpoint: 992,
                     settings: {
                         slidesToShow: 2,
-                        slidesToScroll: 1,
-                        duration: 1
                     }
-                }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                },
             ]
         });
     }
 
     // BRANDS CARROSSEL
-    if(document.querySelector('.brands-carrossel')) {
-        new Glider(document.querySelector('.brands-carrossel.carrossel-init'), {
-            slidesToShow: 1,
+    if (document.querySelector('.brands-carrossel')) {
+        $('.brands-carrossel').slick({
+            infinite: true,
+            slidesToShow: 4,
             slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.brands .control .slider-prev'),
-                next: document.querySelector('.brands .control .slider-next')
-            },
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
             responsive: [
                 {
                     breakpoint: 992,
                     settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        duration: 1
+                        slidesToShow: 3
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 430,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                },
+            ]
+        });
+    }
+
+    //REVIEWS - CARROSSEL
+    if (document.querySelector('.reviews .dep_lista')) {
+        $('.dep_lista li[style="display: none;"]').remove()
+        $('.reviews .dep_lista').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2,
                     }
                 },
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        duration: 1
+                        slidesToShow: 1,
                     }
                 }
             ]
         });
     }
 
-    // REVIEWS CARROSSEL
-    if(document.querySelector('.reviews .dep_lista')) {
-        
-
-        document.querySelectorAll('.reviews .dep_lista li[style="display: none;"]').forEach(element => {
-            element.remove();
-        });
-
-        setTimeout(function(){
-            new Glider(document.querySelector('.dep_lista'), {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                draggable: false,
-                duration: 1,
-                arrows: {
-                    prev: document.querySelector('.reviews .control .slider-prev'),
-                    next: document.querySelector('.reviews .control .slider-next')
-                },
-                responsive: [
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    }
-                ]
-            });
-        }, 1000);
-    }
-
     // CARROSSEL PRODUTO INTERNO
-    if(document.querySelector('.thumb-carrossel')) {
-        new Glider(document.querySelector('.thumb-carrossel'), {
-            slidesToShow: 1,
+    if (document.querySelector('.thumb-carrossel')) {
+        $('.thumb-carrossel').slick({
+            infinite: true,
+            slidesToShow: 4,
             slidesToScroll: 1,
-            draggable: true,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.content-image__carrossel.control-thumb .slider-prev'),
-                next: document.querySelector('.content-image__carrossel.control-thumb .slider-next')
-            },
+            autoplay: false,
+            autoplaySpeed: 3000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
             responsive: [
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        duration: 1
-                    }
-                },
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        duration: 1
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 2
                     }
                 },
                 {
                     breakpoint: 320,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1,
                         slidesToScroll: 1,
                         duration: 1
                     }
                 }
             ]
-        });
+        })
     }
 
-    // BANNER TRIPLO
-    if(document.querySelector('.banner-triplo')) {
-        new Glider(document.querySelector('.banner-triplo .carrossel-init'), {
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.banner-triplo .slider-prev'),
-                next: document.querySelector('.banner-triplo .slider-next')
-            },
+    //CARROSSEL - BANNER TRIPLO
+    if (document.querySelector('.banner-triplo')) {
+        $('.banner-triplo .carrossel-init').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
             responsive: [
                 {
                     breakpoint: 992,
                     settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        duration: 1
+                        slidesToShow: 2
                     }
                 },
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        duration: 1
+                        slidesToShow: 1
                     }
                 }
             ]
-        });
+        })
     }
 
-    // CARROSSEL PRODUTOS
-    if(document.querySelector('.showcase')) {
-        var products = document.querySelectorAll('.product-carrossel.prod');
-
-        products.forEach(element => {
-            new Glider(element, {
-                draggable: false,
-                duration: 1,
-                arrows: {
-                    prev: element.closest('.control').querySelector('.slider-prev'),
-                    next: element.closest('.control').querySelector('.slider-next')
+    //CARROSSEL - PRODUTOS - DESTAQUE
+    if (document.querySelector('.product-carrossel')) {
+        $('.product-carrossel').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+            nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3
+                    },
                 },
-                responsive: [
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
                     },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 430,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    }
-                ]
-            });
-        });
-    }
-
-    // CARROSSEL BANNER PRODUTOS
-    if(document.querySelector('.showcase.showcase-banner')) {
-        var products = document.querySelectorAll('.product-carrossel-banner.prod');
-
-        products.forEach(element => {
-            new Glider(element, {
-                draggable: false,
-                duration: 1,
-                arrows: {
-                    prev: element.closest('.control').querySelector('.slider-prev'),
-                    next: element.closest('.control').querySelector('.slider-next')
                 },
-                responsive: [
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 500,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
+                {
+                    breakpoint: 450,
+                    settings: {
+                        slidesToShow: 1
                     }
-                ]
-            });
+                }
+            ]
         });
     }
 });
@@ -290,65 +221,42 @@ document.addEventListener("DOMContentLoaded", function menuMobile(event) {
     var cartContent = document.querySelector('.cart-resume');
 
     btnMenu.forEach(btn => {
-        btn.addEventListener('click', function(){
-            if(this.dataset.action == 'open') {
+        btn.addEventListener('click', function () {
+            if (this.dataset.action == 'open') {
                 menuContent.classList.add('open')
             }
-            else if(this.dataset.action == 'close') {
+            else if (this.dataset.action == 'close') {
                 menuContent.classList.remove('open')
             }
         })
     });
 
     dropItem.forEach(firstItem => {
-        firstItem.addEventListener('click', function(){
+        firstItem.addEventListener('click', function () {
             var dropContent = this.closest('.first-lvl__item').querySelector('.second-lvl');
             dropContent.classList.toggle('open');
         })
     });
 
     dropThird.forEach(firstItem => {
-        firstItem.addEventListener('click', function(){
+        firstItem.addEventListener('click', function () {
             var dropContent = this.closest('.second-lvl__item').querySelector('.third-lvl');
             dropContent.classList.toggle('open');
         })
     });
 
     cartAction.forEach(element => {
-        element.addEventListener('click', function(){
+        element.addEventListener('click', function () {
             cartContent.classList.toggle('open');
         })
     });
 });
 
 (function () {
-    var e = document.querySelector(".header__content");
-    var miniHeader = document.querySelector('.mini-header');
+    var e = document.querySelector(".header");
     document.querySelector("html").offsetHeight > 1320 &&
         window.addEventListener("scroll", function () {
-            this.scrollY > 250 ? e.classList.add("bg-color") : e.classList.remove("bg-color");
-            this.scrollY > 250 ? miniHeader.classList.add("remove") : miniHeader.classList.remove("remove");
+            this.scrollY > 250 ? e.classList.add("fix") : e.classList.remove("fix");
+            this.scrollY > 250 ? document.querySelector('.application').style.marginTop = "140px" : document.querySelector('.application').style.marginTop = "0";
         });
 })();
-
-(function shareButton() {
-    var shareBtn = document.querySelectorAll('.share-button');
-    var shareName = document.querySelector('.share-itens').dataset.nome
-
-    shareBtn.forEach(btn => {
-        btn.addEventListener('click', function(){
-            if(this.classList.contains('facebook')) {
-                window.open("https://www.facebook.com/sharer/sharer.php?u=" + window.location);
-            }
-            else if(this.classList.contains('twitter')) {
-                window.open("https://twitter.com/intent/tweet?text=" + shareName + "%0a%0a" + window.location);
-            }
-            else if(this.classList.contains('whatsapp')) {
-                window.open("https://web.whatsapp.com/send?text=" + shareName + "%0a%0a" + window.location);
-            }
-            else if(this.classList.contains('whatsapp-mobile')) {
-                window.open("whatsapp://send?text=" + shareName + "%0a%0a" + window.location);
-            }
-        }) 
-    });
-})()

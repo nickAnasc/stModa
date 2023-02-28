@@ -5,32 +5,31 @@
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
 
         .breadcrumb__item {
-            font-weight: $regular;
+            font-weight: $semiBold;
             padding: 5px 0;
-            
+
             a {
-                color: #555;
+                color: #999;
             }
 
-            .slash {
+            .fa-angle-right {
                 margin-left: 5px;
                 margin-right: 5px;
             }
         }
 
         .breadcrumb__item.breadcrumb__item--selected {
-            color: #555;
-            font-weight: $bold;
+            background-color: var(--bgButton);
+            color: var(--textButton);
+            padding: 6px 8px 5px;
+            font-size: 12px;
+            border-radius: 20px 20px 0;
         }
     }
-}
-
-.banner-product {
-    margin-bottom: 50px;
 }

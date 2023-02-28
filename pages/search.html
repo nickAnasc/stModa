@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 {% element 'showcase-catalog' {
-                    "products": products
+                "products": products
                 } %}
                 {% element 'snippets/paginate' %}
             </div>
@@ -29,12 +29,12 @@
 </section>
 
 <script>
-    (function(){
+    (function () {
         var openFilter = document.querySelectorAll('.action-filter');
         var filterMobileContent = document.querySelector('.catalog__filter');
 
         openFilter.forEach(element => {
-            element.addEventListener('click', function() {
+            element.addEventListener('click', function () {
                 this.classList.contains('open') ? filterMobileContent.classList.add('open') : filterMobileContent.classList.remove('open');
             })
         });

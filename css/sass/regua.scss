@@ -1,4 +1,5 @@
 .regua {
+    margin-top: 50px;
     background-color: var(--reguaBg);
     padding: 20px 0;
 
@@ -29,16 +30,12 @@
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        justify-content: center;
 
         @media(max-width: 400px) {
             padding: 0px 35px;
-        }
-
-        .regua__image {
-            padding-right: 10px;
-            margin-right: 10px;
         }
 
         .regua__content {
@@ -46,12 +43,12 @@
                 color: var(--reguaTitle);
                 margin-bottom: 5px;
                 font-size: 15px;
-                font-weight: $semiBold;
             }
 
             .regua__text {
                 color: var(--reguaText);
+                font-weight: $semiBold;
             }
-        }   
+        }
     }
 }

@@ -1,43 +1,46 @@
 <div class="search">
     <form role="form" action="{{ links.search }}" method="get" data-search="suggestion">
         <input type="hidden" name="loja" value="{{ store.id }}">
-        <input class="search-key" type="text" data-input="suggestion" placeholder="Pesquisar..." name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+        <div class="width-search">
+            <input class="search-key" type="text" data-input="suggestion" placeholder="Buscar por Produtos"
+                name="palavra_busca" tabindex="1" data-tray-tst="busca_palavra" required>
+        </div>
         <button class="buscar" type="submit" tabindex="2" data-tray-tst="botao_buscar">
             <i class="fas fa-search"></i>
         </button>
     </form>
 </div>
+
 <script>
     function callback(mutations) {
-         var suggestion = document.querySelectorAll('.suggestion[data-container="suggestion"]')
-         var p = document.createElement('p')
-         p.classList.add('no-results')
+        var suggestion = document.querySelectorAll('.suggestion[data-container="suggestion"]')
+        var p = document.createElement('p')
+        p.classList.add('no-results')
 
-         suggestion.forEach(el => {
-             if (el.childNodes.length <= 1) {
-                 el.setAttribute('style', 'height: auto;')
-                 el.append(p)
-                 document.querySelector('.no-results').textContent = 'Nenhum resultado encontrado'
-             }
-         })
-     }
+        suggestion.forEach(el => {
+            if (el.childNodes.length <= 1) {
+                el.setAttribute('style', 'height: auto;')
+                el.append(p)
+                document.querySelector('.no-results').textContent = 'Nenhum resultado encontrado'
+            }
+        })
+    }
 
-     (function(){
-         var search = document.querySelector('.header__content')
-         var observer = new MutationObserver(callback)
-         let options = {
-             childList: true,
-             attributes: true,
-             characterData: false,
-             subtree: false,
-             attributeFilter: ['attr1', 'attr2'],
-             attributeOldValue: false,
-             characterDataOldValue: false
-         };
+    (function () {
+        var search = document.querySelector('.header__content')
+        var observer = new MutationObserver(callback)
+        let options = {
+            childList: true,
+            attributes: true,
+            characterData: false,
+            subtree: false,
+            attributeFilter: ['attr1', 'attr2'],
+            attributeOldValue: false,
+            characterDataOldValue: false
+        };
 
-
-         search.addEventListener('keyup', function() {
-             observer.observe(document.querySelector('.search form'), options)
-         })
-     })()
- </script>
+        search.addEventListener('keyup', function () {
+            observer.observe(document.querySelector('.search form'), options)
+        })
+    })()
+</script>

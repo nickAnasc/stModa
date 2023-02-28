@@ -1,6 +1,7 @@
 {% spaceless %}
 <!doctype html>
 <html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+
 <head>
     <!-- tray charset -->
     {{ html.charset() }}
@@ -13,65 +14,287 @@
     <!-- tray styles -->
     <!-- {{ tray.styles }} -->
 
-    <!-- Critical CSS -->
+    <!-- theme styles -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/custom-compare.css') }}" type="text/css">
 
     <!-- VARIÁVEIS DO PAINEL -->
     <style>
         :root {
-            --miniHeader: {{ settings.miniHeader }};
-            --textMiniHeader: {{ settings.textMiniHeader }};
-            --textSecondaryMiniHeader: {{ settings.textSecondaryMiniHeader }};
+            --miniHeader: {
+                    {
+                    settings.miniHeader
+                }
+            }
 
-            --bgHeader: {{ settings.bgHeader }};
-            --textHeader: {{ settings.textHeader }};
+            ;
 
-            --iconHeader: {{ settings.iconHeader }};
+            --textMiniHeader: {
+                    {
+                    settings.textMiniHeader
+                }
+            }
 
-            --bgMenu: {{ settings.bgMenu }};
-            --textMenu: {{ settings.textMenu }};
-            --hoverMenu: {{ settings.hoverMenu }};
-            --hoverTextMenu: {{ settings.hoverTextMenu }};
+            ;
 
-            --bgButton: {{ settings.bgButton }};
-            --textButton: {{ settings.textButton }};
+            --bgHeader: {
+                    {
+                    settings.bgHeader
+                }
+            }
 
-            --seloNovosBg: {{ settings.seloNovosBg }};
-            --seloNovosText: {{ settings.seloNovosText }};
+            ;
 
-            --seloShippingBg: {{ settings.seloShippingBg }};
-            --seloShippingText: {{ settings.seloShippingText }};
+            --textHeader: {
+                    {
+                    settings.textHeader
+                }
+            }
 
-            --seloDestaqueBg: {{ settings.seloDestaqueBg }};
-            --seloDestaqueText: {{ settings.seloDestaqueText }};
+            ;
 
-            --seloDescontoBg: {{ settings.seloDescontoBg }};
-            --seloDescontoText: {{ settings.seloDescontoText }};
+            --iconHeader: {
+                    {
+                    settings.iconHeader
+                }
+            }
 
-            --prorductBG: {{ settings.prorductBG }};
-            --productText: {{ settings.productText }};
-            --productPrice: {{ settings.productPrice }};
+            ;
 
-            --bgVitCategorias: {{ settings.bgVitCategorias }};
+            --textIconHeader: {
+                    {
+                    settings.textIconHeader
+                }
+            }
 
-            --newsletterBg: {{ settings.newsletterBg }};
-            --newsletterText: {{ settings.newsletterText }};
-            --newsletterBtnBg: {{ settings.newsletterBtnBg }};
-            --newsBtnText: {{ settings.newsBtnText }};
+            ;
 
-            --reguaBg: {{ settings.reguaBg }};
-            --reguaTitle: {{ settings.reguaTitle }};
-            --reguaText: {{ settings.reguaText }};
+            --bgMenu: {
+                    {
+                    settings.bgMenu
+                }
+            }
 
-            --footerBg: {{ settings.footerBg }};
-            --footerText: {{ settings.footerText }};
-            --iconColor: {{ settings.iconColor }};
+            ;
+
+            --textMenu: {
+                    {
+                    settings.textMenu
+                }
+            }
+
+            ;
+
+            --hoverMenu: {
+                    {
+                    settings.hoverMenu
+                }
+            }
+
+            ;
+
+            --hoverTextMenu: {
+                    {
+                    settings.hoverTextMenu
+                }
+            }
+
+            ;
+
+            --bgButton: {
+                    {
+                    settings.bgButton
+                }
+            }
+
+            ;
+
+            --textButton: {
+                    {
+                    settings.textButton
+                }
+            }
+
+            ;
+
+            --seloNovosBg: {
+                    {
+                    settings.seloNovosBg
+                }
+            }
+
+            ;
+
+            --seloNovosText: {
+                    {
+                    settings.seloNovosText
+                }
+            }
+
+            ;
+
+            --seloShippingBg: {
+                    {
+                    settings.seloShippingBg
+                }
+            }
+
+            ;
+
+            --seloShippingText: {
+                    {
+                    settings.seloShippingText
+                }
+            }
+
+            ;
+
+            --seloDestaqueBg: {
+                    {
+                    settings.seloDestaqueBg
+                }
+            }
+
+            ;
+
+            --seloDestaqueText: {
+                    {
+                    settings.seloDestaqueText
+                }
+            }
+
+            ;
+
+            --seloDescontoBg: {
+                    {
+                    settings.seloDescontoBg
+                }
+            }
+
+            ;
+
+            --seloDescontoText: {
+                    {
+                    settings.seloDescontoText
+                }
+            }
+
+            ;
+
+            --prorductBG: {
+                    {
+                    settings.prorductBG
+                }
+            }
+
+            ;
+
+            --productText: {
+                    {
+                    settings.productText
+                }
+            }
+
+            ;
+
+            --productPrice: {
+                    {
+                    settings.productPrice
+                }
+            }
+
+            ;
+
+            --newsletterBg: {
+                    {
+                    settings.newsletterBg
+                }
+            }
+
+            ;
+
+            --newsletterText: {
+                    {
+                    settings.newsletterText
+                }
+            }
+
+            ;
+
+            --newsletterBtnBg: {
+                    {
+                    settings.newsletterBtnBg
+                }
+            }
+
+            ;
+
+            --newsBtnText: {
+                    {
+                    settings.newsBtnText
+                }
+            }
+
+            ;
+
+            --reguaBg: {
+                    {
+                    settings.reguaBg
+                }
+            }
+
+            ;
+
+            --reguaTitle: {
+                    {
+                    settings.reguaTitle
+                }
+            }
+
+            ;
+
+            --reguaText: {
+                    {
+                    settings.reguaText
+                }
+            }
+
+            ;
+
+            --footerBg: {
+                    {
+                    settings.footerBg
+                }
+            }
+
+            ;
+
+            --footerText: {
+                    {
+                    settings.footerText
+                }
+            }
+
+            ;
+
+            --iconColor: {
+                    {
+                    settings.iconColor
+                }
+            }
+
+            ;
+        }
+
+        .header.fix {
+            z-index: 2;
         }
     </style>
-
-    <!-- theme styles -->
-    <link rel="stylesheet" href="{{ asset('css/glide-js.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/googleFonts.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
 
     <!-- tray analytics -->
     {{ tray.analytics }}
@@ -79,6 +302,7 @@
     <!-- google tag manager -->
     {{ googleTagManager.header(pages.current, tagManagerData) }}
 </head>
+
 <body>
     {{ googleTagManager.top(pages.current, tagManagerData) }}
 
@@ -109,63 +333,64 @@
     </div>
     {% endif %}
 
-    <!-- theme scripts-->
-    <script src="{{ asset('js/jsMinify/glider-js.min.js') }}"></script>
-    <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
-
-    <!-- main script -->
-    <script type="text/javascript" src="{{ asset('js/jsMinify/theme.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jsMinify/cartResume.min.js') }}"></script>
-
-    <!-- product script -->
-    {% if pages.current == 'product' %}
-        <script type="text/javascript" src="{{ asset('js/jsMinify/zoomImage.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jsMinify/page-product.min.js') }}"></script>
-    {% endif %}
-
-    <!-- home scripts -->
-    {% if pages.current == 'home' %}
-        <script type="text/javascript" src="{{ asset('js/jsMinify/noticias.min.js') }}"></script>
-        <script>
-            (function(){
-                setTimeout(function(){
-                    var valPhone = document.querySelector('.hidden-phone').value;
-                    var linkWhats = document.querySelector('.whatsap-web');
-                    var linkFormat = 'https://web.whatsapp.com/send?phone=+55' + valPhone.replace(/\D/g,'');
-
-                    linkWhats.setAttribute('href', linkFormat)
-                }, 1000)
-            })();
-        </script>
-    {% endif %}
-    {% if pages.current == 'search' %}
-        <script>
-            (function(){
-                var formContent = document.querySelector('#Vitrine form[name=form1] fieldset');
-                formContent.innerHTML = formContent.innerHTML + '<button class="btn-busca-avancada"> Enviar </button>'
-            })();
-        </script>
-    {% endif %}
-
     <!-- tray -->
     {% element 'snippets/modal' %}
     {{ googleTagManager.bottom(pages.current, tagManagerData) }}
     {{ tray.scripts }}
     {{
-            html.script({
-                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
-                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
-            })
+    html.script({
+    '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+    '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+    })
     }}
     {% element 'snippets/pageview' %}
     {{ store.chat }}
 
+    <!-- theme scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/a8b71ce8bc.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jsMinify/cartResume.min.js') }}"></script>
+    {% if pages.current == 'product' %}
+    <script type="text/javascript" src="{{ asset('js/jsMinify/zoomImage.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jsMinify/promotion-regressive.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jsMinify/page-product.min.js') }}"></script>
+    {% endif %}
+
+    <script type="text/javascript" src="{{ asset('js/jsMinify/noticias.min.js') }}"></script>
+    <script>
+        (function () {
+            setTimeout(function () {
+                var valPhone = document.querySelector('.hidden-phone').value;
+                var linkWhats = document.querySelector('.whatsap-web');
+                var linkFormat = 'https://wa.me/55' + valPhone.replace(/\D/g, '');
+
+                linkWhats.setAttribute('href', linkFormat)
+            }, 1000)
+        })();
+    </script>
+
+    {% if pages.current == 'search' %}
+    <script>
+        (function () {
+            var formContent = document.querySelector('#Vitrine form[name=form1] fieldset');
+
+            formContent.innerHTML = formContent.innerHTML + '<button class="btn-busca-avancada"> Enviar </button>'
+        })();
+    </script>
+    {% endif %}
+
     {% if settings.background_image %}
     <style>
-        .application{ background-image: url('{{ themePath }}{{ settings.background_image }}'); }
+        .application {
+            background-image: url('{{ themePath }}{{ settings.background_image }}');
+        }
     </style>
     {% endif %}
 
 </body>
+
 </html>
 {% endspaceless %}

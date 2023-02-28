@@ -1,46 +1,51 @@
-<header class="header">
-    <nav class="mini-header">
-        <div class="container mini-header__flex">
-            <span class="text-promotion primary">{{ Translation('ag_telefone_1') }}</span>
-            <span class="text-promotion secondary">{{ Translation('ag_email_1') }}</span>
+<nav class="mini-header">
+    <div class="container mini-header__flex">
+        <div class="mini-header__content">
+            <p class="info phone">{{ Translation('ag_telefone_1') }}</p>
+            <p class="info">{{ Translation('ag_atendimento') ? Translation('ag_atendimento') : 'Aberto todos os dias da
+                semana' }}</p>
         </div>
-    </nav>
+        <div class="mini-header__content">
+            <a class="info" href="{{ links.orders }}">Meus Pedidos</a>
+        </div>
+    </div>
+</nav>
+<header class="header">
     <div class="header__content">
-        <div class="container">
-            <div class="header__flex">
-                <div class="header__logo">
-                    <a href="{{ links.home }}">
-                        <picture>
-                            <source srcset="{{ asset( settings.logoMobile ) }}" media="(max-width: 768px)">
-                            <img src="{{ asset( settings.logoDesktop ) }}">
-                        </picture>
+        <div class="container header__flex">
+            <div class="header__logo">
+                <a href="{{ links.home }}">
+                    <picture>
+                        <source srcset="{{ asset( settings.logoMobile ) }}" media="(max-width: 768px)">
+                        <img src="{{ asset( settings.logoDesktop ) }}">
+                    </picture>
+                </a>
+            </div>
+            <div class="header__search">
+                {% element 'snippets/search' %}
+            </div>
+            <div class="header__action">
+                <div class="QnA">
+                    <a href="{{ links.contact }}" class="QnA__flex">
+                        <i class="far fa-question-circle"></i>
+                        <p>Precisa de Ajuda?</p>
                     </a>
-                    <!-- MENU -->
-                    {% element 'snippets/menu-content' %}
                 </div>
-                <div class="header__action">
-                    <div class="header__search">
-                        {% element 'snippets/search' %}
-                    </div>
-                    <div class="QnA">
-                        <a href="{{ links.contact }}" class="QnA__flex">
-                            <i class="far fa-question-circle"></i>
-                        </a>
-                    </div>
-                    {% element 'snippets/customer' %} 
-                    {% element 'snippets/cart' %}
-                    <div class="hm-content btn-menu" data-action="open">
-                        <span class="hm"></span>
-                        <span class="hm"></span>
-                        <span class="hm"></span>
-                    </div>
+                {% element 'snippets/customer' %}
+                {% element 'snippets/cart' %}
+                <div class="hm-content btn-menu" data-action="open">
+                    <span class="hm"></span>
+                    <span class="hm"></span>
+                    <span class="hm"></span>
                 </div>
             </div>
         </div>
-        <!-- <div class="header__search mobile container">
+        <div class="header__search mobile container">
             {% element 'snippets/search' %}
-        </div> -->
+        </div>
     </div>
+    <!-- MENU -->
+    {% element 'snippets/menu-content' %}
 </header>
 
 {% element 'snippets/menu-mobile' %}
