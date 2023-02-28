@@ -15,6 +15,8 @@
             transform: translateX(-50%);
     top: 100%;
     width: 1320px;
+    height: 420px;
+    overflow: scroll;
 
     @media(max-width: 1399px) {
         width: 1140px;
