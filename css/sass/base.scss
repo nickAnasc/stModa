@@ -362,6 +362,11 @@ body{
         }
     }
 
+    .cart-preview-body {
+        max-height: 400px!important;
+        overflow-y: scroll;
+    }
+
     .cart-preview-table {
         width: 100%;
 
