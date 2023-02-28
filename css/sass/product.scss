@@ -1,41 +1,13 @@
-CARROSSEL DE DESTAQUE
-.carrosse-categories,
-.promocoes,
+// CARROSSEL DE DESTAQUE
 .destaque,
-.novidades, .showcase__title{
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-.promocoes{
-    h1{
-        margin-bottom: 30px;
-    }
-}
-.carrosse-categories{
-    h1{
-        margin-top: 0;
-    }
-    .showcase-banner{
-        margin-top: 50px;
-        background-color: var(--bgVitCategorias);
-        padding: 50px 0;
-    }
-}
-
-.banner-triplo{
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.banner-line {
-    margin-top: 30px;
-    margin-bottom: 0px;
+.novidades,
+.promocoes,
+.carrosse-categories {
+    margin-top: 50px;
 }
 
 .showcase {
     .showcase-content {
-        .glider-track {
-            margin: 10px 0;
-        }
 
         .product {
             display: -webkit-box;
@@ -43,89 +15,123 @@ CARROSSEL DE DESTAQUE
             display: flex;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
             -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
             -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
             height: 100%;
             position: relative;
+            background-color: var(--prorductBG);
+            padding: 20px 20px;
+            border-radius: 15px 15px 0;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
 
             .product-image {
-                margin-bottom: 15px;
+                margin-bottom: 20px;
+                padding: 20px;
+
+                img {
+                    border-radius: 10px 10px 0;
+                    overflow: hidden;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 5px -2px #000;
+                border-right: 1px solid transparent;
+                border-bottom: 1px solid transparent;
             }
         }
 
         .showcase-content__item {
-            padding: 10px;
+            padding: 5px;
             transition: .3s;
 
             a {
                 text-decoration: none;
+                text-align: center;
             }
 
             .product-name {
                 text-transform: uppercase;
-                font-size: 14px;
-                font-weight: $bold;
+                font-size: 16px;
             }
 
-            .product-payment {
-                display: none;
-            }
-
+            .product-payment,
             .product-name {
                 color: var(--productText);
             }
 
-            .btn-comprar {
-                white-space: nowrap;
-                color: var(--textButton);
-                background-color: var(--bgButton);
-                text-transform: uppercase;
-                padding: 18px;
-                transition: .3s;
-                // font-family: $fontStyle;
-                font-weight: $semiBold;
-                font-size: 18px;
-                width: 100%;
-                text-align: center;
-                margin-top: 10px;
-                //position: absolute;
-                //bottom: 0;
-               // left: 0;
-                //opacity: 1;
-               // visibility: visible;
-                //transition: .3s;
-                //margin-bottom: 0;
+            .compare-buttons {
+                margin-top: 20px;
 
-                &:hover {
-                    .btn-comprar {
-                        border-radius: 0 10px;
-                        transition: .3s;
-                //         opacity: 1;
-                //         visibility: visible;
-                //         margin-bottom: initial;
+                a[data-compare="remove"] {
+                    display: none;
+                }
+
+
+                a[data-compare="add"] {
+                    .filter-checkbox {
+                        border: 2px solid var(--bgButton);
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        vertical-align: middle
+                    }
+                }
+
+                a[data-compare="add"].compare-hidden {
+                    .filter-checkbox {
+                        border-radius: 50%;
+                        background-color: var(--bgButton);
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
                     }
                 }
             }
 
-            @media(max-width: 992px) {
-                .btn-comprar {
-                    position: initial;
-                    bottom: 0;
-                    left: initial;
-                    opacity: 1;
-                    visibility: visible;
-                    margin-bottom: 0;
+            .showcase {
+                .showcase-content {
+                    &__item {
+                        a {
+                            color: var(--productText);
+                        }
+                    }
+                }
+            }
+
+            .btn-comprar {
+                margin-top: 20px;
+                white-space: nowrap;
+                color: var(--textButton);
+                background-color: var(--bgButton);
+                text-transform: uppercase;
+                padding: 13px 40px;
+                border-radius: 20px 20px 0;
+                transition: .3s;
+
+                @media(max-width: 535px) {
+                    padding: 13px 30px;
+                }
+
+                .fa-arrow-right {
+                    margin-left: 5px;
+                    color: --iconHeader;
+                }
+
+                &:hover {
+                    border-radius: 30px;
                 }
             }
 
             .price-various {
-                margin-right: 5px;
+                display: none;
             }
 
             .price-before.strike {
@@ -134,6 +140,9 @@ CARROSSEL DE DESTAQUE
                 .currency,
                 span {
                     text-decoration: line-through;
+                    color: #333333;
+                    font-size: 12px;
+                    margin-bottom: 4px;
                 }
             }
 
@@ -146,7 +155,7 @@ CARROSSEL DE DESTAQUE
                 display: block;
 
                 .fa-star {
-                    color: var(--bgButton);
+                    color: #FED800;
                     margin-right: 5px;
 
                     &:last-child {
@@ -157,31 +166,6 @@ CARROSSEL DE DESTAQUE
 
             .product-price {
                 margin: 10px 0;
-
-                .btn-consulta {
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    display: block;
-                    color: #555;
-                }
-
-                .prices {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-
-                    .price-promotion {
-                        margin-left: 5px;
-                        display: -webkit-box;
-                        display: -ms-flexbox;
-                        display: flex;
-
-                        .por-price {
-                            font-size: 15px;
-                            margin-right: 5px;
-                        }
-                    }
-                }
             }
 
             .price-off,
@@ -190,8 +174,8 @@ CARROSSEL DE DESTAQUE
 
                 .currency,
                 span {
-                    font-weight: $regular;
-                    font-size: 15px;
+                    font-weight: $bold;
+                    font-size: 22px;
                     color: var(--productPrice);
                 }
             }
@@ -213,10 +197,11 @@ CARROSSEL DE DESTAQUE
             .seals,
             .discount {
                 display: block;
-                padding: 7px;
+                padding: 5px;
                 margin-bottom: 5px;
                 text-transform: uppercase;
-                font-size: 11px;
+                font-size: 10px;
+                border-radius: 5px;
                 text-align: center;
                 color: #fff;
             }
@@ -250,8 +235,7 @@ CARROSSEL DE DESTAQUE
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            margin-top: 23px;
+        flex-wrap: wrap;
 
         .showcase-content__item {
             width: calc(100% / 4);
@@ -275,10 +259,10 @@ CARROSSEL DE DESTAQUE
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-                justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
 
         .showcase-content__item {
             width: calc(100% / 4);
@@ -294,7 +278,7 @@ CARROSSEL DE DESTAQUE
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
 
         @media(max-width: 991px) {
             margin-left: -10px;
@@ -318,55 +302,6 @@ CARROSSEL DE DESTAQUE
             @media(max-width: 480px) {
                 padding: 0 10px;
                 width: 100%;
-            }
-        }
-    }
-}
-
-.showcase-banner {
-    background-color: var(--bgVitCategorias);
-    padding: 50px 0;
-
-    .showcase-flex {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
-
-        .showcase-text-content {
-            width: 20%;
-            margin-right: 80px;
-
-            .showcase__title {
-                font-weight: $bold;
-
-            }
-
-            .showcase__text {
-                text-align: center;
-                font-size: 16px;
-            }
-        }
-
-        .showcase-carrossel-content {
-            width: 70%;
-        }
-
-        @media(max-width: 991px) {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
-
-            .showcase-text-content,
-            .showcase-carrossel-content {
-                width: 100%;
-                margin-right: 0;
             }
         }
     }

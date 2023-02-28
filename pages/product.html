@@ -1,21 +1,3 @@
-<!-- <style>
-    .varTit strong {
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: 600;
-        font-family: "EB Garamond",serif;
-        display: block;
-    }
-
-    .select.selectanel.infoSelects {
-        padding: 6px 10px;
-        border: none;
-    }
-
-    ## coloquei esse trecho de código na page-product.scss
-
-</style>-->
-
 <div class="container">
     <div class="product-breadcrumb">
         {% element 'snippets/breadcrumb' %}
@@ -27,135 +9,112 @@
             <div class="colum-prod-photo">
                 <div class="content-image">
                     <div class="zoom-content-image">
-                        <img class="content-image__full" onmouseover="magnify('.content-image__full', 1.7)" src="{{ images[0].full }}">
+                        <img class="content-image__full" onmouseover="magnify('.content-image__full', 1.7)"
+                            src="{{ images[0].full }}">
                     </div>
-                    <div class="content-image__carrossel control-thumb">
-                        <div class="thumb-carrossel">
+                    <div class="content-image__carrossel">
+                        <div class="thumb-carrossel control-thumb">
                             {% for thumb in images %}
-                                <div class="thumb-content" onClick="changeMainPhoto('{{ thumb.full }}')">
-                                    <img class="thumb change-photo" src="{{ thumb.full }}">
-                                </div>
+                            <img class="thumb change-photo" onClick="changeMainPhoto('{{ thumb.full }}')"
+                                src="{{ thumb.large }}">
                             {% endfor %}
                         </div>
-                        <button class="slider-prev"><i class="fas fa-angle-left"></i></button>
-                        <button class="slider-next"><i class="fas fa-angle-right"></i></button>
                     </div>
                 </div>
             </div>
             <div class="colum-prod-info">
+                <input type="hidden" class="start-promotion" data-start="{{ product.start_promotion }}">
+                <input type="hidden" class="end-promotion" data-end="{{ product.end_promotion }}">
+                <div class="contador-promotion">
+                    <div class="content">
+                    </div>
+                    <div class="promotion-off-content">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="prod-seal">
+                    {% if product.featured %}
+                    <span class="seal destaque-seal">Destaque</span>
+                    {% endif %}
+                    {% if product.new %}
+                    <span class="seal lancamento-seal">Lançamento</span>
+                    {% endif %}
+                    {% if product.free_shipping %}
+                    <span class="seal frete-gratis-seal">Frete Grátis</span>
+                    {% endif %}
+                </div>
+                {% set ranking = product.ranking %}
+                {% if ranking.rating %}
+                <div class="ranking-content">
+                    {% for star in 1..ranking.rating %}
+                    <i class="fas fa-star"></i>
+                    {% endfor %}
+
+                    {% if ranking.rating < 5 %} {% set emptystar=5 - ranking.rating %} {% for i in 1..emptystar %} <i
+                        class="far fa-star"></i>
+                        {% endfor %}
+                        {% endif %}
+                </div>
+                {% endif %}
                 <h1 class="prod-name">{{ product.name }}</h1>
-                <div class="prod-info__flex">
-                    <div class="prod-info">
-                        <div class="prod-seal">
-                            {% if product.price_offer > 0 %}
-                                {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
-                                {% if porcentagemDesconto < 100 %}
-                                    <span class="seal discount-seal"> {{ porcentagemDesconto|number_format }}% OFF </span>
-                                {% endif %}
-                            {% endif %}
+                <div class="details-content">
+                    {{ productHelper.details() }}
+                </div>
+                <div class="desc-simplificada">
+                    {{ product.description_small }}
+                </div>
+                <div class="price-content">
+                    <p class="price"></p>
+                    <p class="price-promotion"></p>
+                    <p class="parcelamento"></p>
+                </div>
 
-                            {% if product.featured %}
-                            <span class="seal destaque-seal">Destaque</span>
-                            {% endif %}
-
-                            {% if product.new %}
-                            <span class="seal lancamento-seal">Lançamento</span>
-                            {% endif %}
-
-                            {% if product.free_shipping %}
-                            <span class="seal frete-gratis-seal">Frete Grátis</span>
-                            {% endif %}
-                        </div>
-                        {% set ranking = product.ranking %}
-                        {% if ranking.rating %}
-                        <div class="ranking-content">
-                            {% for star in 1..ranking.rating %}
-                            <i class="fas fa-star"></i>
-                            {% endfor %}
-
-                            {% if ranking.rating < 5 %} {% set emptystar=5 - ranking.rating %} {% for i in 1..emptystar %} <i
-                                class="far fa-star"></i>
-                                {% endfor %}
-                                {% endif %}
-                        </div>
-                        {% endif %}
-                        <div class="details-content">
-                            {{ productHelper.details() }}
-                        </div>
-                        <div class="desc-simplificada">
-                            {{ product.description_small }}
-                            <a class="mais-detalhes" href="#ProdBlock">Ver mais detalhes <i class="fas fa-angle-down"></i></a>
+                {% if product.upon_request %}
+                <form id="form_comprar" class="buy-content upon-request" method="post" data-app="product.buy-form"
+                    action="{{ links.cart_add ~ product.id }}">
+                    {{ productHelper.pricing() }}
+                </form>
+                {% else %}
+                <form id="form_comprar" class="buy-content" method="post" data-app="product.buy-form"
+                    action="{{ links.cart_add ~ product.id }}">
+                    <div class="variants-content">
+                        {{ productHelper.variants() }}
+                    </div>
+                    <div class="product-add-information">
+                        {{ product.additional_information }}
+                    </div>
+                    <div class="qtde-content">
+                        <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">Selecione uma opção para
+                            variação do produto</span>
+                        <div class="flex-qtde-buy">
+                            <div data-app="product.quantity" id="quantidade">
+                                <input type="button" id="plus" value='-' onclick="process(-1)" />
+                                <input id="quant" name="quant" class="text" size="1" type="text" value="1"
+                                    maxlength="5" />
+                                <input type="button" id="minus" value='+' onclick="process(1)">
+                            </div>
+                            <button class="btn-buy" type="submit">Comprar</button>
                         </div>
                     </div>
-                    <div class="prod-form">
-                        <div class="price-content-flex">
-                            {% if product.upon_request %}
-                                <div class="upon-request">
-                                    PREÇO SOB CONSULTA
-                                </div>
-                            {% else %}
-                                <div class="price-content">
-                                    {{ productHelper.pricing() }}
-                                </div>
-                                <div class="price-content" style="display: none;">
-                                    <p class="price"></p>
-                                    <p class="price-promotion"></p>
-                                    <p class="parcelamento"></p>
-                                </div>
-                            {% endif %}
-                            <div class="share-content">
-                                <p>
-                                    Compartilhar <i class="fas fa-share-alt"></i>
-                                    <div class="share-itens" data-nome="{{ product.name }}">
-                                        <a href="javascript:;" class="share-button facebook"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="javascript:;" class="share-button twitter"><i class="fab fa-twitter"></i></a>
-                                        <a href="javascript:;" class="share-button whatsapp"><i class="fab fa-whatsapp"></i></a>
-                                        <a href="javascript:;" class="share-button whatsapp-mobile"><i class="fab fa-whatsapp"></i></a>
-                                    </div>
-                                </p>
-                            </div>
-                        </div>
-                        {% if product.upon_request %}
-                            <div class="price-request">
-                                {{ productHelper.pricing() }}
-                            </div>
-                        {% else %}
-                            <form id="form_comprar" class="buy-content" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
-                                <div class="product-add-information">
-                                    {{ product.additional_information }}
-                                </div>
-                                <div class="variants-content">
-                                    {{ productHelper.variants() }}
-                                </div>
-                                <div class="qtde-content">
-                                    <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">Selecione uma opção para variação do produto</span>
-                                    <div class="flex-qtde-buy">
-                                        <div data-app="product.quantity" id="quantidade">
-                                            <input type="button" id="plus" value='-' onclick="process(-1)" />
-                                            <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
-                                            <input type="button" id="minus" value='+' onclick="process(1)">
-                                        </div>
-                                        <button class="btn-buy" type="submit">Comprar</button>
-                                    </div>
-                                </div>
-                            </form>
+                </form>
+                {% endif %}
 
-                            <div class="kit-content">
-                                {{ productHelper.kit() }}
-                            </div>
-                            <div class="frete-content">
-                                {{ productHelper.shipping() }}
-                            </div>
-                        {% endif %}
-                    </div>
+                {% if productHelper.kit() %}
+                <div class="kit-content">
+                    {{ productHelper.kit() }}
+                </div>
+                {% endif %}
+
+                <div class="frete-content">
+                    {{ productHelper.shipping() }}
                 </div>
             </div>
         </div>
     </div>
 
     {% if productHelper.bundle() %}
-    <div class="compre-junto">
-        <h1 class="title">Compre Junto</h1>
+    <div class="bundle-content">
+        <h1 class="showcase__title">Compre Junto</h1>
         {{ productHelper.bundle() }}
     </div>
     {% endif %}
@@ -163,36 +122,23 @@
     {% if product.video %}
     <div class="video-content">
         <h1 class="title">Vídeo</h1>
-        <iframe class="video-content__responsive" width="1904" height="768" src="{{ product.video }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="video-content__responsive" width="1904" height="768" src="{{ product.video }}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
     </div>
     {% endif %}
 
-    {% if product.related_products %}
-    <div class="showcase container related-products" data-tray-tst="vitrine_home">
-        <h1 class="showcase__title">Produtos Relacionados</h1>
-        <div class="control">
-            <ul class="showcase-content product-carrossel prod" style="width: 100%;">
-                {% for related in product.related_products %}
-                    <li class="showcase-content__item" data-tray-tst="vitrine_produto" itemscope itemtype="https://schema.org/SomeProducts">
-                        {% element 'snippets/product' {"product": related} %}
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    {% endif %}
-</div>
-<div class="background-tabs">
-    <div id="ProdBlock" class="product-tabs container">
+    <div id="ProdBlock" class="product-tabs">
         <a name="formaPagto"></a>
         <div id="ProdAbas" class="abasProduto tab-panel">
             <ul class="list-tabs">
                 {% for key, tab in productTabs %}
-                  {% if tab.container_id %}
-                  <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
-                    <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
-                  </li>
-                  {% endif %}
+                {% if tab.container_id %}
+                <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                    <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{
+                        tab.description }}</a>
+                </li>
+                {% endif %}
                 {% endfor %}
             </ul>
         </div>
@@ -227,24 +173,35 @@
         {{ productTabs.downloads.content }}
 
         <div id="garantia" class="prodBox">
-            <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg"  />
+            <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" />
         </div>
-        <div data-app="product.payment-methods" id="formasPagto" class="prodBox"  ></div>
+        <div data-app="product.payment-methods" id="formasPagto" class="prodBox"></div>
     </div>
 </div>
 
-<div class="container banner-product">
-    <!-- BANNER LINE -->
-    {% element 'snippets/banner-line' %}
+{% if product.related_products %}
+<div class="showcase container related-products" data-tray-tst="vitrine_home">
+    <h1 class="showcase__title">Produtos Relacionados</h1>
+    <div class="control">
+        <ul class="showcase-content product-carrossel prod" style="width: 100%;">
+            {% for related in product.related_products %}
+            <li class="showcase-content__item" data-tray-tst="vitrine_produto" itemscope
+                itemtype="https://schema.org/SomeProducts">
+                {% element 'snippets/product' {"product": related} %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
+{% endif %}
 
 <script>
-    function process(quant){
+    function process(quant) {
         var value = parseInt(document.getElementById("quant").value);
-        value+=quant;
-        if(value < 1){
+        value += quant;
+        if (value < 1) {
             document.getElementById("quant").value = 1;
-        }else{
+        } else {
             document.getElementById("quant").value = value;
         }
     }
@@ -254,4 +211,13 @@
 
         imageFullContent.setAttribute('src', link);
     }
+
+    (function () {
+        setTimeout(function () {
+            var price = document.querySelector('.price-content .price');
+            if (price.dataset.pricefull == '0.00') {
+                price.innerHTML = "Produto sob consulta."
+            }
+        }, 500)
+    })();
 </script>

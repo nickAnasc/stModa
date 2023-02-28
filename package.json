@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@tray-tecnologia/tray-cli": "^1.0.1",
+    "node-sass": "^8.0.0"
+  }
+}

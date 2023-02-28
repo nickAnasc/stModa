@@ -2,82 +2,74 @@
     @media(max-width: 1199px) {
         text-align: center;
     }
+
     .customer__flex {
         position: relative;
         transition: .3s;
 
-        a {
+        a,
+        .hide-login {
             color: var(--textHeader);
-            @media(max-width: 1199px) {
+        }
+
+        @media(max-width: 1199px) {
+            .hide-login {
                 display: none;
             }
         }
     }
 
     .drop-login {
-        position: relative;
         transition: .1s;
-        cursor: pointer;
+        position: relative;
+
+        .fa-user {
+            display: none;
+
+            @media(max-width: 1199px) {
+                display: block;
+            }
+        }
 
         .drop-customer {
             opacity: 0;
-            height: 0;
-            width: initial;
             visibility: hidden;
-            transition: .1s;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            transform: translateX(0);
-            padding: 0;
-            text-align: center;
-            background-color: #fff;
-            border-radius: 10px 0px 10px 10px;
-            z-index: 1;
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: -9px;
-                right: 0;
-                width: 20px;
-                height: 20px;
-                border-top: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-                border-left: 10px solid transparent;
-                border-right: 10px solid #fff;
-            }
+            height: 0;
 
             a {
                 display: block;
-                margin-bottom: 5px;
-                white-space: nowrap;
-                color: var(--textHeader);
-                font-size: 15px;
+                color: #000;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
 
                 &:last-child {
                     margin-bottom: 0;
                 }
             }
-
-            .customer-name {
-                font-weight: $bold;
-                font-family: $fontStyle;
-                font-size: 16px;
-                font-style: italic;
-                margin-bottom: 10px;
-                white-space: nowrap;
-            }
         }
 
         &:hover {
             padding-bottom: 10px;
+
             .drop-customer {
                 opacity: 1;
-                height: auto;
-                width: auto;
                 visibility: visible;
-                padding: 10px 60px;
+                height: auto;
+                position: absolute;
+                top: 100%;
+                padding: 15px;
+                background-color: #f5f5f5;
+                width: 100%;
+                z-index: 1;
+                border-radius: 20px 20px 0;
+                box-shadow: 0px 0px 10px -4px #000;
+            }
+        }
+
+        @media(max-width: 1199px) {
+            .drop-customer {
+                display: none;
             }
         }
     }

@@ -1,14 +1,14 @@
 .brands {
-    padding: 10px 0 0;
+    padding: 70px 0 50px;
 
-    .control {
-        margin-top: 30px;
-        .dep_lista{
-            background-color: aqua;
+    .container {
+        .brands-carrossel.slick-initialized.slick-slider {
+            padding: 25px;
         }
     }
 
     .brands-carrossel {
+
         .link-brand {
             text-decoration: none;
 
@@ -32,4 +32,8 @@
             }
         }
     }
+}
+
+.brands-carrossel.slick-initialized.slick-slider {
+    padding: 25px;
 }

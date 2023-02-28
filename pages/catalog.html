@@ -1,20 +1,6 @@
-<!-- <style>
-    .showcase .showcase-content .showcase-content__item .btn-comprar {
-        bottom: 80px;
-    }
-    .compare-buttons a[data-compare="remove"] {
-        display: none;
-    }
-    .compare-buttons a[data-compare="add"] {
-        font-weight: bold;
-        color: black;
-    }
-##Levei esse bloco de comando para a page-catolog.scss
-
-</style> -->
 <section class="catalog">
     <div class="container">
-        <div class="breadcrumb-content">
+        <div class="breadcrumb-mobile">
             {% element 'snippets/breadcrumb' %}
         </div>
         <div class="catalog__flex">
@@ -23,11 +9,13 @@
             </div>
             <div class="catalog__showcase">
                 <div class="flex-showcase-components">
-                    <div class="category-name">
-                        {{ category.name }}
+                    <div class="breadcrumb-desk">
+                        {% element 'snippets/breadcrumb' %}
                     </div>
-                    <div class="button-compare"></div>
-                    <a class="btn-compare" href="/loja/comparador.php?loja={{ store.id }}" alt="compare">COMPARAR</a>
+                    <div class="btn-compare-catalog">
+                        <a class="btn-compare" href="/loja/comparador.php?loja={{ store.id }}"
+                            alt="comparar">Comparar</a>
+                    </div>
                     <div>
                         {% element 'snippets/filter-order' %}
                     </div>
@@ -42,14 +30,13 @@
     </div>
 </section>
 
-
 <script>
-    (function(){
+    (function () {
         var openFilter = document.querySelectorAll('.action-filter');
         var filterMobileContent = document.querySelector('.catalog__filter');
 
         openFilter.forEach(element => {
-            element.addEventListener('click', function() {
+            element.addEventListener('click', function () {
                 this.classList.contains('open') ? filterMobileContent.classList.add('open') : filterMobileContent.classList.remove('open');
             })
         });
