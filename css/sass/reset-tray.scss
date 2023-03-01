@@ -390,6 +390,14 @@ html{
     
     .varCont{
         margin-bottom: 10px;
+
+        .select.selectanel.infoSelects {
+            background-color: #fff;
+        }
+
+        .textarea {
+            border: none;
+        }
     }
     
     input{
@@ -469,7 +477,7 @@ html{
 .margem_imagem_frete{
     margin: 0;
 }
-
+Selects
 .caixa-forma-frete{
     
     .tablePage{
