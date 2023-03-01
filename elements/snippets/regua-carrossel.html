@@ -1,7 +1,7 @@
 <div class="regua">
     <div class="container">
-        <div class="control">
-            <div class="regua-carrossel">
+        <div class="regua-carrossel">
+            <div class="regua-carrossel-init control">
                 <div class="regua__item">
                     {% if settings.reguaIconeUm %}
                         <img class="regua__image" src="{{ asset( settings.reguaIconeUm ) }}" width="60">
@@ -55,8 +55,6 @@
                     </div>
                 </div>
             </div>
-            <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
-            <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
         </div>
     </div>
 </div>

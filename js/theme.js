@@ -24,40 +24,49 @@
         });
 })();
 
+ // REGUA CARROSSEL
+ (function () {
+    $('.regua-carrossel-init').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          duration: 3,
+          prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+          nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+          responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            }
+        ]
+        });
+})();
+
 // GLIDE JS INIT
 document.addEventListener("DOMContentLoaded", function glideInit(event) {
 
-    // REGUA CARROSSEL
-    if(document.querySelector('.regua-carrossel')) {
-        new Glider(document.querySelector('.regua-carrossel'), {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.regua .control .slider-prev'),
-                next: document.querySelector('.regua .control .slider-next')
-            },
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
-                        duration: 1
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        duration: 1
-                    }
-                }
-            ]
-        });
-    }
+
 
     // BRANDS CARROSSEL
     if(document.querySelector('.brands-carrossel')) {
