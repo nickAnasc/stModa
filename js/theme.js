@@ -1,33 +1,31 @@
+ // MAIN BANNER DESKTOP
+ (function () {
+    $('.carrossel-init-desk').slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          duration: 3,
+          prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+          nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+        });
+})();
+
+ // MAIN BANNER MOBILE
+ (function () {
+    $('.carrossel-init-mb').slick({
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          duration: 3,
+          prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+          nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+        });
+})();
+
 // GLIDE JS INIT
 document.addEventListener("DOMContentLoaded", function glideInit(event) {
-
-    // MAIN BANNER DESKTOP
-    if(document.querySelector('.banner-carrossel')) {
-        new Glider(document.querySelector('.banner-carrossel .carrossel-init'), {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.banner-carrossel.control .slider-prev'),
-                next: document.querySelector('.banner-carrossel.control .slider-next')
-            }
-        });
-    }
-
-    // MAIN BANNER MOBILE
-    if(document.querySelector('.banner-carrossel-mb')) {
-        new Glider(document.querySelector('.banner-carrossel-mb .carrossel-init'), {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            draggable: false,
-            duration: 1,
-            arrows: {
-                prev: document.querySelector('.banner-carrossel-mb.control .slider-prev'),
-                next: document.querySelector('.banner-carrossel-mb.control .slider-next')
-            }
-        });
-    }
 
     // REGUA CARROSSEL
     if(document.querySelector('.regua-carrossel')) {

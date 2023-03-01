@@ -1,29 +1,25 @@
 <section class="main-banner">
 	{% if banner.home %}
-			<div class="banner-carrossel control">
-				<div class="carrossel-init">
+			<div class="banner-carrossel">
+				<div class="carrossel-init-desk control">
 					{% for slide in banners.home.slides %}
 						<a href="{{ slide.link ? slide.link : 'javascript:;' }}">
 							<img class="main-banner__image" src="{{ slide.image }}" alt="{{ slide.label }}" width="1920">
 						</a>
 					{% endfor %}
 				</div>
-				<button class="slider-prev"><i class="fas fa-angle-left"></i></button>
-				<button class="slider-next"><i class="fas fa-angle-right"></i></button>
 			</div>
 	{% endif %}
 	
 	{% if banner.extra1 %}
-		<div class="banner-carrossel-mb control">
-			<div class="carrossel-init">
+		<div class="banner-carrossel-mb">
+			<div class="carrossel-init-mb control">
 				{% for slide in banners.extra1.slides %}
 					<a href="{{ slide.link ? slide.link : 'javascript:;' }}">
 						<img class="main-banner__image" src="{{ slide.image }}" alt="{{ slide.label }}" width="992">
 					</a>
 				{% endfor %}
 			</div>
-			<button class="slider-prev"><i class="fas fa-angle-left"></i></button>
-			<button class="slider-next"><i class="fas fa-angle-right"></i></button>
 		</div>
 	{% endif %}
 </section>
