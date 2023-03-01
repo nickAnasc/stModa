@@ -2,7 +2,7 @@
     <div class="container">
         <h1 class="showcase__title">{{ settings.titleMarcas ? settings.titleMarcas : "Marcas" }}</h1>
         <div class="control">
-            <ul class="brands-carrossel carrossel-init">
+            <ul class="brands-carrossel brands-carrossel-init">
                 {% if settings.imageMarca1 %}
                     <li>
                         <a href="{{ settings.linkMarca1 ? settings.linkMarca1 : 'javascript:;' }}" class="link-brand">
@@ -93,8 +93,6 @@
                     </li>
                 {% endif %}
             </ul>
-            <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
-            <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
         </div>
     </div>
 </section>
