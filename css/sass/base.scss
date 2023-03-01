@@ -341,6 +341,11 @@ body{
         border: none;
         border-radius: 50%;
         cursor: pointer;
+
+        @media screen and (max-width: 600px) {
+            width: 50px;
+            height: 30px;
+        }
     }
 
     .modal-content {
