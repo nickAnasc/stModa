@@ -121,7 +121,6 @@
 }
 
 .news {
-    margin-top: 50px;
     .noticias {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -176,12 +175,6 @@
                 overflow: hidden;
                 transition: .3s;
                 height: 250px;
-
-                &:hover {
-                    height: 400px;
-                    margin-bottom: -250px;
-                    z-index: 1;
-                }
 
                 img {
                     width: 100%;
