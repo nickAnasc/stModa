@@ -1,7 +1,7 @@
 {% if products|length > 0 %}
     <div class="showcase container">
         <h1 class="showcase__title">{{ showcaseTitle }}</h1>
-        <div class="control">
+        <div class="product-carrossel-init control">
             <ul class="showcase-content product-carrossel prod" style="width: 100%;">
                 {% for product in products %}
                     {% set ranking = product.ranking %}
@@ -10,8 +10,6 @@
                     </li>
                 {% endfor %}
             </ul>
-            <button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
-            <button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
         </div>
     </div>
 {% endif %}

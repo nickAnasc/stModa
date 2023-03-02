@@ -176,6 +176,45 @@
         });
 })();
 
+// CARROSSEL PRODUTOS
+(function () {
+    $('.product-carrossel.prod').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          duration: 3,
+          prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+          nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+          responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 430,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            }
+        ]
+        });
+})();
+
 // GLIDE JS INIT
 document.addEventListener("DOMContentLoaded", function glideInit(event) {
 
@@ -217,48 +256,6 @@ document.addEventListener("DOMContentLoaded", function glideInit(event) {
                     }
                 }
             ]
-        });
-    }
-
-    // CARROSSEL PRODUTOS
-    if(document.querySelector('.showcase')) {
-        var products = document.querySelectorAll('.product-carrossel.prod');
-
-        products.forEach(element => {
-            new Glider(element, {
-                draggable: false,
-                duration: 1,
-                arrows: {
-                    prev: element.closest('.control').querySelector('.slider-prev'),
-                    next: element.closest('.control').querySelector('.slider-next')
-                },
-                responsive: [
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 430,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    }
-                ]
-            });
         });
     }
 
