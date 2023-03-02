@@ -293,10 +293,6 @@
         });
 })();
 
-// GLIDE JS INIT
-document.addEventListener("DOMContentLoaded", function glideInit(event) {
-});
-
 // MENU MOBILE
 document.addEventListener("DOMContentLoaded", function menuMobile(event) {
     var menuContent = document.querySelector('.menu.mobile');
