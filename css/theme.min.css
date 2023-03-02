@@ -2042,7 +2042,8 @@ div[id^="AbaPersonalizada"] table td {
         background-color: var(--bgButton);
         padding: 9px 10px 7px;
         border-radius: 15px 15px 0;
-        display: none; }
+        display: none;
+        margin-top: 10px; }
         @media (max-width: 991px) {
           .catalog .catalog__showcase .flex-showcase-components .mobile-filter {
             display: block; } }
@@ -3522,8 +3523,7 @@ div[id^="AbaPersonalizada"] table td {
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;
   font-weight: 400;
-  line-height: 1.3rem;
-  margin-top: 30px; }
+  line-height: 1.3rem; }
 
 .page-newsletter .board {
   color: #666;
@@ -3726,13 +3726,18 @@ div[id^="AbaPersonalizada"] table td {
   font-size: 25px;
   font-weight: 700; }
 
-.page-noticia .imagemNoticia {
+.page-noticia .board .imagemNoticia {
   float: left;
   margin-right: 20px; }
   @media (max-width: 991px) {
-    .page-noticia .imagemNoticia {
+    .page-noticia .board .imagemNoticia {
       float: none;
       margin: 40px auto 40px; } }
+
+.page-noticia .board p, .page-noticia .board span {
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 10px; }
 
 .page-noticia .page-content ol, .page-noticia .page-content ul {
   list-style: initial;
@@ -5432,7 +5437,7 @@ div[id^="AbaPersonalizada"] table td {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
         .footer .foo-content .footer-item .social-media .social-media__item {
-          width: calc(100% / 5); }
+          width: calc(100% / 8); }
           .footer .foo-content .footer-item .social-media .social-media__item a {
             background-color: var(--bgButton);
             color: var(--textButton);
@@ -5945,9 +5950,7 @@ div[id^="AbaPersonalizada"] table td {
           padding: 10px;
           background-color: #eee;
           margin-top: 10px;
-          border-radius: 15px 15px 0;
-          border-bottom: 1px solid var(--textMenu);
-          border-right: 1px solid var(--textMenu); }
+          border-radius: 15px 15px 0; }
           .menu.mobile .first-lvl .first-lvl__item .second-lvl .third-lvl.open .third-lvl__item {
             margin-bottom: 18px; }
             .menu.mobile .first-lvl .first-lvl__item .second-lvl .third-lvl.open .third-lvl__item:last-child {
@@ -6368,6 +6371,9 @@ div[id^="AbaPersonalizada"] table td {
     visibility: hidden;
     transition: .3s;
     margin-bottom: -100%; }
+    @media (max-width: 768px) {
+      .showcase .showcase-content .showcase-content__item .btn-comprar {
+        margin-top: 10px; } }
   .showcase .showcase-content .showcase-content__item:hover .btn-comprar {
     opacity: 1;
     visibility: visible;
@@ -6773,7 +6779,8 @@ div[id^="AbaPersonalizada"] table td {
   padding: 0;
   position: absolute;
   right: 0;
-  top: 100%; }
+  top: 100%;
+  z-index: 999; }
   @media (max-width: 767px) {
     .suggestion {
       display: block;
