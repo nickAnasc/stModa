@@ -113,6 +113,10 @@
                 visibility: hidden;
                 transition: .3s;
                 margin-bottom: -100%;
+
+                @media(max-width: 768px) {
+                    margin-top: 10px;
+                }
             }
 
             &:hover {
