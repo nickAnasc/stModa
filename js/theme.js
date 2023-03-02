@@ -204,9 +204,17 @@
                 }
             },
             {
-                breakpoint: 430,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 430,
+                settings: {
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     duration: 1
                 }
