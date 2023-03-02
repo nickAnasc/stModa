@@ -1,5 +1,5 @@
 <section class="banner-triplo control container">
-    <div class="carrossel-init">
+    <div class="banner-triplo-carrossel-init">
         {% if banner.extra3 %}
             <a href="{{ banners.extra3.link ? banners.extra3.link : 'javascript:;' }}">
                 <img class="image-banner" src="{{ banners.extra3.src }}" width="500">
@@ -16,6 +16,4 @@
             </a>
         {% endif %}
     </div>
-    <button class="slider-prev"><i class="fas fa-angle-left"></i></button>
-    <button class="slider-next"><i class="fas fa-angle-right"></i></button>
 </section>
