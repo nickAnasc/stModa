@@ -1,6 +1,6 @@
 <div class="breadcrumb-content">
 	<div class="breadcrumb__flex">
-		<span class="breadcrumb__item"><a href="{{ links.home }}">Pagina Inicial</a> <span class="slash"> / </span></span>
+		<span class="breadcrumb__item"><a href="{{ links.home }}">Página Inicial</a> <span class="slash"> / </span></span>
 		{% if breadcrumb %}
 			{% for item in breadcrumb %}
 				<span class="breadcrumb__item"> <a href="{{ item.link}}" title="{{ item.name }}">{{ item.name|length > 45 ? item.name[0:45] ~ '...' : item.name }}</a> <span class="slash"> / </span></span>
