@@ -27,15 +27,13 @@
                         <img class="content-image__full" onmouseover="magnify('.content-image__full', 1.7)" src="{{ images[0].full }}">
                     </div>
                     <div class="content-image__carrossel control-thumb">
-                        <div class="thumb-carrossel">
+                        <div class="thumb-carrossel-init">
                             {% for thumb in images %}
                                 <div class="thumb-content" onClick="changeMainPhoto('{{ thumb.full }}')">
                                     <img class="thumb change-photo" src="{{ thumb.full }}">
                                 </div>
                             {% endfor %}
                         </div>
-                        <button class="slider-prev"><i class="fas fa-angle-left"></i></button>
-                        <button class="slider-next"><i class="fas fa-angle-right"></i></button>
                     </div>
                 </div>
             </div>
