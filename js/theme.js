@@ -133,49 +133,53 @@
         });
 })();
 
+// REVIEWS
+(function () {
+    document.querySelectorAll('.reviews .dep_lista li[style="display: none;"]').forEach(element => {
+        element.remove();
+    });
+
+    $('.dep_lista').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          duration: 3,
+          prevArrow: '<button class="slider-prev" style="z-index: 1;"><i class="fas fa-angle-left"></i></button>',
+          nextArrow: '<button class="slider-next"><i class="fas fa-angle-right"></i></button>',
+          responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    duration: 1
+                }
+            }
+        ]
+        });
+})();
+
 // GLIDE JS INIT
 document.addEventListener("DOMContentLoaded", function glideInit(event) {
 
-    // REVIEWS CARROSSEL
-    if(document.querySelector('.reviews .dep_lista')) {
-        
-
-        document.querySelectorAll('.reviews .dep_lista li[style="display: none;"]').forEach(element => {
-            element.remove();
-        });
-
-        setTimeout(function(){
-            new Glider(document.querySelector('.dep_lista'), {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                draggable: false,
-                duration: 1,
-                arrows: {
-                    prev: document.querySelector('.reviews .control .slider-prev'),
-                    next: document.querySelector('.reviews .control .slider-next')
-                },
-                responsive: [
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            duration: 1
-                        }
-                    }
-                ]
-            });
-        }, 1000);
-    }
-
+    
     // CARROSSEL PRODUTO INTERNO
     if(document.querySelector('.thumb-carrossel')) {
         new Glider(document.querySelector('.thumb-carrossel'), {

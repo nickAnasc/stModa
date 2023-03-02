@@ -102,12 +102,10 @@
 <!-- REVIEWS -->
 {% if settings.booleanDepoimentos %}
 	<section class="reviews">
-		<div class="container">
+		<div class="reviews-carrossel-init container">
 			<h1 class="showcase__title">{{ settings.titleDepoimentos ? settings.titleDepoimentos : "Depoimentos" }}</h1>
 			<div class="control">
 				{% element 'CustomerReview.reviews' %}
-				<button aria-label="Previous" class="slider-prev"><i class="fas fa-angle-left"></i></button>
-				<button aria-label="Next" class="slider-next"><i class="fas fa-angle-right"></i></button>
 			</div>
 
 			<div class="mais-dep">
