@@ -6334,7 +6334,7 @@ div[id^="AbaPersonalizada"] table td {
   .showcase .showcase-content .showcase-content__item .product-name {
     color: var(--productText); }
   .showcase .showcase-content .showcase-content__item .compare-buttons {
-    margin-top: 10px; }
+    margin: 10px 0; }
     .showcase .showcase-content .showcase-content__item .compare-buttons a {
       color: var(--productText); }
     .showcase .showcase-content .showcase-content__item .compare-buttons a[data-compare="remove"] {
@@ -6364,28 +6364,12 @@ div[id^="AbaPersonalizada"] table td {
     font-size: 18px;
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 90px;
+    bottom: 0;
     left: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s;
-    margin-bottom: -100%; }
+    transition: .3s; }
     @media (max-width: 768px) {
       .showcase .showcase-content .showcase-content__item .btn-comprar {
         margin-top: 10px; } }
-  .showcase .showcase-content .showcase-content__item:hover .btn-comprar {
-    opacity: 1;
-    visibility: visible;
-    margin-bottom: initial; }
-  @media (max-width: 992px) {
-    .showcase .showcase-content .showcase-content__item .btn-comprar {
-      position: initial;
-      bottom: initial;
-      left: initial;
-      opacity: 1;
-      visibility: visible;
-      margin-bottom: initial; } }
   .showcase .showcase-content .showcase-content__item .price-various {
     margin-right: 5px; }
   .showcase .showcase-content .showcase-content__item .price-before.strike {
